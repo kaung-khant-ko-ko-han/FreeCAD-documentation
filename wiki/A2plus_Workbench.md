@@ -1,367 +1,342 @@
 # <img alt="A2plus workbench icon" src=images/A2p_workbench.svg  style="width:64px;"> A2plus Workbench
 
-## Introduction
+## နိဒါန်း
 
  
 
-The A2plus workbench is an [external workbench](External_workbenches.md) to [assemble](Assembly.md) different parts in FreeCAD.
+A2plus workbench သည် FreeCAD (ဖရီးကက် (FreeCAD)) တွင် မတူညီသည့် အစိတ်အပိုင်းများကို [assemble](Assembly.md) (အစိတ်အပိုင်းများ တပ်ဆင်စုစည်းမှု (Assembly)) ဖွဲ့စည်းရန် အသုံးပြုသော [external workbench](External_workbenches.md) တစ်ခုဖြစ်သည်။
 
-This documentation describes A2plus version **0.4.56 or newer**.
+ဤစာရွက်စာတမ်းသည် A2plus အတွက် ဗားရှင်း **0.4.56 သို့မဟုတ် ပိုမိုသစ်** ဖြစ်သည့် ဗားရှင်းများအတွက် ဖော်ပြထားသည်။
 
-## Installing
+## ထည့်သွင်းခြင်း
 
-The A2plus workbench is an addon to FreeCAD. It can easily be installed via the FreeCAD <img alt="" src=images/AddonManager.svg  style="width:24px;"> [Addon Manager](Std_AddonMgr.md) from the **Tools → Addon Manager** menu. A2plus is under active development and will get new features frequently. Therefore you should update it regularly using also the menu **Tools → [Addon Manager](Std_AddonMgr.md)**. The A2plus code is hosted and developed [on GitHub](https://github.com/kbwbe/A2plus) and can also be installed manually by copying it into FreeCAD\'s **Mod** directory.
+A2plus workbench သည် FreeCAD (ဖရီးကက် (FreeCAD)) အတွက် addon တစ်ခုဖြစ်သည်။ ၎င်းကို မူလပလက်ဖောင်းမှ တိုက်ရိုက် ထည့်သွင်းရန် FreeCAD ၏ <img alt="" src=images/AddonManager.svg  style="width:24px;"> [Addon Manager](Std_AddonMgr.md) ကို **Tools → Addon Manager** မီနူး မှတဆင့် အလွယ်တကူ ထည့်သွင်းနိုင်သည်။ A2plus သည် တပ်ဆင်မှုတိုးတက်ရေး ကို ဆက်လက်ဖွံ့ဖြိုးနေသဖြင့် လုပ်ဆောင်ချက်အသစ်များကို မကြာခဏ ထပ်တိုးပေးသည်။ ထို့ကြောင့် သင်သည်လည်း **Tools → [Addon Manager](Std_AddonMgr.md)** မီနူး မှတဆင့် ပုံမှန်နောက်ဆက်တွဲ update လုပ်သင့်သည်။ A2plus ၏ ကုဒ်ကို [GitHub](https://github.com/kbwbe/A2plus) ပေါ်တွင် စီမံထိန်းသိမ်း ဖန်တီး တင်ထားပြီး FreeCAD ၏ **Mod** ဖိုလ်ဒါထဲသို့ မန်ယူးအလိုက် ကော်ပီလုပ်ပြီး လက်လှမ်းမီစွာ လက်ဖြင့် ထည့်သွင်းလည်း ရသည်။
 
-## Getting Started 
+## စတင်အသုံးပြုခြင်း
 
-At first switch to the A2plus toolbar in FreeCAD. To create an assembly create a new file in FreeCAD. At first this file needs to be saved. It is recommended (but not necessary) to save it in the same folder of the parts you want to assemble.
+စတင်ရန် FreeCAD (ဖရီးကက် (FreeCAD)) ထဲတွင် A2plus တူးလ်ဘား သို့ ပြောင်းပါ။ Assembly (အစိတ်အပိုင်းများ တပ်ဆင်စုစည်းမှု (Assembly)) အသစ်တစ်ခု ဖန်တီးရန် FreeCAD ၌ ဖိုင် အသစ်ဖန်တီးပါ။ အရင်ဆုံး ဤဖိုင်ကို သိမ်းဆည်းရန် လိုအပ်သည်။ သင့်လိုအပ်ချက်အရ (လိုအပ်ပေမယ့် မလိုအပ်ပေ) သင့်တပ်ဆင်လိုသည့် အစိတ်အပိုင်းများရှိသော ဖိုလ်ဒါနှင့် တူညီသော ဖိုလ်ဒါ၌ သိမ်းဆည်းထားသင့်သည်။
 
-Now parts can be added to the assembly by using the toolbar button <img alt="" src=images/A2p_ImportPart.svg  style="width:24px;"> or <img alt="" src=images/A2p_ShapeReference.svg  style="width:24px;">. The button <img alt="" src=images/A2p_ImportPart.svg  style="width:24px;"> adds all bodies in the selected file as a single part. When using the button <img alt="" src=images/A2p_ShapeReference.svg  style="width:24px;"> you can choose what part from a file should be imported as part. This way one can for example only import a sketch to assemble further parts using the sketch to determine the part positions.
+ယခု အစိတ်အပိုင်းများကို တူးလ်ဘား ခလုတ် <img alt="" src=images/A2p_ImportPart.svg  style="width:24px;"> သို့မဟုတ် <img alt="" src=images/A2p_ShapeReference.svg  style="width:24px;"> ကို အသုံးပြု၍ အစီအစဉ်ထဲသို့ ထည့်နိုင်သည်။ <img alt="" src=images/A2p_ImportPart.svg  style="width:24px;"> ခလုတ်သည် ရွေးထားသော ဖိုင်ရှိ 모든 bodies များကို တစ်ခုတည်းသော part အဖြစ် ထည့်သွင်းသည်။ <img alt="" src=images/A2p_ShapeReference.svg  style="width:24px;"> ခလုတ်ကို အသုံးပြုပါက ဖိုင်ထဲမှ မည်သည့် part ကို import လုပ်မည်ကို သင့်အား ရွေးချယ်ခွင့် ပေးမည် ဖြစ်သည်။ ဥပမာအားဖြင့် စကစ် (ပုံကြမ်းဖန်တီးမှု (Sketcher)) တစ်ခုသာ import လုပ်ပြီး ထိုစကစ်ကို အသုံးပြု၍ အခြား part များကို တပ်ဆင်ရာတွင် အနေအထား သတ်မှတ်ရန်သာ အသုံးပြုနိုင်သည်။
 
-The first added part gets a fixed position by default. (You can change this later via the part property **fixed Position**.)
+ပထမတွင် ထည့်သွင်းသော part သည် ပုံမှန်အားဖြင့် fixed position ဖြစ်နေမည်။ (ဤကို နောက်တွင် part property **fixed Position** မှတဆင့် ပြောင်းလဲနိုင်သည်)
 
-Parts that are already in the assembly can be cloned with the toolbar button <img alt="" src=images/A2p_DuplicatePart.svg  style="width:24px;">.
+Assembly ထဲတွင် ရှိပြီးသား parts များကို <img alt="" src=images/A2p_DuplicatePart.svg  style="width:24px;"> ခလုတ်ဖြင့် ကလုန်း (clone) ပြုလုပ်နိုင်သည်။
 
-To edit a part from the assembly, select it in the model tree and use the toolbar button <img alt="" src=images/A2p_EditPart.svg  style="width:24px;">. This will open the part into a new tab in FreeCAD or switch to its tab if the file is already opened.
+Assembly ထဲမှ part တစ်ခုကို တည်းဖြတ်ရန် model tree တွင် ရွေးပြီး <img alt="" src=images/A2p_EditPart.svg  style="width:24px;"> ခလုတ်ကို အသုံးပြုပါ။ ၎င်းသည် part ဖိုင်ကို FreeCAD ၌ အခြား tab အသစ်တစ်ခုဖြင့် ဖွင့်ပေးမည် သို့မဟုတ် ဖိုင်ကို မကြာခဏ ဖွင့်ထားပြီးသားကိျဗျာဖြစ်လျှင် ၎င်း tab သို့ ပြောင်းလဲပေးမည် ဖြစ်သည်။
 
-To update changed parts in assemblies click on the toolbar button <img alt="" src=images/A2p_ImportPart_Update.svg  style="width:24px;">. The toolbar button <img alt="" src=images/A2p_RecursiveUpdate.svg  style="width:24px;"> imports parts too but recursively over possible [subassemblies](#Subassemblies.md). If you select one or some parts in FreeCAD\'s the tree view, A2plus will ask you to only update the selected parts.
+Assembly များ၌ ပြောင်းလဲထားသော parts များကို update လုပ်ရန် <img alt="" src=images/A2p_ImportPart_Update.svg  style="width:24px;"> ခလုတ်ကို နှိပ်ပါ။ <img alt="" src=images/A2p_RecursiveUpdate.svg  style="width:24px;"> ခလုတ်သည် parts များကို import လုပ်ပေးသော်လည်း အောက်ပါ [subassemblies](#Subassemblies.md) များကို recursive ဖေါ်ထုတ်ပြီး import လုပ်ပေးပါသည်။ FreeCAD ၏ tree view တွင် part တစ်ခု သို့မဟုတ် အချို့ကို ရွေးထားပါက A2plus သည် ရွေးထားသော part များကို ထောက်ပံ့ update လုပ်ရန် မေးမည် ဖြစ်သည်။
 
-Imported parts will keep their external dependencies and can be edited. For well-defined parts like screws it is however useful that their shape cannot be edited. This can be achieved with the toolbar button <img alt="" src=images/A2p_ConvertPart.svg  style="width:24px;"> that converts the selected part to a static copy of the original part.
+Imported parts များသည် ၎င်းတို့၏ ပြင်ပ အားပံ့ပိုးမှုများကို ထိန်းသိမ်းထားပြီး တည်းဖြတ်နိုင်မည် ဖြစ်သည်။ သို့သော် screws ကဲ့သို့ အကောင်အထည်တည်သော parts များအတွက် ၎င်းတို့၏ shape ကို တည်းဖြတ်၍ မရနေရန် လိုအပ်သည့် အခါများ ရှိသည်။ ၎င်းကို <img alt="" src=images/A2p_ConvertPart.svg  style="width:24px;"> ခလုတ်ဖြင့် ရရှိနိုင်ပြီး ရွေးထားသော part ကို မူရင်း part ၏ static copy အဖြစ် ပြောင်းပေးသည်။
 
-To save the assembly and close it afterwards, the toolbar button <img alt="" src=images/A2p_Save_and_exit.svg  style="width:24px;"> can be used.
+Assembly ကို သိမ်းပြီး ပိတ်လိုလျှင် <img alt="" src=images/A2p_Save_and_exit.svg  style="width:24px;"> ခလုတ်ကို အသုံးပြုနိုင်သည်။
 
-Toggling the toolbar button <img alt="" src=images/A2p_CD_OneButton.svg  style="width:24px;"> sets the way you can select several several edges, faces etc.: Either with a single click or by **Ctrl**+click.
+<img alt="" src=images/A2p_CD_OneButton.svg  style="width:24px;"> ခလုတ်ကို toggle ပြုလုပ်ခြင်းဖြင့် ရွေးချယ်မှုအမျိုးအစားကို သတ်မှတ်နိုင်သည်။ အထူးသဖြင့် edge, face များကို ရွေးချယ်ရာတွင် တစ်ချက် နှိပ်ခြင်းဖြင့် သို့မဟုတ် **Ctrl**+click ဖြင့် ရွေးချယ်ရန် ရွေးချယ်နိုင်သည်။
 
-## Assembling
+## တပ်ဆင်ခြင်း (Assembling)
 
-Assembling parts is done by adding constraints between parts. After a constraint A2plus will move the parts according to the constraint if possible.
+Parts များကို တပ်ဆင်ခြင်းသည် parts များအကြား ကန့်သတ်ချက် (constraint) များကို ထည့်သွင်းခြင်းဖြင့် ပြုလုပ်သည်။ Constraint တစ်ခု ထည့်သွင်းပြီးနောက် A2plus သည် ၎င်း constraint အရ parts များကို သက်ဆိုင်သလို ရှေ့ဆောင်ပြောင်းလွှတ်ပေးမည် ဖြစ်သည် (ဖြေရှင်းနိုင်ပါက)။
 
-To create a constraint between parts, keep the **Ctrl** key pressed and select each an edge or face of two parts. Then click the toolbar button of the desired constraint. A dialog will pop up that is descried in section [Constraints](#Constraints.md). The constraint will be added in the model tree attached to the affected parts.
+Parts များအကြား constraint တစ်ခု ဖန်တီးရန်အတွက် **Ctrl** key ကို ဖိထားပြီး parts နှစ်ခုစလုံး၏ edge သို့မဟုတ် face တစ်ခုချင်းစီကို ရွေးပါ။ ထို့နောက် သင့်လိုချင်သော constraint ၏ toolbar ခလုတ်ကို နှိပ်ပါ။ ပြတင်းပေါက်တစ်ခု ဖွင့်မည်ဖြစ်ပြီး ၎င်းကို [Constraints](#Constraints.md) အပိုင်းတွင် ဖတ်ရှုနိုင်သည်။ Constraint သည် model tree တွင် သက်ဆိုင်ရာ parts တွင် ဆက်သွယ်ထားသဖြင့် ထည့်သွင်းထားမည် ဖြစ်သည်။
 
-For complex constraints between parts A2plus might fail to solve the constraints. Therefore also have a look at section [Troubleshooting](#Troubleshooting.md) for strategies to resolve such cases.
+Parts များအကြား ရှုပ်ထွေးသော constraint များကို A2plus သည် တခါတရံ ဖြေရှင်းရန် မအောင်မြင်နိုင်ပါ။ ထို့ကြောင့် ၎င်းအခြေအနေများကို ဖြေရှင်းရာတွင် အကူအညီအဖြစ် [Troubleshooting](#Troubleshooting.md) အပိုင်းကိုလည်း ကြည့်ပါ။
 
-### Keeping track 
+### လိုက်လံကြည့်ရှုခြင်း (Keeping track)
 
-The more parts you add, the more important it is to keep track. A2plus therefore offers these tools to move and view parts:
+Parts များ အများလာသည့်အခါ နောက်ဆုံးအခြေအနေကို သိရှိထားရမည်မှာ အရေးကြီးလာသည်။ A2plus သည် ထို့အတွက် parts များကို မြှောက်နှိပ်၍ သွားလာပြောင်းလဲရန်နှင့် တွေ့မြင်ရန် အောက်ပါ ကိရိယာများကို ပေးထားသည်။
 
--   To move a part around in the assembly, select it in the model tree and use the toolbar button <img alt="" src=images/A2p_MovePart.svg  style="width:24px;">. When you placed the part where you like it, left-click with the mouse. If the moved part already has constraints it will be placed accordingly by pressing the toolbar button <img alt="" src=images/A2p_solver.svg  style="width:24px;"> because this triggers to resolve all constraints of the assembly.
--   To show a constraint select it in the model tree and use the toolbar button <img alt="" src=images/A2p_ViewConnection.svg  style="width:24px;">. This will make the whole assembly transparent and highlight the two objects that are connected via the constraint. To go back to the normal view, left-click into the assembly.
--   To show only certain parts in the assembly, select these parts in the model tree and use the toolbar button <img alt="" src=images/A2p_Isolate_Element.svg  style="width:24px;">. Alternatively you can hide a certain part by selecting it in the model tree and pressing **Space** to toggle its visibility.
--   To toggle the transparency view of the whole assembly you can use the toolbar button <img alt="" src=images/A2p_ToggleTransparency.svg  style="width:24px;">.
--   Every part can be made transparent using the normal FreeCAD editing. However sometimes the transparency setting for parts is lost when reopening the assembly due to a bug in FreeCAD. As workaround you can use the toolbar button <img alt="" src=images/A2p_Restore_Transparency.svg  style="width:24px;"> to restore the transparency settings.
+-   Assembly အတွင်း part တစ်ခုကို တနေရာမှ တနေရာသို့ ဆက်ရွှေ့ရန် model tree တွင် ရွေးပြီး <img alt="" src=images/A2p_MovePart.svg  style="width:24px;"> ခလုတ်ကို အသုံးပြုပါ။ သင် မိမိထားလိုသည့်နေရာတွင် part ကို တပ်ဆင်ပြီးပါက သက်ဖြင့် လက်ဘက်ကောက်နှိပ်ပါ။ မျှော်လင့်ထားသလို ရွှေ့နေသော part တွင် ရှိပြီးသား constraint များ ရှိလျှင် <img alt="" src=images/A2p_solver.svg  style="width:24px;"> ခလုတ်ကို နှိပ်ခြင်းဖြင့် assembly ၏ အားလုံး constraint များကို ဖြေရှင်းရန် စတင်ပေးမည် ဖြစ်သောကြောင့် ၎င်းအတိုင်း အနေအထားကို ထားပေးမည်။
+-   Constraint တစ်ခုကို ပြသရန် model tree တွင် ၎င်းကို ရွေးပြီး <img alt="" src=images/A2p_ViewConnection.svg  style="width:24px;"> ခလုတ်ကို အသုံးပြုပါ။ ၎င်းသည် အစုံ assembly ကို မျက်နှာပြင် ထိပ်ပြင် ဖျော့ဖျော့ ဖြစ်အောင် ပြသပြီး constraint ဖြင့် ဆက်စပ်ထားသည့် objects နှစ်ခုကို ထူးခြား လှိမ့်ပေးမည်။ ပုံမှန် ကြည့်ရှုမှုသို့ ပြန်သွားရန် assembly အတွင်း ညာဘက်ကလစ် တစ်ချက် နှိပ်ပါ။
+-   Assembly ထဲမှ အချို့သော parts များကို သာ ပြသလိုပါက model tree တွင် ထို parts များကို ရွေးပြီး <img alt="" src=images/A2p_Isolate_Element.svg  style="width:24px;"> ခလုတ်ကို အသုံးပြုပါ။ အခြားနည်းလမ်းတစ်ခုအနေဖြင့် model tree တွင် part တစ်ခုကို ရွေးပြီး **Space** ကို နှိပ်၍ ၎င်း၏ မြင်နိုင်မှုကို toggle ပြုလုပ်၍ ဖျောက်နိုင်သည်။
+-   အစုံ assembly ၏ transparency အမြင်ကို toggle ပြုလုပ်ရန် <img alt="" src=images/A2p_ToggleTransparency.svg  style="width:24px;"> ခလုတ်ကို အသုံးပြုနိုင်သည်။
+-   Part တစ်ခုချင်းစီကို သာမန် FreeCAD (ဖရီးကက် (FreeCAD)) တည်းဖြတ်မှုမှတဆင့် သာမန်အားဖြင့် transparent ပြုလုပ်နိုင်သည်။ သို့သော် အချို့အခါတွင် FreeCAD ၏ bug တစ်ခုကြောင့် assembly ကို ပြန်ဖွင့်သည့်အခါ transparency သတ်မှတ်ချက်များ ပျောက်ဆုံးသွားနိုင်သည်။ workaround အနေဖြင့် <img alt="" src=images/A2p_Restore_Transparency.svg  style="width:24px;"> ခလုတ်ကို အသုံးပြု၍ transparency သတ်မှတ်ချက်များကို ပြန်လည်ထူထောင်နိုင်သည်။
 
 ### Constraints
 
-When creating a constraint such a dialog will be displayed after you pressed a constraint toolbar button:
+Constraint တစ်ခု ဖန်တီးသောအခါ သင် constraint toolbar ခလုတ်ကို နှိပ်ပြီးနောက် အောက်ပါ ပြတင်းပေါက် ဖြစ်ပေါ်ပြသမည်။
 
  ![](images/A2p_ConstraintPropertiesDialog.png )  
-*Above: The A2plus Constraint Properties Dialog*
+*အထက်ပါ — A2plus Constraint Properties Dialog*
 
-For certain constraints it allows you to modify the constraint direction. With the button **<img src="images/A2p_solver.svg" width=24px> Solve** you can check beforehand if this new constraint can be solved by A2plus. If not, have a look at section [Troubleshooting](#Troubleshooting.md).
+တချို့သော constraint အမျိုးအစားများအတွက် constraint သဘောတရား၏ ဦးတည်ချက်ကို ပြောင်းလဲနိုင်သည်။ **<img src="images/A2p_solver.svg" width=24px> Solve** ခလုတ်ဖြင့် ဤ constraint အသစ်ကို A2plus ဖြင့် ဖြေရှင်းနိုင်မည့် မဟုတ်မဖြစ်ကို ကြိုစစ်ဆေးနိုင်သည်။ မဖြေရှင်းနိုင်ပါက [Troubleshooting](#Troubleshooting.md) အပိုင်းကို ကြည့်ပါ။
 
-Constraints can be disabled by changing its [visibility](Std_ToggleVisibility.md). This is done by selecting the constraint in the tree view and pressing **Space**. This toggles the property **Suppressed**. A suppressed constraint is not taken into account when the assembly is solved.
+Constraint များကို ၎င်း၏ [visibility](Std_ToggleVisibility.md) ကို ပြောင်းလဲခြင်းဖြင့် ပိတ်ထားနိုင်သည်။ ၎င်းကို tree view တွင် constraint ကို ရွေးပြီး **Space** ကို နှိပ်ခြင်းဖြင့် ပြုလုပ်နိုင်သည်။ ၎င်းသည် **Suppressed** property ကို toggle လုပ်ပေးမည်။ Suppressed ဖြစ်ထားသော constraint တစ်ခုကို assembly ဖြေရှင်းသောအခါ တွက်ချက်ချက်တွင် ထည့်သွင်းမထားပါ။
 
-A2plus provides the following constraints:
+A2plus သည် အောက်ပါ constraint များကို ပံ့ပိုးပေးသည် — အကြောင်းအရာများကို အသက်သာစေနိုင်ရန် အမျိုးအစားခွဲစိတ်ထားသည်။
 
 #### Point on Point 
 
-Select either a [vertex](Glossary#Vertex.md) (point), circle or sphere on each part. If a circle or sphere was selected, its center point will be used for the constraint. The toolbar button <img alt="" src=images/A2p_PointIdentity.svg  style="width:24px;"> adds the constraint {{Variable|pointIdentity}} that make the vertices coincident.
+Part နှစ်ပိုင်းလုံး၌ [vertex](Glossary#Vertex.md) (point), circle သို့မဟုတ် sphere တစ်ခုကို ရွေးချယ်ပါ။ circle သို့မဟုတ် sphere ကို ရွေးထားခဲ့ပါက ၎င်း၏ center point ကို constraint အတွက် အသုံးပြုမည်။ <img alt="" src=images/A2p_PointIdentity.svg  style="width:24px;"> ခလုတ်သည် {{Variable|pointIdentity}} ဆိုသည့် constraint ကို ထည့်သည်။ ၎င်းသည် vertices များကို coincident ဖြစ်အောင် ပြုလုပ်မည်။
 
 #### Point on Line 
 
-Select a [vertex](Glossary#Vertex.md) (point), or circular [edge](Glossary#Edge.md) (will select its center point), or a spherical [face](Glossary#Face.md) (will also select its center point) on one part and an [edge](Glossary#Edge.md) on the other part. The toolbar button <img alt="" src=images/A2p_PointOnLineConstraint.svg  style="width:24px;"> adds the constraint {{Variable|pointOnLine}}. It will put the vertex on the edge.
+Part တစ်ခုတွင် [vertex](Glossary#Vertex.md) (point) သို့မဟုတ် circular [edge](Glossary#Edge.md) (၎င်း၏ center point ကို ရွေးမည်) သို့မဟုတ် spherical [face](Glossary#Face.md) (၎င်း၏ center point ကိုလည်း ရွေးမည်) တစ်ခုကို ရွေးပြီး အခြား part တွင် [edge](Glossary#Edge.md) တစ်ခုကို ရွေးပါ။ <img alt="" src=images/A2p_PointOnLineConstraint.svg  style="width:24px;"> ခလုတ်သည် {{Variable|pointOnLine}} constraint ကို ထည့်သည်။ ၎င်းသည် vertex ကို edge ပေါ်သို့ တင်ပေးမည်။
 
 #### Point on Plane 
 
-Select a [vertex](Glossary#Vertex.md) (point), or circular [edge](Glossary#Edge.md) (will select its center point), or a spherical [face](Glossary#Face.md) (will also select its center point) on one part and a plane on the other part. The toolbar button <img alt="" src=images/A2p_PointOnPlaneConstraint.svg  style="width:24px;"> adds the constraint {{Variable|pointOnPlane}}. The constraint dialog allows you to specify an offset between the point and the plane. This offset can also be flipped between both sides of the plane. If the offset is zero, the constraint will put the vertex on the plane.
+Part တစ်ခုတွင် [vertex](Glossary#Vertex.md) (point) သို့မဟုတ် circular [edge](Glossary#Edge.md) (center point ကို ရွေးမည်) သို့မဟုတ် spherical [face](Glossary#Face.md) (center point ကိုလည်း ရွေးမည်) တစ်ခုကို ရွေးပြီး အခြား part တွင် plane တစ်ခုကို ရွေးပါ။ <img alt="" src=images/A2p_PointOnPlaneConstraint.svg  style="width:24px;"> ခလုတ်သည် {{Variable|pointOnPlane}} constraint ကို ထည့်သည်။ Constraint dialog တွင် point နှင့် plane အကြား offset တစ်ခုကို သတ်မှတ်နိုင်သည်။ ဤ offset ကို plane ၏ နှစ်ဘက်အလှည့်ပြောင်းနိုင်သည်။ offset သည် သုည ဖြစ်လျှင် constraint သည် vertex ကို plane ပေါ်သို့ တင်ပေးမည်။
 
 #### Sphere on Sphere 
 
-Select either a spherical [face](Glossary#Face.md) or a [vertex](Glossary#Vertex.md) (point) on both parts. The toolbar button <img alt="" src=images/A2p_SphericalSurfaceConstraint.svg  style="width:24px;"> adds the constraint {{Variable|sphereCenterIdent}}. It will either make the center of the spheres, the center of the sphere and the vertex, or the vertices coincident.
+Part နှစ်ခုလုံးတွင် spherical [face](Glossary#Face.md) သို့မဟုတ် [vertex](Glossary#Vertex.md) (point) တစ်ခုကို ရွေးပါ။ <img alt="" src=images/A2p_SphericalSurfaceConstraint.svg  style="width:24px;"> ခလုတ်သည် {{Variable|sphereCenterIdent}} constraint ကို ထည့်သည်။ ၎င်းသည် sphere များ၏ center များကို၊ sphere center နှင့် vertex တစ်ခုကို သို့မဟုတ် vertices များကို coincident ဖြစ်အောင် ပြုလုပ်မည်။
 
 #### Circular Edge on Circular Edge 
 
-Select a circular [edge](Glossary#Edge.md) on both parts. The toolbar button <img alt="" src=images/A2p_CircularEdgeConstraint.svg  style="width:24px;"> adds the constraint {{Variable|circularEdge}}. The constraint dialog allows you to specify an offset between the edges. This offset can also be flipped. You can furthermore set the constraint direction and lock the rotation of the parts. If the offset is zero, the constraint will put the edges concentric in the same plane.
+Part နှစ်ခုလုံးတွင် circular [edge](Glossary#Edge.md) တစ်ခုစီကို ရွေးချယ်ပါ။ <img alt="" src=images/A2p_CircularEdgeConstraint.svg  style="width:24px;"> ခလုတ်သည် {{Variable|circularEdge}} constraint ကို ထည့်သည်။ Constraint dialog တွင် edges များအကြား offset တစ်ခု သတ်မှတ်နိုင်သည်။ ဤ offset ကိုလည်း အလှည့်ပြောင်းနိုင်သည်။ ထို့ပြင် constraint direction သတ်မှတ်ပြီး parts များ၏ rotation ကို lock လုပ်နိုင်သည်။ offset သည် သုည ဖြစ်လျှင် constraint သည် edges များကို 同心円 (concentric) ဖြစ်စေပြီး တူညီသော ပလိန်း(plane) အတွင်းမှာထားမည်။
 
 #### Axis Coincident 
 
-Select either a cylindrical [face](Glossary#Face.md) or a linear [edge](Glossary#Edge.md) on both parts. The toolbar button <img alt="" src=images/A2p_AxialConstraint.svg  style="width:24px;"> adds the constraint {{Variable|axisCoincident}}. The constraint dialog allows you to specify the axis direction. The dialog allows you furthermore to lock the rotation of the parts. The constraint will make the axes or lines coincident.
+Part နှစ်ခုတွင် cylindrical [face](Glossary#Face.md) သို့မဟုတ် linear [edge](Glossary#Edge.md) တစ်ခုစီကို ရွေးချယ်ပါ။ <img alt="" src=images/A2p_AxialConstraint.svg  style="width:24px;"> ခလုတ်သည် {{Variable|axisCoincident}} constraint ကို ထည့်သည်။ Constraint dialog တွင် axis direction ကို သတ်မှတ်နိုင်သည်။ dialog မှာ parts များ၏ rotation ကို lock လုပ်နိုင်သည့်ရွေးချယ်မှုကိုလည်း ပါဝင်သည်။ ၎င်း constraint သည် axes သို့မဟုတ် lines များကို coincident ဖြစ်အောင် ပြုလုပ်မည်။
 
 #### Axis Parallel 
 
-Select either a cylindrical [face](Glossary#Face.md) or a linear [edge](Glossary#Edge.md) on both parts. The toolbar button <img alt="" src=images/A2p_AxisParallelConstraint.svg  style="width:24px;"> adds the constraint {{Variable|axisParallel}}. The constraint dialog allows you to specify the axis direction. The constraint will make the axes or lines parallel.
+Part နှစ်ခုတွင် cylindrical [face](Glossary#Face.md) သို့မဟုတ် linear [edge](Glossary#Edge.md) တစ်ခုစီကို ရွေးချယ်ပါ။ <img alt="" src=images/A2p_AxisParallelConstraint.svg  style="width:24px;"> ခလုတ်သည် {{Variable|axisParallel}} constraint ကို ထည့်သည်။ Constraint dialog တွင် axis direction ကို သတ်မှတ်နိုင်သည်။ ၎င်း constraint သည် axes သို့မဟုတ် lines များကို parallel ဖြစ်အောင် ပြုလုပ်မည်။
 
 #### Axis on Plane parallel 
 
-Select either a cylindrical [face](Glossary#Face.md) or a linear [edge](Glossary#Edge.md) on one part and a plane on the other part. The toolbar button <img alt="" src=images/A2p_AxisPlaneParallelConstraint.svg  style="width:24px;"> adds the constraint {{Variable|axisPlaneParallel}}. The constraint will make the axis or line parallel to the plane.
+Part တစ်ခုတွင် cylindrical [face](Glossary#Face.md) သို့မဟုတ် linear [edge](Glossary#Edge.md) ကို ရွေးပြီး အခြား part တွင် plane တစ်ခုကို ရွေးပါ။ <img alt="" src=images/A2p_AxisPlaneParallelConstraint.svg  style="width:24px;"> ခလုတ်သည် {{Variable|axisPlaneParallel}} constraint ကို ထည့်သည်။ ၎င်း constraint သည် axis သို့မဟုတ် line ကို plane နှင့် parallel ဖြစ်အောင် ပြုလုပ်မည်။
 
 #### Axis on Plane normal 
 
-Select either a cylindrical [face](Glossary#Face.md) or a linear [edge](Glossary#Edge.md) on one part and a plane on the other part. The toolbar button <img alt="" src=images/A2p_AxisPlaneNormalConstraint.svg  style="width:24px;"> adds the constraint {{Variable|axisPlaneNormal}}. The constraint will make the axis or line normal to the plane.
+Part တစ်ခုတွင် cylindrical [face](Glossary#Face.md) သို့မဟုတ် linear [edge](Glossary#Edge.md) ကို ရွေးပြီး အခြား part တွင် plane တစ်ခုကို ရွေးပါ။ <img alt="" src=images/A2p_AxisPlaneNormalConstraint.svg  style="width:24px;"> ခလုတ်သည် {{Variable|axisPlaneNormal}} constraint ကို ထည့်သည်။ ၎င်း constraint သည် axis သို့မဟုတ် line ကို plane အပေါ် မျက်နှာထောင့် (normal) ဖြစ်အောင် ပြုလုပ်မည်။
 
 #### Axis on Plane angle 
 
-Select either a cylindrical [face](Glossary#Face.md) or a linear [edge](Glossary#Edge.md) on one part and a plane on the other part. The toolbar button <img alt="" src=images/A2p_AxisPlaneAngleConstraint.svg  style="width:24px;"> adds the constraint {{Variable|axisPlaneAngle}}. The constraint will at first make the axis parallel to the plane. Then you can adjust the angle for the axis in the appearing constraint settings dialog.
+Part တစ်ခုတွင် cylindrical [face](Glossary#Face.md) သို့မဟုတ် linear [edge](Glossary#Edge.md) ကို ရွေးပြီး အခြား part တွင် plane တစ်ခုကို ရွေးပါ။ <img alt="" src=images/A2p_AxisPlaneAngleConstraint.svg  style="width:24px;"> ခလုတ်သည် {{Variable|axisPlaneAngle}} constraint ကို ထည့်သည်။ ၎င်း constraint သည် အရင်ဆုံး axis ကို plane နှင့် parallel ဖြစ်အောင် ပြုလုပ်မည်။ ထို့နောက် constraint settings dialog ထဲတွင် axis အတွက် သတ်မှတ်ထားသော angle ကို ချိန်ညှိနိုင်မည်။
 
 #### Plane Parallel 
 
-Select a plane on both parts. The toolbar button <img alt="" src=images/A2p_PlanesParallelConstraint.svg  style="width:24px;"> adds the constraint {{Variable|planesParallel}}. The constraint dialog allows you to specify the constraint direction. The constraint will make the planes parallel.
+Part နှစ်ခုလုံး၌ plane များကို ရွေးပါ။ <img alt="" src=images/A2p_PlanesParallelConstraint.svg  style="width:24px;"> ခလုတ်သည် {{Variable|planesParallel}} constraint ကို ထည့်သည်။ Constraint dialog တွင် constraint direction ကို သတ်မှတ်နိုင်သည်။ ၎င်း constraint သည် plane များကို parallel ဖြစ်အောင် ပြုလုပ်မည်။
 
 #### Plane on Plane 
 
-Select a plane on both parts. The toolbar button <img alt="" src=images/A2p_PlaneCoincidentConstraint.svg  style="width:24px;"> adds the constraint {{Variable|planeCoincident}}. The constraint dialog allows you to specify a constraint direction and an offset between the planes. This offset can also be flipped. If the offset is zero, the constraint will make the planes coincident.
+Part နှစ်ခုလုံး၌ plane များကို ရွေးပါ။ <img alt="" src=images/A2p_PlaneCoincidentConstraint.svg  style="width:24px;"> ခလုတ်သည် {{Variable|planeCoincident}} constraint ကို ထည့်သည်။ Constraint dialog တွင် constraint direction နှင့် plane များအကြား offset တစ်ခုကို သတ်မှတ်နိုင်သည်။ ဤ offset ကိုလည်း အလှည့်ပြောင်းနိုင်သည်။ offset သည် သုည ဖြစ်လျှင် constraint သည် plane များကို coincident ဖြစ်အောင် ပြုလုပ်မည်။
 
 #### Plane Angular 
 
-Select a plane on both parts. The toolbar button <img alt="" src=images/A2p_AngleConstraint.svg  style="width:24px;"> adds the constraint {{Variable|angledPlanes}}. The constraint dialog allows you to specify an angle between the planes. The constraint will make the planes at first parallel and the set the specified angle.
+Part နှစ်ခုလုံး၌ plane များကို ရွေးပါ။ <img alt="" src=images/A2p_AngleConstraint.svg  style="width:24px;"> ခလုတ်သည် {{Variable|angledPlanes}} constraint ကို ထည့်သည်။ Constraint dialog တွင် plane များအကြား angle တစ်ခု သတ်မှတ်နိုင်သည်။ ၎င်း constraint သည် plane များကို အရင်ဆုံး parallel ဖြစ်အောင် ပြုလုပ်ပြီး ထို့နောက် သတ်မှတ်ထားသည့် angle ကို ထပ်သတ်ပေးမည်။
 
 #### Coincidence at Center of Mass 
 
-Select either a closed [edge](Glossary#Edge.md) or a plane on both parts. The toolbar button <img alt="" src=images/A2p_CenterOfMassConstraint.svg  style="width:24px;"> adds the constraint {{Variable|centerOfMass}}. The constraint dialog allows you to specify an offset between the edges or planes. This offset can also be flipped. You can furthermore set the constraint direction and lock the rotation of the parts. If the offset is zero, the constraint will put the edges or planes into the same plane.
+Part နှစ်ခုလုံး၌ ပိတ်ပင်ထားသော [edge](Glossary#Edge.md) သို့မဟုတ် plane တစ်ခုကို ရွေးပါ။ <img alt="" src=images/A2p_CenterOfMassConstraint.svg  style="width:24px;"> ခလုတ်သည် {{Variable|centerOfMass}} constraint ကို ထည့်သည်။ Constraint dialog တွင် edges သို့မဟုတ် planes များအကြား offset တစ်ခုကို သတ်မှတ်နိုင်သည်။ ဤ offset ကိုလည်း အလှည့်ပြောင်းနိုင်သည်။ ထို့ပြင် constraint direction သတ်မှတ်ခြင်းနှင့် parts များ၏ rotation ကို lock လုပ်နိုင်ပါသည်။ offset သည် သုည ဖြစ်လျှင် constraint သည် edges သို့မဟုတ် planes များကို တူညီသော plane ထဲသို့ တင်ပေးမည်။
 
 ### Subassemblies
 
-An assembly can contain other assemblies. They are added like parts by pressing the toolbar button <img alt="" src=images/A2p_ImportPart.svg  style="width:24px;"> and selecting a ***.FCStd** file containing an assembly. Such subassemblies can also be edited like parts using the toolbar button <img alt="" src=images/A2p_EditPart.svg  style="width:24px;">. Please make sure for higher assembly stages that you update the assembly recursively via the toolbar button <img alt="" src=images/A2p_RecursiveUpdate.svg  style="width:24px;"> when there were changes.
+Assembly တစ်ခုတည်း၌ အခြား assembly များပါဝင်နိုင်သည်။ ၎င်းတို့ကို part များလိုပဲ <img alt="" src=images/A2p_ImportPart.svg  style="width:24px;"> ခလုတ်ကို နှိပ်ပြီး ***.FCStd** ဖိုင်တစ်ခုကို ရွေးခြင်းဖြင့် ထည့်သွင်းနိုင်သည်။ အမိန့်တန်း subassemblies များကိုလည်း part များလိုပဲ <img alt="" src=images/A2p_EditPart.svg  style="width:24px;"> ခလုတ်ဖြင့် တည်းဖြတ်နိုင်သည်။ အဆင့်မြင့် assembly များအတွက် တိုးတက်မှုများ ရှိခဲ့ပါက <img alt="" src=images/A2p_RecursiveUpdate.svg  style="width:24px;"> ခလုတ်ကို အသုံးပြု၍ assembly ကို recursive အနေဖြင့် update လုပ်ရန် သေချာစေပါ။
 
 ## Constraint Handling 
 
-Possible constraints for a selection are displayed in the toolbar and the *Constraint Tools* dialog by enabling the corresponding buttons. The *Constraint Tools* dialog is opened via the toolbar button <img alt="" src=images/A2p_DefineConstraints.svg  style="width:24px;">. It is intended to stay open to be able to add quickly several constraints to the assembly.
+ရွေးချယ်မှုအတွက် ဖြစ်နိုင်သော constraint များကို toolbar နှင့် *Constraint Tools* dialog တွင် လိုက်ဖော်ပြပါ ခလုတ်များအား ဖွင့်ထားခြင်းဖြင့် ပြသပေးသည်။ *Constraint Tools* dialog ကို <img alt="" src=images/A2p_DefineConstraints.svg  style="width:24px;"> ခလုတ်မှ ဖြင့်လိုက်နိုင်သည်။ ၎င်း dialog သည် ဖွင့်အပ်ထားသည့်အဖြစ် ပြန်ထားရန် ရည်ရွယ်ထားပါသည်၊ ထို့ကြောင့် assembly သို့ constraint များကို အလျင်အမြန် ထည့်သွင်းနိုင်ရန် အဆင်ပြေသည်။
 
-Existing constraints can be edited by selecting them in the model tree and then either double-clicking on it or using the toolbar button <img alt="" src=images/A2p_EditConstraint.svg  style="width:24px;">. This opens the *Constraint Properties* dialog.
+မရှိမဖြစ်ရှိပြီးသား constraints များကို model tree တွင် ရွေးပြီး double-click လုပ်ခြင်း သို့မဟုတ် <img alt="" src=images/A2p_EditConstraint.svg  style="width:24px;"> ခလုတ်ကို အသုံးပြုခြင်းဖြင့် တည်းဖြတ်နိုင်သည်။ ၎င်းသည် *Constraint Properties* dialog ကို ဖွင့်ပေးမည်။
 
-Constraints can be temporarily suppressed by selecting them in the model tree and changing the tree element property **Suppressed**.
+Constraint များကို ယာယီ ပိတ်ထားလိုလျှင် model tree တွင် ရွေးပြီး tree element property **Suppressed** ကို ပြောင်းလဲနိုင်သည်။
 
-Constraints can be deleted either by selecting them in the model tree and pressing **Del** or by selecting a part with constraints in the model tree and using the toolbar button <img alt="" src=images/A2p_DeleteConnections.svg  style="width:24px;">.
+Constraint များကို ဖျက်ရန် model tree တွင် ရွေးပြီး **Del** ကို နှိပ်ခြင်းဖြင့် သို့မဟုတ် constraints များပါရှိသော part ကို model tree တွင် ရွေးထားပြီး <img alt="" src=images/A2p_DeleteConnections.svg  style="width:24px;"> ခလုတ်ကို အသုံးပြု၍ ဖျက်နိုင်သည်။
 
-All constraints can be resolved at any time with the toolbar button <img alt="" src=images/A2p_solver.svg  style="width:24px;">. If the toolbar button <img alt="" src=images/A2p_ToggleAutoSolve.svg  style="width:24px;"> is turned on a resolve is automatically done after every edit of a constraint.
+Assembly ၏ အားလုံး constraint များကို မည်သည့်အချိန်တွင်မဆို <img alt="" src=images/A2p_solver.svg  style="width:24px;"> ခလုတ်ဖြင့် ဖြေရှင်းနိုင်သည်။ <img alt="" src=images/A2p_ToggleAutoSolve.svg  style="width:24px;"> ခလုတ်ကို ဖွင့်ထားပါက constraint တည်းဖြတ်မှုတိုင်းနောက်တွင် အလိုမလိုက် ဖြေရှင်းသည်။
 
-The toolbar button <img alt="" src=images/A2p_FlipConstraint.svg  style="width:24px;"> affects the constraint that was added most recently. It flips the constraint direction.
+အစဉ်အလာအရ နောက်ဆုံးထည့်သွင်းထားသော constraint အပေါ်သက်ရောက်မှုကို ပြောင်းလိုပါက <img alt="" src=images/A2p_FlipConstraint.svg  style="width:24px;"> ခလုတ်ကို အသုံးပြုနိုင်သည်။ ၎င်းသည် နောက်ဆုံး ထည့်သွင်းထားသော constraint ၏ direction ကို လှေဖျားပြောင်းလဲပေးမည်။
 
-With the <img alt="" src=images/A2p_CD_ConstraintViewer.svg  style="width:24px;"> tool, it is possible the show and inspect existing constraints. After clicking it a dialog pops up. Then either select a part in the tree and click the button **Import from part** to get all constraints of this part, or select one or more constraints in the tree and click the button **Import from Tree**. As result you get all info about the constraints. By clicking in the column *Suppress* a single constraint can be suppressed. For more features, follow the tooltips of the other dialog buttons.
+<img alt="" src=images/A2p_CD_ConstraintViewer.svg  style="width:24px;"> ကိရိယာဖြင့် ရှိပြီးသား constraints များကို ပြသ၍ စစ်ဆေးနိုင်သည်။ ၎င်းကို နှိပ်လျှင် dialog တစ်ခု ပေါက်ကာ ပေါ်လာမည်။ ထို့နောက် model tree တွင် part တစ်ခုကို ရွေးပြီး **Import from part** ခလုတ်ကို နှိပ်၍ ထို part ၏ constraint အားလုံးကို ရယူနိုင်သည်။ သို့မဟုတ် tree တွင် constraint များ တစ်ခု သို့မဟုတ် အများကို ရွေးပြီး **Import from Tree** ကို နှိပ်၍ constraint များအကြောင်း အပြည့်အစုံ ရရှိနိုင်သည်။ အားလုံးထဲမှ *Suppress* column တွင် နှိပ်ခြင်းဖြင့် တစ်ခုချင်း constraint ကို suppressed ပြုလုပ်နိုင်သည်။ အခြား dialog ခလုတ်များအတွက် အင်္ဂါရပ်များကို tooltip များမှ ဆက်လက်လေ့လာနိုင်သည်။
 
-## Part Lists 
+## Part Lists
 
-To create part lists of assemblies, the different parts of the assembly must get part info that can be read by A2plus. This is done by editing the part using the toolbar button <img alt="" src=images/A2p_EditPart.svg  style="width:24px;">. In the opened part press the toolbar button <img alt="" src=images/A2p_PartsInfo.svg  style="width:24px;"> and a [spreadsheet](Spreadsheet_Workbench.md) with the name *#PARTINFO#* is created.
+Assembly များအတွက် part list များ ဖန်တီးရန် assembly ၏ အစိတ်အပိုင်းများ အား A2plus မှဖတ်ယူနိုင်သော part info ဖြင့် ဖြည့်ရမည်။ ၎င်းကို part ကို <img alt="" src=images/A2p_EditPart.svg  style="width:24px;"> ခလုတ်ဖြင့် တည်းဖြတ်ခြင်းမှတဆင့် ပြုလုပ်သည်။ ဖွင့်ထားသော part တွင် <img alt="" src=images/A2p_PartsInfo.svg  style="width:24px;"> ခလုတ်ကို နှိပ်ပါ၊ *#PARTINFO#* ဟု အမည်ရသော [spreadsheet](Spreadsheet_Workbench.md) တစ်ခု ဖန်တီးပေးမည်။
 
-The structure of the spreadsheet is like this:
+Spreadsheet ၏ ဖွဲ့စည်းပုံမှာ အောက်ပါပုံစံဖြစ်သည်။
 
 ![](images/A2p_PartinfoTable.png )
 
-Fill out the grey fields with info you have and want to have in the final parts list.
+သင့်ထုတ်လွှင့်လိုသော အချက်အလက်များနှင့် ကိုက်ညီသော အမဲ (grey) ရောင်အကွက်များကို ဖြည့်ဆည်းပါ။
 
-In the assembly or subassembly use the toolbar button <img alt="" src=images/A2p_PartsList.svg  style="width:24px;">. It will ask you if you want to iterate recursively over all subassemblies. Click on *Yes*. This creates a new spreadsheet with the name *#PARTSLIST#*. It contains the info from the different *#PARTSINFO#* spreadsheets of the parts in a list like this:
+Assembly သို့မဟုတ် subassembly တွင် <img alt="" src=images/A2p_PartsList.svg  style="width:24px;"> ခလုတ်ကို အသုံးပြုပါ။ ၎င်းသည် subassemblies တို့အား အလွှာလိုက် iterate လုပ်လိုသူ မဟုတ်သူ မေးပါလိမ့်မည်။ *Yes* ကို နှိပ်ပါ။ ၎င်းသည် *#PARTSLIST#* ဟု အမည်ပေးထားသော spreadsheet အသစ်ကို ဖန်တီးမည်။ ၎င်းတွင် အပိုင်းများ၏ *#PARTSINFO#* spreadsheets များမှ အချက်အလက်များကို အောက်က ပုံစံအတိုင်း စာရင်းသို့ ထည့်သွင်းပေးမည်။
 
 ![](images/A2p_PartslistTable.png )
 
-The position (POS) is automatically set according to the appearance of the parts in the model tree. The top level part will get POS 1.
+POS (position) သည် model tree တွင် parts များ ပေါ်လာသည့် အဆင့်အတိုင်း အလိုအလျောက် သတ်မှတ်ပေးသည်။ အထက်ဆုံး အဆင့်ရွိ part သည် POS 1 ကို ရရှိမည်။
 
-The quantity (QTY) is automatically calculated from the assembly. If a parts is twice in the assembly it will get QTY 2.
+QTY (quantity) သည် assembly မှ အလိုအလျောက် တွက်ချက်ပေးသည်။ part တစ်ခုကို assembly တွင် နှစ်ကြိမ် ပါဝင်လျှင် QTY 2 ကို ရမည်။
 
-If you have updated a part info you can refresh the parts list by pressing the toolbar button <img alt="" src=images/A2p_PartsList.svg  style="width:24px;"> again.
+Part info ကို update ပြုလုပ်ထားပါက <img alt="" src=images/A2p_PartsList.svg  style="width:24px;"> ခလုတ်ကို ထပ်မံ နှိပ်၍ parts list ကို refresh ပြုလုပ်နိုင်သည်။
 
-For subassemblies you can also create an info spreadsheet using the toolbar button <img alt="" src=images/A2p_PartsInfo.svg  style="width:24px;">. When you create or update the parts list of the main assembly this info will be used if you click on *No* for the question if you want to iterate recursively over all subassemblies. Then the different parts are not in the parts list but only the subassemblies.
+Subassemblies များအတွက်လည်း <img alt="" src=images/A2p_PartsInfo.svg  style="width:24px;"> ခလုတ်ဖြင့် info spreadsheet တစ်ခု ဖန်တီးနိုင်သည်။ အဓိက assembly ၏ parts list ကို ဖန်တီး သို့မဟုတ် update လုပ်ရာတွင် subassemblies များအား recursive အနေဖြင့် iterate မလုပ်ရန် မေးလျှင် *No* ကို နှိပ်ပါ။ ထိုအချိန်တွင် မူလအားဖြင့် parts များ မပေါ်လာဘဲ subassemblies များသာ parts list ထဲတွင် ပါဝင်မည် ဖြစ်သည်။
 
-## Special Features 
+## အထူးအင်္ဂါရပ်များ (Special Features)
 
-### Assembly Structure 
+### Assembly Structure
 
-The toolbar button <img alt="" src=images/A2p_Treeview.svg  style="width:24px;"> creates an HTML file with the structure of your assembly. The file will by default be created in the folder of your assembly file. The structure looks like this:
+<img alt="" src=images/A2p_Treeview.svg  style="width:24px;"> ခလုတ်သည် သင့် assembly ၏ ဖွဲ့စည်းပုံ HTML ဖိုင်ကို ဖန်တီးပေးမည်။ ဖိုင်ကို ပုံမှန်အားဖြင့် သင့် assembly ဖိုင်ရှိသော ဖိုလ်ဒါ၌ ထည့်သွင်းမည်။ ဖွဲ့စည်းပုံမှာ အောက်ပါအတိုင်း ဖြစ်သည်။
 
 :   ![](images/A2p_Dependency-Tree.jpg )
 
-### Degrees of Freedom 
+### Degrees of Freedom
 
-The button <img alt="" src=images/A2p_DOFs.svg  style="width:24px;"> labels every part of the assembly with its degrees of freedom. Furthermore it outputs a list with all parts and their dependencies. The list is output into FreeCAD\'s widget *Report view*. If this widget is currently not visible, it can either be shown by right-clicking into an empty part of the FreeCAD toolbar area and then choosing it in the appearing context menu or with the menu **View → Panels → [Report view](Report_view.md)**.
+<img alt="" src=images/A2p_DOFs.svg  style="width:24px;"> ခလုတ်သည် assembly ၏ part တစ်ခုချင်းစီအား ၎င်းတို့၏ degrees of freedom ဖြင့် လုံခြုံအမှတ်တံဆိပ် ချပေးမည်။ ထို့နောက် ၎င်းသည် part များနှင့် ၎င်းတို့၏ dependencies အားလုံးပါသော စာရင်းတစ်ခုကိုထုတ်ပေးမည်။ ၎င်းစာရင်းကို FreeCAD (ဖရီးကက် (FreeCAD)) ၏ *Report view* widget ထဲသို့ ထုတ်ပေးမည်။ ထို widget ကို ယခုအခါ မမြင်နိုင်ဘူးဆိုလျှင် FreeCAD toolbar ဧရိယာ၏ ဖန်အလယ်ပိုင်းကို ညာဘက်ကလစ်နှိပ်၍ ပြသသော context menu ထဲမှ ရွေးချယ်နိုင်သည်၊ သို့မဟုတ် **View → Panels → [Report view](Report_view.md)** မီနူးမှ ဖွင့်နိုင်သည်။
 
-The degrees of freedom labels can be removed by clicking the button <img alt="" src=images/A2p_DOFs.svg  style="width:24px;"> again.
+DoF (degrees of freedom) အမှတ်တံဆိပ်များကို ထပ်မံ ဖျက်လိုပါက <img alt="" src=images/A2p_DOFs.svg  style="width:24px;"> ခလုတ်ကို ထပ်မံ နှိပ်ပါ။
 
-### Part Labels 
+### Part Labels
 
-The button <img alt="" src=images/A2p_PartLabel.svg  style="width:24px;"> labels every part of the assembly in the 3D view with its name. The part labels can be removed by clicking the button <img alt="" src=images/A2p_PartLabel.svg  style="width:24px;"> again
+<img alt="" src=images/A2p_PartLabel.svg  style="width:24px;"> ခလုတ်သည် assembly ၏ part တစ်ခုချင်းစီကို 3D view တွင် ၎င်း၏နာမည်ဖြင့် label ထားပေးမည်။ Part labels များကို ဖျက်လိုပါက ထပ်မံ <img alt="" src=images/A2p_PartLabel.svg  style="width:24px;"> ခလုတ်ကို နှိပ်ပါ။
 
-### Shape of whole Assembly 
+### Shape of whole Assembly
 
-Sometimes it is necessary to have the whole assembly combined as one shape. This shape can then for example be used for 3D printing in the [Mesh workbench](Mesh_Workbench.md) or for drawings in the [TechDraw workbench](TechDraw_Workbench.md). It is created using the toolbar button <img alt="" src=images/A2p_SimpleAssemblyShape.svg  style="width:24px;">. The shape is by default not made visible. Use the same toolbar button to update the shape in case of changes in the assembly.
+တချို့အချိန်များတွင် assembly အားလုံးကို တစ်ခုထဲသော shape အဖြစ်ပေါင်းစည်းရန် လိုအပ်နိုင်သည်။ ၎င်း shape ကို ဥပမာအားဖြင့် [Mesh workbench](Mesh_Workbench.md) တွင် 3D-printing အတွက် သို့မဟုတ် [TechDraw workbench](TechDraw_Workbench.md) တွင် အပြင်ဆန်းများအတွက် အသုံးပြုနိုင်သည်။ ၎င်းကို <img alt="" src=images/A2p_SimpleAssemblyShape.svg  style="width:24px;"> ခလုတ်ဖြင့် ဖန်တီးနိုင်သည်။ ၎င်း shape ကို မူလအားဖြင့် မမြင်နိုင်အောင်ထားသည်။ Assembly တွင် ပြောင်းလဲမှုများရှိခဲ့ပါက အတူတူသော ခလုတ်နဲ့ shape ကို update ပြုလုပ်နိုင်သည်။
 
-### Convert absolute Paths to relative Ones 
+### Convert absolute Paths to relative Ones
 
-With the menu **A2plus → Misc → [<img src=images/A2p_SetRelativePathes.svg style="width:24px"> Convert absolute paths of imported parts to relative ones** you can convert absolute paths of imported parts to relative ones.
+မီနူး **A2plus → Misc → [<img src=images/A2p_SetRelativePathes.svg style="width:24px"> Convert absolute paths of imported parts to relative ones]** ကို အသုံးပြု၍ imported parts များ၏ absolute paths များကို relative paths ဖြစ်အောင် ပြောင်းနိုင်သည်။
 
 ## Preferences
 
-The a2plus preferences can be accessed via FreeCAD\'s menu **Edit → [Preferences](Preferences_Editor.md)** and there in the section *A2plus*. You can set the following options:
+a2plus preferences များကို FreeCAD (ဖရီးကက် (FreeCAD)) ၏ **Edit → [Preferences](Preferences_Editor.md)** မီနူး ထဲမှ *A2plus* အပိုင်း၌ ဝင်၍ ပြင်ဆင်နိုင်သည်။ အောက်ပါ ရွေးချယ်စရာများကို သတ်မှတ်နိုင်သည်။
 
-### Default solving method 
+### Default solving method
 
-Use solving of partial systems : The solver begins with a part that has the property **fixed Position** set to *true* and a part constrained to it. All other parts are not calculated. If a solution could be found, the next constrained part is added to the calculation and so on.
-Use \"magnetic\" solver, solving all parts at once : The solver tries to move all parts at once in direction to a part that has the property **fixed Position** set to *true*. Note that this will in most cases take more time for the calculation of a solution.
-Force fixed position : This sets the property **fixed Position** to *true* for all parts in the assembly. Then no calculation is actually performed since all parts will always be fixed to the positions where they were created.
+- Use solving of partial systems : solver သည် property **fixed Position** ကို *true* အဖြစ် သတ်မှတ်ထားသော part တစ်ခုနှင့် ၎င်းနှင့် အချက်ပေးထားသော part တစ်ခုနှင့်အတူ စတင်သည်။ အခြား parts များကို မတွက်ချက်ပါ။ အဖြေရှာနိုင်ခဲ့ပါက နောက်ထပ် constrained part တစ်ခုကို တွက်ချက်ချက်ထဲထည့်ပြီး ဆက်လက်လုပ်ဆောင်မည်။
+- Use "magnetic" solver, solving all parts at once : solver သည် property **fixed Position** ကို *true* သတ်မှတ်ထားသော part သို့ ဦးတည်ပြီး parts အားလုံးကို တပြိုင်နက်တည်း ဆွဲဆောင်ရန် ကြိုးပမ်းသည်။ ယင်းသည် အများအားဖြင့် ဖြေရှင်းချက် တွက်ချက်ရန် ပိုမိုအချိန်ကုန်စေနိုင်သည်။
+- Force fixed position : ဤသည်သည် assembly အတွင်းရှိ parts အားလုံး၏ property **fixed Position** ကို *true* သတ်မှတ်ပေးသည်။ ထို့ကြောင့် parts အားလုံးကို မူလဖန်တီးထားသော မည်သည့်နေရာတွင်မဆို အမြဲတမ်း fixed ဖြစ်နေမည်ဖြစ်၍ တကယ်ထည့်သွင်း၍ တိုင်ပင်ကာ ရှာဖွေမှုကို မလိုအပ်တော့ပါ။
 
-### Default solver behaviour 
+### Default solver behaviour
 
-Solve automatically if a constraint property is changed : The solver will automatically be started. The same as turning on the toolbar button <img alt="" src=images/A2p_ToggleAutoSolve.svg  style="width:24px;">.
+- Solve automatically if a constraint property is changed : constraint property တစ်ခုကို ပြောင်းလဲသောအခါ solver ကို အလိုအလျောက် စတင်လုပ်ဆောင်မည်။ ၎င်းသည် toolbar အပေါ် <img alt="" src=images/A2p_ToggleAutoSolve.svg  style="width:24px;"> ခလုတ်ကို ဖွင့်ထားသလို ဖြစ်စေသည်။
 
-### Behaviour when updating imported parts 
+### Behaviour when updating imported parts
 
-Recalculate imported parts before updating them : All parts of the assembly, including subassemblies, will be opened in FreeCAD to be reconstructed using values from spreadsheets.
-This feature is designed to construct fully parametrically. **Note:** This feature is very experimental and not recommended for important projects.
-Known problems:
+- Recalculate imported parts before updating them : Assembly ၏ အစိတ်အပိုင်းများအားလုံး၊ subassemblies ရောပါပြီး FreeCAD ၌ ဖွင့်၍ spreadsheets များမှ ဂဏန်းများကို အသုံးပြုကာ ပြန်လည်တည်ဆောက်မည်။ ဤအင်္ဂါရပ်သည် စနစ်တကျ ပြီမိုက်စနစ်ဖြင့် ဖန်တီးရန် ရည်ရွယ်ထားသည်။ သတိပြုရန်: ဤအင်္ဂါရပ်သည် အလွန် 실험적 ဖြစ်ပြီး အရေးကြီးသော project များအတွက် မသင့်လျော်ပါ။
+  နောက်ဆက်တွဲ ပြဿနာများ -
+  - Assembly ကို ဖျက်ပစ်နိုင်သည်၊ အကြောင်းရင်းမှာ parts များ၏ topological names များရှိသော မှားယွင်းသော လင့်ခ်များကြောင့် ဖြစ်သည်။
+  - Master spreadsheets များကို အကယ်၍ အမှား ထားပြင်သောအခါ၊ ရည်ညွှန်းထားသော part ဖိုင်ကို ပိတ်ထားသောအချိန်တွင် ပြင်ဆင်လျှင် ဖိုင်များ ပျက်စီးကာ FreeCAD ကို crash ဖြစ်စေနိုင်သည်။
 
--   The assembly can be destroyed because of wrong references to topological names in parts
--   Master spreadsheets can get broken when they are edited while a referenced part file is already closed. This can crash FreeCAD.
+- Enable recursive update of imported parts : subassemblies များအားလုံးကို recursive အတွင်းဖွင့်ခြင်းအားဖြင့် update လုပ်ပေးသည်။
 
-Enable recursive update of imported parts : Opens all subassemblies recursively to update them.
+- Use experimental topological naming : parts များကို assembly သို့ import လုပ်စဉ်တွင် algorithm တစ်ခုက subelement တစ်ခုချင်းစီအတွက် topological names များ ထုတ်ပေးသည်။ ထို topological names များကို **mux Info** ထဲသို့ ရေးထည့်သည်။ Imported part တစ်ခု ချိန်ဆင်ရန် လိုအပ်လာသောအခါ၌ ၎င်း topological names များကို သုံးကာ constraints ၏ subelements များကို update ပြုလုပ်နိုင်သည်။ ဒါကြောင့် assembly များသည် FreeCAD ၏ subelement နံပါတ်များ ပြောင်းလဲလှုပ်ရှားမှုဆီမှ ပိုမိုခံနိုင်ရည်ရှိ သွားမည် ဖြစ်သည်။
+  သတိပြုရန်: ဤသည်သည် ဖိုင်အရွယ်အစားနှင့် import ဆောင်ရွက်ချိန်တွင် တွက်ချက်ချိန်ကို များစေသည်။ topological naming ကို အသုံးချလိုလျှင် assembly ဖန်တီးမည့် မလုပ်ခင် အဆင့်တွင် ဖွင့်ထားရမည်။
 
+- Inherit per face transparency from parts and subassemblies : imported parts များမှ colour နှင့် transparency setting များကို အလိုအလျောက် သုံးမည်။
+  သတိပြုရန်: ဤအင်္ဂါရပ်သည် အလွန် 실험적 ဖြစ်ပြီး အရေးကြီးသော project များအတွက် မသင့်လျော်ပါ။
 
+- Do not import invisible shapes : invisible datum/construction shapes များကို ဖျောက်ပစ်မည်။ သတိပြုရန်: အခြား higher သို့မဟုတ် တခြား subassemblies များတွင် datum/construction shapes များနှင့် constraints များ ဆက်သွယ်ထားမထားသင့်ပါ။ မဟုတ်လျှင် assembly ကို ဖျက်စီးနိုင်သည်။
 
+- Use solid union for importing parts and subassemblies : imported parts များအားလုံးကို တိုက်ရိုက် union အဖြစ် တစ်ခုထဲ ပေါင်းစည်းထားမည်။
+  ဤအင်္ဂါရပ်သည် [FEM](FEM_Workbench.md) (Finite Element Method (FEM / အပိုင်းငယ်နည်းစနစ်)) စမ်းသပ်မှုများ သို့မဟုတ် [3D-printing](Manual_Preparing_models_for_3D_printing.md) အတွက် အသုံးဝင်ပါသည်၊ အကယ်၍ တစ်ခုတည်းသော solid သာ ခွင့်ပြုထားရပါက။ အခြားရွေးချယ်စရာမှာ မကြာခဏနောက်ပိုင်းတွင် [shape of the whole assembly](#Shape_of_whole_Assembly.md) ကို ဖန်တီးခြင်း ဖြစ်သည်။
 
+### User interface settings
 
-Use experimental topological naming : While importing parts to the assembly an algorithm generates topological names for each subelement of the imported shape. The topological names are written into the **mux Info**. When an imported part needs to be updated, these topological names are used to update the subelements of the constraints. So assemblies get more robust against volatile subelement numbers of FreeCAD.
-**Note:** This increases file sizes and calculation time during import of parts. If topological naming should be used it has to be activated before the assembly is created.
+- Show constraints in toolbar : ဤရွေးချယ်ချက်ကို မသုံးပါက များသော constraint များအတွက် toolbar ခလုတ်များ မမြင်ရတော့ဘဲ toolbar အတွင်း နေရာသိမ်းရန် အတွက် ဖျက်ထားမည်။ အချက် အသစ်များကို *Constraint Tools* dialog (toolbar ခလုတ် <img alt="" src=images/A2p_DefineConstraints.svg  style="width:24px;">) မှတဆင့် ဆက်လက် သတ်မှတ်နိုင်သည်။
+- Use native file manager of your OS : ဤ options ကို အသုံးပြုပါက assembly များအတွက် ဖိုင်ရွေးချယ်ရာတွင် သင်၏ OS ၏ native file dialog ကို ရရှိမည်။
 
+### Storage of files
 
+- Use relative paths for imported parts : imported parts များအတွက် relative file paths ကို အသုံးပြုသည်။
+- Use absolute paths for imported parts : imported parts များအတွက် absolute file paths ကို အသုံးပြုသည်။
+- All files are in this project folder : project ဖိုင်အားလုံးကို သတ်မှတ်ထားသော ဖိုလ်ဒါအတွင်းထားရမည်။ ၎င်းတို့သည် ထိုဖိုလ်ဒါ၏ subfolders များတွင်ရှိပါကလည်း ပြဿနာမရှိ။ သတိပြုရန်: ဖိုင်တစ်ခုကို ဤဖိုလ်ဒါအတွင်း မျိုးချင်းများစွာ (ဥပမာ ဖြင့် မတူညီသော subfolders များ၌) မရှိသင့်ပါ။
+  ဤ option သည် မတူညီသော ကွန်ပျူတာပေါ်တွင် အလုပ်လုပ်ရန် အဆင်ပြေစေသည်၊ အကယ်၍ project ဖိုလ်ဒါကို ကူးယူရန်သာ လိုအပ်မည်ဖြစ်သည်။
 
+## ပြဿနာဖြေရှင်းခြင်း (Troubleshooting)
 
+A2plus သည် သင်ထားသော constraints များကို ဖြေရှင်း၍ မရနိုင်သည့် ပြဿနာကို မကြာခဏ တွေ့ကြုံရမည်။ ၎င်းကို ဖြေရှင်းရန် အမျိုးမျိုးသော ဝါလဒ်များရှိသည်။
 
-Inherit per face transparency from parts and subassemblies : Use colour and transparency settings from imported parts.
-**Note:** This feature is very experimental and not recommended for important projects.
+### Conflict Finder ကိရိယာ အသုံးပြုခြင်း
 
+တူညီသော constraint အများကြားရှိသောအခါ ဤကိရိယာသည် အကောင်းဆုံး နည်းလမ်းဖြစ်သည်၊ အကြောင်းမှာ ဤကိရိယာသည် constraint ကို တစ်ခါတစ်လေစီ ဖြေရှင်းကြည့်၍ ဘာကြောင့် conflict ဖြစ်နေသည်ကို ရှာဖွေပေးနိုင်သည်။ ထိုအခါ တွေ့ရှိထားသော conflicting constraint ကို ဖြေရှင်းရန် အခြား strategy များကို အသုံးပြုနိုင်သည်။ ၎င်းကို <img alt="" src=images/A2p_SearchConstraintConflicts.svg  style="width:24px;"> ခလုတ်ဖြင့် ခေါ်ယူနိုင်သည်။
 
+### Constraint Direction ကို စစ်ဆေးခြင်း
 
+တချို့အခါတွင် constraints များသည် လုံးဝတည်းသလို သတ်မှတ်ထားလည်း သော်လည်း ဖြေရှင်း၍ မရနိုင်စေနိုင်သည်။ ဥပမာ - နှစ်ခုသော plane များအတွက် {{Variable|[planesParallel](#Plane_Parallel.md)}} constraint တစ်ခု ရှိပြီး ယင်း plane များအတွက် {{Variable|[planeCoincident](#Plane_on_Plane.md)}} constraint ကို ထပ်မံ သတ်မှတ်ချင်လျှင် A2plus သည် ဖြေရှင်း၍ မရနိုင်နိုင်သည်။ ဤအချိန်တွင် {{Variable|planesParallel}} နှင့် {{Variable|planeCoincident}} ၏ constraint direction များ ကွာခြားနေခြင်း ဖြစ်နိုင်သည်။ အချိန်တိုင်း၌ နှစ်ခုစလုံးအတွက် အလားတူ direction အသုံးပြုပါ။
 
+A2plus သည် assembly ၏ **အားလုံး** constraint များအတွက် မှန်ကန်သည့် direction ကို အလိုအလျောက် စစ်ဆေးပေးနိုင်သည်။ ၎င်းကို <img alt="" src=images/A2p_ReAdjustConstraints.svg  style="width:24px;"> ခလုတ်ဖြင့် အသုံးပြုနိုင်သည်။
 
-Do not import invisible shapes : This will hide invisible datum/construction shapes. **Note:** No constraints must be connected to datum/construction shapes in higher or other subassemblies. Otherwise you can break the assembly.
+### Constraint များ ဖျက်ခြင်း
 
+ဖြေရှင်း၍ မရသော constraint များအများစုသည် constraint အသစ်တစ်ခု ထည့်သွင်းသည့် ခဏအတွင်း တိုက်ရိုက်ဖြစ်ပေါ်သည်။ ၎င်းအချိန်တွင် ဖြေရှင်းနည်းမှာ နောက်ဆုံးထည့်ထားသော constraint ကို ဖျက်ပစ်ခြင်း ဖြစ်သည်။ A2plus သည် ဤအကြံပြုချက်ကိုလည်း ပေးပါလိမ့်မည်။
 
+တချို့အခါတွင် ဖျက်ခြင်းသာသာ လျှင်သာ ဖြေရှင်းနိုင်သည်၊ ဥပမာ သင်သည် FreeCAD ၌ part တစ်ခုကို တည်းဖြတ်ပြီး constraints နှင့် ဆက်စပ်ထားသော face သို့မဟုတ် edge များ ပျောက်သွားခဲ့လျှင် ဖြစ်နိုင်သည်။ ဤအခါ သင့်လုပ်ရမည့်အချက်မှာ ၎င်း ပြောင်းလဲထားသော part နှင့် ဆက်စပ်နေသော constraint ကို တစ်ချက်ချင်း ဖျက်ပစ်ရမည်ဖြစ်သည်။ ဖျက်ခြင်းတိုင်းနောက် သတ်မှတ်ချက်ကို တွက်ချက်ရန် <img alt="" src=images/A2p_solver.svg  style="width:24px;"> ခလုတ်ကို နှိပ်ပါ။ သင် ဖြေရှင်းနိုင်သည့် အခြေအနေတစ်ခု ရောက်ရှိသည်ကို တွေ့ပါက လိုအပ်သည့် constraint များကို အဆင့်လိုက် ထပ်ထည့်ပါ။
 
+### Parts ကို ရွှေ့တင်ခြင်း (Moving Parts)
 
+တချို့ အခါ၌ solver ၌ သတ်မှတ်ထားသော စတင်တန်ဖိုးများ (start values) ကောင်းမွန်ရန် လိုအပ်သည်။ ဥပမာ အက်စ် (axle) part တစ်ခုနှင့်ဘီး (wheel) part တစ်ခုရှိသည်ဟု ယူပါ။ သင် {{Variable|axisCoincident }} constraint ကို ထည့်သွင်းပြီး solver မှ အချက်မပေးပေမယ့် parts များ မရွှေ့လျှင် FreeCAD ၏ *Report view* တွင် \"*REACHED POS-ACCURACY :0.0*\" ဟူသောစာသားကို မြင်နိုင်သည်။ ဤအခြေအနေတွင် ဖြေရှင်းနည်းတစ်ခုမှာ မည်သည့် parts များကို မျက်နှာချင်းဆိုင်ရောက်အောင် လက်ဖျားဖြင့် နီးစေ့ရွှေ့၍ စတင်တန်ဖိုးများကို ပိုမိုလက်လှမ်းရာချင်း set လုပ်ပေးခြင်း ဖြစ်သည်။
 
-Use solid union for importing parts and subassemblies : All imported parts will directly be put together as union.
-This feature is useful for [FEM](FEM_Workbench.md) simulations or [3D-printing](Manual_Preparing_models_for_3D_printing.md) if only one solid is allowed. The alternative is to create a [shape of the whole assembly](#Shape_of_whole_Assembly.md) later on.
+မှတ်ချက်: Constraint ၏ တစ်ခုခုပင်သာ **fixed Position** property ကို *false* သတ်မှတ်ထားရန် သေချာပါစေ။
 
-### User interface settings 
+### Tip Property ကို သတ်မှတ်ခြင်း
 
-Show constraints in toolbar : If this option is not used, the toolbar buttons for the different constraints are not visible to save space in the toolbar. New constraints can still be set using the *Constraint Tools* dialog (toolbar button <img alt="" src=images/A2p_DefineConstraints.svg  style="width:24px;">).
-Use native file manager of your OS : If this option is used, you get the file dialog of your OS when selecting files for assemblies.
+Imported part တွင် မျှော်လင့်ထားသည့် အချို့သော feature များ မပေါ်လာခဲ့ပါက property **[Tip](PartDesign_MoveTip.md)** ကို စစ်ဆေးပါ။
 
-### Storage of files 
+A2plus သည် bodies များကို သူတို့တွင် ရှိသည့် features အားလုံးကို tip feature အထိ import လုပ်သည်။ အကြောင်းမှာ tip ကို တစ်ခုချိန်ထားခြင်းသည် tip ထက် ကျော်သန်းသည့် features များကို မမြင်ရစေရန် ရည်ရွယ်မှုဖြစ်သည်။ အကယ်၍ A2plus တွင် part feature တစ်ခု မပေါ်လာခဲ့လျှင် <img alt="" src=images/A2p_EditPart.svg  style="width:24px;"> ခလုတ်ဖြင့် part ကို ဖွင့်ပြီး body တစ်ခုကို ရွေးပြီး ၎င်း၏ property **Tip** ကို ကြည့်ပါ။ Tip သည် သင်လိုချင်သည့် feature တွင် မရှိပါက လိုချင်သော feature အပေါ် right-click ပြုလုပ်ပြီး **[<img src=images/PartDesign_MoveTip.svg style="width:24px"> Set tip]** ကို ရွေးချယ်ပါ။ နောက်ဆုံးတွင် part ကို သိမ်းပြီး <img alt="" src=images/A2p_ImportPart_Update.svg  style="width:24px;"> ခလုတ်ဖြင့် assembly ကို reload ပြုလုပ်ပါ။
 
-Use relative paths for imported parts : Uses relative file paths to the part files.
-Use absolute paths for imported parts : Uses absolute file paths to the part files.
-All files are in this project folder : All project files have to be in the specified folder. It doesn\'t matter if they are in subfolders of this folder. **Note:** No file is allowed to exist several times in the folder (e.g. in different subfolders).
-This option is helpful to work on different machines because then one only has to copy the project folder.
+### Assembly Tree ကို ပြင်ဆင်ခြင်း (Repairing Assembly Tree)
 
-## Troubleshooting
+Constraint များ မဖြေရှင်းနိုင်သည့် ရှင်းလင်းသော အကြောင်းရင်းကို မမြင်နိုင်ပါက <img alt="" src=images/A2p_RepairTree.svg  style="width:24px;"> ခလုတ်ကို အသုံးပြုကြည့်နိုင်သည်။ ၎င်းသည် အားလုံး constraint များကို ဖြေရှင်းပြီး နောက် ပြန်လည် အစိတ်အပိုင်းများအောက်၌ ထပ်မံ အုပ်စုဖွဲ့ပေးမည်။
 
-Sooner or later you will get the problem that A2plus cannot solve the constraints you set. To overcome this, there are different strategies:
+### အဟောင်း A2plus assemblies များကို မိုင်ဂရိတ် ပြုလုပ်ခြင်း (Migrating old A2plus assemblies)
 
-### Using the Conflict Finder Tool 
+March 2019 より မတိုင်မီအချိန်တွင် ဖန်တီးထားသော A2plus assemblies များတွင် imported parts အတွက် မှန်ကန်သော icons မပြရန်နှင့် obsolete properties များ ပါဝင်နိုင်သည်။ ဤ assemblies များကို A2plus ဗားရှင်း 0.4.35 နှင့် အထက်သို့ မိုင်ဂရိတ်ပြုလုပ်ရန် **A2plus → Misc → [<img src=images/A2p_Upgrade.svg style="width:24px"> Migrate proxies of imported parts]** မီနူးကို အသုံးပြုပါ။ ပြုလုပ်ခဲ့ပြီးနောက် assembly ဖိုင်ကို သိမ်းပြီး ပြန်ဖွင့်ရပါမည်။
 
-This is the safest method when you have several constraints because this tool attempts to solve one constraint after another until it finds the conflicting constraint. Then you can go on with the other strategies to resolve the identified constraint. The tool is called using the toolbar button <img alt="" src=images/A2p_SearchConstraintConflicts.svg  style="width:24px;">.
+### Accented Characters များ ကင်းရှင်းရန် သတိပေးချက်
 
-### Checking Constraint Direction 
+**ဤနည်းလမ်းသည် Windows အတွက် မလိုအပ်ပါ။**
 
-Sometimes constraints seem to be consistently defined but they can nevertheless not be solved. An example: Assume you have a {{Variable|[planesParallel](#Plane_Parallel.md)}} constraint set for two planes. Now you want to set for the same planes the {{Variable|[planeCoincident](#Plane_on_Plane.md)}} constraint and A2plus cannot solve this. Then the constraint directions of {{Variable|planesParallel}} and {{Variable|planeCoincident}} are different. Use the same direction for both constraints to fix this.
+အချို့ OS များတွင် part များ သို့မဟုတ် assembly ၏ ဖိုင်နာမည် သို့မဟုတ် ဖိုင်လမ်းကြောင်းများတွင် accent ပါသော character များပါရှိလျှင် ပြဿနာများ ဖြစ်ပေါ်နိုင်သည်။ ထို့ကြောင့် အဲဒီသက်ရောက်မှုရှိသည့် ကာဂျာတွင် accent characters များနှင့် အထူး စာလုံးများကို ရှောင်ကြဉ်ပါ။
 
-A2plus offers to automatically check the right direction for **all** constraints of the assembly using the toolbar button <img alt="" src=images/A2p_ReAdjustConstraints.svg  style="width:24px;">.
+### Fixing Position
 
-### Deleting Constraints 
+**ဤနည်းလမ်းသည် A2plus 0.3.11 သို့မဟုတ် ထက်ပိုမိုနောက်သစ်သော assembly များအတွက် မလိုအပ်တော့ပါ၊ အဆိုပါ A2plus အားလုံးသည် ယခု missing fixed positions များအတွက် သတိပေးချက်ထုတ်ပေးသည်။**
 
-Most cases of unsolvable constraints occur directly when adding a new constraint. The solution is then to delete the constraint you added last. A2plus will propose this, too.
+သင် parts နှစ်ခုအကြား constraint တင်ရာတွင် မည်သည့် part မှာမဆို property **fixed Position** ကို *true* အဖြစ် သတ်မှတ်ထားခြင်းမရှိပါက သို့မဟုတ် fixed Position = *true* သတ်မှတ်ထားသော part တစ်ခုနှင့် constraint မှတဆင့် ဆက်စပ်ထားသော part မရှိပါက constraint သည် ဖြေရှင်း၍ မရနိုင်ပါ။ ညီမျှသည့် ဖောက်သည်များတွင် ဖိုက်ဆိုလျှင် နှစ်ဖက်စလုံးတွင် **fixed Position** ကို *true* သတ်မှတ်ထားပါကလည်း ထိုအတိုင်း ဖြစ်ပေါ်မည်။
 
-Sometimes the deletion strategy is the only one, for example when you edited a part in FreeCAD so that faces or edges connected to constraints are missing. You should then delete one constraint that is connected to the changed part at a time. Use the toolbar button <img alt="" src=images/A2p_solver.svg  style="width:24px;"> after every deletion to see if you reached a solvable state.
+A2plus သည် ဖြေရှင်းမှု မအောင်မြင်ပါက သတင်းအချက်အလက် ထုတ်ပေးမည် ဖြစ်သော်လည်း တခါတရံ သင် သာမန်အားဖြင့် parts များ မရွှေ့ရန်သာ ဖြစ်နိုင်ပြီး FreeCAD ၏ *Report view* widget တွင် \"*REACHED POS-ACCURACY :0.0*\" ဟူသောစာသားကို တွေ့ရနိုင်သည်။ ၎င်းသည် solver သည် အမှားမကျော်ဖြတ်ဘဲပြီးဆုံးသော်လည်း တကယ်တမ်း constraint များကို ဖြေရှင်း၍ မရခြင်းကို အဓိပ္ပါယ်ရသည်။
 
-When you got an assembly that can be solved, add step by step the constraints you need.
+ထို့ကြောင့် assembly အတွင်းရှိ သင့် part များထဲမှ အနည်းဆုံးတစ်ခုတွင် **fixed Position** ကို *true* သတ်မှတ်ထားခြင်း သေချာစေပါ။ ထို့နောက် သင့်သည် fixed part နှင့် တစ်ဖက်ထဲသို့ ဘယ်လိုမဆို ဆက်နွယ်ထားသော part များကိုသာ constraint များ သတ်မှတ်ပါ။ ၎င်း dependencies များကို မြင်ရန် [Assembly Structure](#Assembly_Structure.md) အပိုင်းကို ကြည့်ပါ။
 
-### Moving Parts 
+### Parts ကို လှည့်ခြင်း (Rotating Parts)
 
-In some cases the solver only needs better start values to solve the constraints. Take for example the case that you have an axle part and a wheel part. You add a {{Variable|axisCoincident }} constraint and get no info that the solver failed but the parts are not moved accordingly and in the *Report view* widget of FreeCAD you see \"*REACHED POS-ACCURACY :0.0*\". A solution for this is to move the parts closer to that position you like to get by the constraint.
+**ဤနည်းလမ်းသည် A2plus 0.4.0 သို့မဟုတ် ထက်နောက်သစ်သော assembly များအတွက် မလိုအပ်တော့ပါ၊ A2plus သည် solver အတွက် စတင် angle အထူးတန်ဖိုး ရရှိအောင် နောက်ခံတွင် အနည်းငယ် အလိုအလျောက် rotate ပေးပါသည်။**
 
-**Note:** Assure that at least one part of the constraint has the property **fixed Position** set to *false*.
+solver က {{Variable|angledPlanes}} constraint အတွက် မအောင်မြင်သော အချိန်များ များစွာ ရှိပြီး ၎င်းအကြောင်းရင်းမှာ ရွေးထားသည့် plane နှစ်ခုသည် လောလောဆယ်တွင် 0° သို့မဟုတ် 180° angle ရှိနေခြင်း ဖြစ်နိုင်သည်။ (parts များ မရွှေ့လျှင် FreeCAD ၏ *Report view* တွင် \"*REACHED POS-ACCURACY :0.0*\" ဟူသောစာသားကို မြင်ရမည်။) ၎င်းအတွက် ဖြေရှင်းနည်းမှာ part တစ်ခုကို အချို့ အဆင့်များဖြင့် FreeCAD ၏ transform feature ကို အသုံးပြုကာ (model tree တွင် part ကို right-click → **Transform**) တစ်ဖက်သို့ အနည်းငယ် လှည့်ပေးခြင်း ဖြစ်သည်။
 
-### Setting the Tip Property 
+မှတ်ချက်: Constraint ၏ တစ်ပိုင်းဟာ **fixed Position** ကို *false* အဖြစ် သတ်မှတ်ထားရန် သေချာပါစေ။
 
-If you miss some features of your part after the import to an A2plus assembly, check the property **[Tip](PartDesign_MoveTip.md)**.
+## အနုပျို ဇာတ်လမ်း (Animation)
 
-A2plus imports bodies of parts with all their features up to the tip feature. This is sensible because setting the tip to a certain feature means that all features behind the tip should not appear in the final part. So if you miss a part feature in A2plus, open the part via the toolbar button <img alt="" src=images/A2p_EditPart.svg  style="width:24px;">, then select a body and look at its property **Tip**. If the tip is not at the feature where you want it, right-click on the feature where the tip should be and choose **[<img src=images/PartDesign_MoveTip.svg style="width:24px"> Set tip**. Finally save the part and reload the assembly using the toolbar button <img alt="" src=images/A2p_ImportPart_Update.svg  style="width:24px;">.
-
-### Repairing Assembly Tree 
-
-If you cannot see a clear reason why some constraints cannot be resolved, you can try to use the toolbar button <img alt="" src=images/A2p_RepairTree.svg  style="width:24px;">. This will resolve all constraints and re-group then again under the different parts.
-
-### Migrating old A2plus assemblies 
-
-Assemblies created with A2plus older than March 2019 do not show the correct icons for imported parts and have obsolete properties. These assemblies can be migrated to A2plus version 0.4.35 and newer using the menu **A2plus → Misc → [<img src=images/A2p_Upgrade.svg style="width:24px"> Migrate proxies of imported parts**. After doing this, you must save and reopen your assembly file.
-
-### Avoiding Accented Characters 
-
-**This strategy is not necessary for Windows.**
-
-On some operating systems you can get problems if the file names or the file paths of parts or the assembly contain accented characters. Therefore avoid such characters and also special characters in general.
-
-### Fixing Position 
-
-**This strategy is no longer necessary for assemblies created with A2plus 0.3.11 or newer because A2plus issues now a warning for missing fixed positions.**
-
-When you set a constraint between two parts and no part has the property **fixed Position** set to *true* or is connected by a constraint to a part with **fixed Position** set to *true*, the constraint cannot be solved. The same happens if both parts of the constraint have **fixed Position** set to *true*.
-
-Then A2plus outputs the info about the failed solution, but sometimes you only see that the parts are not moved accordingly and in the *Report view* widget of FreeCAD you see \"*REACHED POS-ACCURACY :0.0*\". This means the solver finished without errors but it could actually not solve the constraints.
-
-Therefore check that at least one of your parts in the assembly has **fixed Position** set to *true*. Then assure that you only set constraints to a part which is somehow connected to the fixed part. To visualise these dependencies, see section [Assembly Structure](#Assembly_Structure.md).
-
-### Rotating Parts 
-
-**This strategy is no longer necessary for assemblies created with A2plus 0.4.0 or newer because A2plus rotates the parts now automatically a bit in the background to get a sufficient start angle for the solver.**
-
-The solver often fails for the constraint {{Variable|angledPlanes}} if the two selected planes have currently an angle of 0° or 180°. (The parts are not moved accordingly and in the *Report view* widget of FreeCAD you see \"*REACHED POS-ACCURACY :0.0*\".) A solution for this is to rotate one part by a few degrees using FreeCAD\'s transform feature (right-click on the part in the model tree and select in the context menu **Transform**).
-
-**Note:** Assure that at least one part of the constraint has the property **fixed Position** set to *false*.
-
-## Animation
-
-A2plus offers animations via dragging and via Python scripts.
+A2plus သည် dragging နှင့် Python scripts တို့မှတဆင့် animation များကို ပံ့ပိုးပေးသည်။
 
 ### Dragging
 
-Dragging animations are interactive since you trigger it by dragging a part of the assembly. To get these kind of animations:
+Dragging animation များသည် interactive ဖြစ်ပါသည်၊ သင် assembly ၏ part တစ်ခုကို drag လုပ်၍ ထိန်းချုပ်စေနိုင်သည်။ ဤ animation များရရှိရန် -
 
-1.  Fully constrain the part whose movement or rotation should be animated
-2.  Click on the toolbar button <img alt="" src=images/A2p_MovePartUnderConstraints.svg  style="width:24px;">. This enables the dragging mode.
-3.  Click on the desired part in the assembly.
-4.  Now you can move the mouse and the part will follow the movement of the mouse within the defined constraints.
-5.  To end the dragging mode, left click in the assembly or press ESC.
+1.  သာမန် animation များကို ပြုလုပ်လိုသည့် part ကို လုံးဝ constraints ဖြင့် ကန့်သတ်ထားပါ။
+2.  <img alt="" src=images/A2p_MovePartUnderConstraints.svg  style="width:24px;"> ခလုတ်ကို နှိပ်ပါ။ ၎င်းသည် dragging mode ကို enable လုပ်မည်။
+3.  Assembly ၌ သင့်လိုသည့် part ကို နှိပ်ပါ။
+4.  ယခု မောက်စ်ကို လှန်လိုက်သည့်အခါ part သည် သတ်မှတ်ထားသည့် constraints အတွင်း အလျားလိုက် သို့မဟုတ် ခေါင်လိုက် အတိုင်း လှုပ်ရှားသွားမည်။
+5.  Dragging mode ကို အဆုံးသတ်ရန် assembly အတွင်း ညာဘက်ကလစ် တစ်ချက်နှိပ်ပါ သို့မဟုတ် ESC ကို နှိပ်ပါ။
 
-Here is an example assembly to try out the dragging animation: [A2p_example-for-dragging-animation.FCStd](https://forum.freecadweb.org/download/file.php?id=99204)
+Dragging animation ကို လေ့လာရန် example assembly တစ်ခု: [A2p_example-for-dragging-animation.FCStd](https://forum.freecadweb.org/download/file.php?id=99204)
 
 ![](images/A2p_dragging-animation-result.gif )
 
-
-
-*Above: The dragging animation using the example assembly*
+*အထက်ပါ — ဥပမာ assembly ကို အသုံးပြုပြီး dragging animation ကို ပြသခြင်း*
 
 ### Scripting
 
-Despite the dragging mode offers nice interactive animations, they are sometimes not precise enough for screencasts or videos. Scripted animations have the advantage that they animate movements and rotations in a defined way. You can for example rotate a part by exactly 10° back and forth. The following examples use an assembly where a part should be rotated. If you try to animate this using the dragging mode, you will see how hard it is to get a back and forth rotation that you can e.g. show your boss in a presentation. With the interactive example script, however, this is an easy task.
+Dragging mode ၌ interactive animations များကို ဖန်တီးနိုင်သော်လည်း screencasts သို့မဟုတ် ဗီဒီယို အတွက် တိကျမှန်ကန်မှု မလုံလောက်နိုင်သဖြင့် scripted animations များကို အသုံးပြုပါက တိကျမှန်ကန်စွာ လှုပ်ရှားမှုများနှင့် လှည့်လျားမှုများကို သတ်မှတ်နိုင်သည်။ ဥပမာ တိကျစွာ 10° ချင်း အနက်အချင်း လှည့်စေလိုပါက scripted animation သည် လွယ်ကူစေမည်။
 
-A scripted animation works usually this way:
+Scripted animation တစ်ခုသည် ဦးလေးအားဖြင့် အောက်ပါနည်းဖြင့် လည်ပတ်သည် -
 
-1.  The assembly is fully constrained
-2.  The script changes a parameter, for example the position or rotation angle of a part
-3.  After the parameter change, the assembly constraints are solved
-4.  Step 2. and 3. are repeated to get the animation
+1.  Assembly ကို လုံးဝ constraints ဖြင့် ကန့်သတ်ထားသည်။
+2.  Script သည် parameter တစ်ခု (ဥပမာ part ၏ position သို့မဟုတ် rotation angle) ကို ပြောင်းသည်။
+3.  Parameter ပြောင်းပြီးနောက် assembly constraints များကို ဖြေရှင်းသည်။
+4.  အဆင့် 2 နှင့် 3 ကို ထပ်မံလုပ်ဆောင်၍ animation ကို ရရှိစေသည်။
 
-It is also possible to change instead of a placement parameter a constraint, for example the distance between 2 planes.
+constraint တစ်ခု (ဥပမာ plane နှစ်ခုအကြား distance) ကို အစားထိုးပြောင်းလဲ၍လည်း animation ပြုလုပ်နိုင်သည်။
 
-#### Simple Script Example 
+#### Simple Script Example
 
-The simplest way to script an animation is a non-interactive animation that follows a defined movement. Here is an example: First download this assembly file: [A2p_animated-example.FCStd](https://forum.freecadweb.org/download/file.php?id=97554) and also this Python script: [A2p_animation-example-script.py](https://forum.freecadweb.org/download/file.php?id=97981).
-
-
-
+အနည်းဆုံးနည်းလမ်းဖြင့် non-interactive animation တစ်ခုကို ရေးနိုင်သည်။ ဥပမာအနေဖြင့် - ဤ assembly ဖိုင်ကို ဒေါင်းလုဒ်လုပ်ပါ: [A2p_animated-example.FCStd](https://forum.freecadweb.org/download/file.php?id=97554) နှင့် Python script ကိုလည်း ဒေါင်းလုဒ်လုပ်ပါ: [A2p_animation-example-script.py](https://forum.freecadweb.org/download/file.php?id=97981)။
 
 <div class="mw-collapsible mw-collapsed toccolours">
 
- This is the content of the script and the lines beginning with a \'#\' describe what the different script lines do: 
+ This is the content of the script and the lines beginning with a '#' describe what the different script lines do: 
 
 
 <div class="mw-collapsible-content">
@@ -417,29 +392,26 @@ while angle < 360: # run this loop until we have one full turn (360 degrees)
 
 
 
-To use the script to perform the animation, we must
+Script ကို အသုံးပြုပြီး animation ပြုလုပ်ရန် အဆင့်များမှာ -
 
-1.  Open the assembly file in FreeCAD.
-2.  Open the script file in FreeCAD.
-3.  Click on the toolbar button <img alt="" src=images/Menu_Std_DlgMacroExecute_fr_02.png  style="width:24px;"> to execute the script (also called macro).
-4.  Change to the tab of the assembly to see the rotation.
+1.  Assembly ဖိုင်ကို FreeCAD (ဖရီးကက် (FreeCAD)) တွင် ဖွင့်ပါ။
+2.  Script ဖိုင်ကို FreeCAD (ဖရီးကက် (FreeCAD)) တွင် ဖွင့်ပါ။
+3.  Script (macro) ကို အကောင်အထည်ဖော်ရန် <img alt="" src=images/Menu_Std_DlgMacroExecute_fr_02.png  style="width:24px;"> ခလုတ်ကို နှိပ်ပါ။
+4.  Rotation ကို ကြည့်ရန် assembly tab သို့ ပြောင်းပါ။
 
-To practice, just change something in the script and execute it afterwards. For example increase *step* to *5*.
+လေ့ကျင့်ရန် script အတွင်းကို ပြောင်းလဲပြီး ထပ်မံ 실행 ပြုလုပ်ပါ။ ဥပမာတွင် *step* ကို *5* သို့ တိုးလိုက်ပါ။
 
-This is the result of the example animation:
+ဥပမာ animation ၏ ရလဒ်မှာ -
 
 ![](images/A2p_animated-example-result.gif )
 
-#### Interactive Script Example 
+#### Interactive Script Example
 
-The first script example demonstrated how to create an animation without any user feedback. For most applications you need to interact with the animation. For example the interesting issue in the example is to see how the driving pins cross the center groove of the wheel. To have a closer look you might present this detail to your colleagues or boss. Therefore you need an interactive solution.
+ပထမဥပမာသည် feedback မရှိသည့် non-interactive animation တစ်ခုကို ဖော်ပြခဲ့သည်။ အမြဲတမ်းအများစုလုံးတွင် သင်သည် animation နှင့် အပြန်အလှန် ဆက်ဆံလိုတတ်သည်။ ဥပမာ အထက်ပါ ဥပမာ၌ driving pins များ wheel ၏ center groove ကို ကျော်သွားပတ်သည်ကို မြင်လိုပါက အနီးကပ် ကြည့်ရှုချင်သည်။ ထို့ကြောင့် interactive ဖြေရှင်းချက်တစ်ခု လိုအပ်သည်။
 
-This can be done by using a custom animation dialog with a slider. By moving the slider you can set the rotation angle and therefore rotate back and forth at interesting position.
+ဒါကို custom animation dialog တစ်ခုနှင့် slider တစ်ခုသုံးကာ ပြုလုပ်နိုင်သည်။ Slider ကို ရွေ့ပြီး rotation angle ကို ပြောင်းလဲနိုင်သည်၊ ထို့ဖြင့် လှည့်ချင်းပြန်ခြင်းနှင့် အတူတူအဆင့်များကို ပြသနိုင်သည်။
 
-We use the same assembly file: [A2p_animated-example.FCStd](https://forum.freecadweb.org/download/file.php?id=97554) and this Python script: [A2p_animation-example-script.py](https://forum.freecadweb.org/download/file.php?id=97982).
-
-
-
+အပေါ်ပါ assembly ဖိုင်ထက် အချည်းနှီးသော script ကို အသုံးပြုပါ - [A2p_animated-example.FCStd](https://forum.freecadweb.org/download/file.php?id=97554) နှင့် [A2p_animation-example-script.py](https://forum.freecadweb.org/download/file.php?id=97982)။
 
 <div class="mw-collapsible mw-collapsed toccolours">
 
@@ -614,33 +586,29 @@ while AnimationDialog.isVisible():
 
 
 
-The dialog defined in the script looks like this:
+Script တွင် သတ်မှတ်ထားသည့် dialog သည် အောက်ပါပုံစံရှိသည်။
 
 ![](images/A2p_AnimationDialog.png )
 
-### Script Commands 
+### Script Commands
 
-To understand the script syntax better, here is some command info:
+Script syntax ကို ပိုမိုနားလည်ရန် အောက်တွင် အချို့ command များကို ဖော်ပြထားသည်။
 
+အောက်တွင် ဥပမာအားဖြင့် placement property `Rotation.Angle` ကို မိမိ starWheel အဖြစ် သိမ်းထားသည့် part တွင် ပြောင်းလဲထားသည်။ ဤ property သည် [radian](https://en.wikipedia.org/wiki/Radian) အဖြစ် angle ကို လက်ခံသည်။ library `math` မှ function `radians()` သည် degree ကို radian သို့ ပြောင်းပေးသည်။
 
-
-Here we change the placement property `Rotation.Angle` of the part get got previously as `starWheel`. This property gets the angle as [radian](https://en.wikipedia.org/wiki/Radian). The function `radians()` from the library `math` converts the angle from degree to radian.
-
-The property `Rotation.Angle` uses the current placement axis of the part (in our example the X-axis). To rotate the part e.g. around the Z-axis one can set the rotation axis (before calling the rotation command) using the command:
+Property `Rotation.Angle` သည် part ၏ လက်ရှိ placement axis ကို အသုံးပြုသည် (ဤဥပမာတွင် X-axis ဖြစ်သည်)။ part ကို ဥပမာအားဖြင့် Z-axis အပေါ် လှည့်လိုပါက rotation command ကို ခေါ်မီအဘွေ့ rotation axis ကို အောက်ပါ command ဖြင့် သတ်မှတ်နိုင်သည်။
 
 
 
-Instead of rotating, parts can also be moved. To change for example the placement in Y-direction of the wheel, the command would be:
+Parts များကို လှည့်ခြင်း အစား ကူးရွှေ့လှည့်လိုပါက ဥပမာ wheel ၏ Y-direction တွင် placement ကို ပြောင်းမည်ဆိုပါက command သည် ဤနေရာတွင် ဖြစ်မည်။
 
 
 
-In this case we would not define the variable `angle` but `PositionShift` that we change on every loop run.
+ဤအမှုအရာတွင် `angle` အစား `PositionShift` ဆိုသည့် variable ကို သတ်မှတ်ပြီး loop အစဉ်တိုင်း၌ ပြောင်းလဲသုံးနိုင်သည်။
 
-There are different ways to set the placement of a part. Some are [ documented here](Placement.md). Unfortunately there is no list (yet) with all possible placement commands.
+Part ၏ placement ကို သတ်မှတ်ရန် အမျိုးမျိုးသော နည်းလမ်းများ ရှိသည်။ အချို့ကို [ documented here](Placement.md) တွင် ဖတ်ရှုနိုင်သည်။ ထိုသို့သော် အားလုံးသော placement commands များ၏ စာရင်းကို ယခုအချိန်တွင် မရှိသေးပါ။
 
-
-
-This is an A2plus-specific command. It solves the assembly constraints of the assembly we previously got as `document`. The option `useTransaction` specifies if FreeCAD should store every change in the undo/redo stack. For large animations you might therefore set it to `False`.
+A2plus-specific command တစ်ခုရှိသည်။ ၎င်းသည် သင် ယခင်တွင် `document` အဖြစ် ရယူထားသော assembly ၏ constraints များကို ဖြေရှင်းပေးသည်။ `useTransaction` အဖြစ်း ရွေးချယ်ခြင်းသည် FreeCAD ၏ undo/redo stack ထဲသို့ သင့်ပြောင်းလဲမှုအား တစ်ချက်ချင်း သိမ်းဆည်းမည် ဖြစ်ရန် သတ်မှတ်ပေးသည်။ အကြီးမားသော animations များအတွက် ယင်းကို `False` သတ်မှတ်နိုင်သည်။
 
 
 

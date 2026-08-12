@@ -1,37 +1,39 @@
-# <img alt="External workbench icon" src=images/Assembly4_workbench_icon.svg  style="width:64px;"> Assembly4 Workbench
+# <img alt="External workbench icon" src=images/Assembly4_workbench_icon.svg  style="width:64px;"> Assembly4 Workbench (လုပ်ငန်းခွင်)
 
-## Introduction
+## နိဒါန်း
+
+[Assembly4](Assembly4_Workbench.md) သည် တစ်ဖိုင်တည်းထဲ သို့မဟုတ် ပေါင်းစပ် စာရွက်စာတမ်းများ အတွင်း ပါသော အမျိုးမျိုးသော body များကို အစိတ်အပိုင်းများ တပ်ဆင်စုစည်းရန် အသုံးပြုသော [external workbench](external_workbenches.md) (ပြင်ပ လုပ်ငန်းခွင်) ဖြစ်သည်။ ၎င်းကို v0.19 ဖွံ့ဖြိုးရေး လည်ပတ်မှုအတွင်း ဖန်တီးခဲ့ပြီး၊ [Assembly3](Assembly3_Workbench.md) branch ၏ အင်္ဂါရပ်အသစ်များကို အကျိုးယူနိုင်ရန် အထူးသဖြင့် [App Link](App_Link.md) object နှင့် အသစ်မြှင့်တင်ထားသော [expression engine](expressions.md) စသည့် အင်္ဂါရပ်များကို အသုံးချထားသည်။
+
+၎င်းကို တကယ့်လက်တွဲဖြေရှင်းသူ (constraint solver) တစ်ခု မလိုအပ်ဘဲ ဖန်တီးရန် ထင်မြင်ချက်ဖြင့် ဖွံ့ဖြိုးခဲ့ပြီး၊ အစားတစ်ခုတည်းက [expression engine](expressions.md) က သာလျှင် body များနှင့် ဆက်စပ်ထားသော ဒေသဆိုင်ရာ coordinate စနစ်များအကြား ဆက်နွယ်မှုများကို သတ်မှတ်ပေးနိုင်သည်ဟု ယူဆထားခဲ့ကြသည်။ ထို့ကြောင့် ၎င်း၏ ပရိုတိုတိုင်းအမည်ကို "Assembly without solver" သို့မဟုတ် AWS ဟု ခေါ်ခဲ့ပါသည်။
 
  
+## တပ်ဆင်ခြင်း
 
-[Assembly4](Assembly4_Workbench.md) is an [external workbench](external_workbenches.md) that is used to perform assembly of different bodies contained in a single file or in multiple documents. It was created in the v0.19 development cycle to take advantage of Assembly3 branch\'s new features, such as the [App Link](App_Link.md) object, and the new [expression engine](expressions.md).
+Assembly4 ကို [Addon Manager](Std_AddonMgr.md) မှတဆင့် တပ်ဆင်နိုင်ပါသည်။
 
-It was developed with the idea that a true constraint solver was not needed, and instead the [expression engine](expressions.md) was enough to establish relationships between different local coordinate systems attached to bodies. Thus its prototype name was \"Assembly without solver\" or AWS.
+ 
+## ကိုက်ညီမှု
 
-## Installation
+Assembly4 ကို [Assembly3](Assembly3_Workbench.md) အတွက် ဖန်တီးထားသော ကိရိယာအသစ်များမှ တည်ဆောက်ထားပြီး၊ အထူးသဖြင့် [App Link](App_Link.md) object နှင့် တိုးတက်ကောင်းမွန်လာသော [expression engine](expressions.md) ကို အခြေခံထားသည်။
 
-Assembly4 can be installed from the [Addon Manager](Std_AddonMgr.md).
+ 
+Assembly4 သည် <img alt="" src=images/A2p_workbench.svg  style="width:24px;"> [A2plus](A2plus_Workbench.md) နှင့် <img alt="" src=images/Assembly3_workbench_icon.svg  style="width:24px;"> [Assembly3](Assembly3_Workbench.md) မှ ရွေ့ပြောင်းလှုံ့ဆော်မှု ရရှိခဲ့သော်လည်း၊ ၎င်းတို့နှင့် ကိုက်ညီမှု မရှိပါ။ ထိုနှစ်မျိုးသော workbench များဖြင့် ဖန်တီးထားသော အဟောင်း မော်ဒယ်များရှိပါက၊ သင် သင့်မော်ဒယ်များကို ဖွင့်ရန် အတွက် ထို workbench များကိုသာ အသုံးပြုသင့်သည်။
 
-## Compatibility
+ 
+## လင့်ခ်များ
 
-Assembly4 was developed from the new tools created for [Assembly3](Assembly3_Workbench.md), in particular, the [App Link](App_Link.md) object and the improved [expression engine](expressions.md).
+-   [App Link](App_Link.md) object — Assembly3 နှင့် Assembly4 ၏ လုပ်ဆောင်မှုပြုလုပ်စေသည့် အရာ။
+-   [Assembly4](https://github.com/Zolko-123/FreeCAD_Assembly4) repository နှင့် documentation။
+-   [Assembly 4 workbench](https://forum.freecadweb.org/viewtopic.php?f=20&t=34806) — ဆွေးနွေးချက်ကြီးသော သရဖူ။
+-   [Current Assembly Status](https://forum.freecadweb.org/viewtopic.php?f=20&t=34583) — လက်ရှိ Assembly အခြေအနေ။
+-   [External workbenches](External_workbenches.md) — ပြင်ပ Workbench များ။
 
-Assembly4 was inspired by <img alt="" src=images/A2p_workbench.svg  style="width:24px;"> [A2plus](A2plus_Workbench.md) and <img alt="" src=images/Assembly3_workbench_icon.svg  style="width:24px;"> [Assembly3](Assembly3_Workbench.md) but it is not compatible with them. If you have older models made in those two workbenches, you should use those workbenches to open your models only.
+ 
+## သင်ခန်းစာများ (Tutorials)
 
-## Links
-
--   [App Link](App_Link.md) object that makes Assembly3 and Assembly4 work.
--   [Assembly4](https://github.com/Zolko-123/FreeCAD_Assembly4) repository and documentation.
--   [Assembly 4 workbench](https://forum.freecadweb.org/viewtopic.php?f=20&t=34806), big discussion thread.
--   [Current Assembly Status](https://forum.freecadweb.org/viewtopic.php?f=20&t=34583)
--   [External workbenches](External_workbenches.md)
-
-## Tutorials
-
--   [Various example parts, assemblies and tutorials](https://github.com/Zolko-123/FreeCAD_Examples)
--   [Phone Assembly Tutorial](https://github.com/thermalling/FreeCADAsm4_TutorialSubassembly/)
-
+-   [Various example parts, assemblies and tutorials](https://github.com/Zolko-123/FreeCAD_Examples) — နမူနာ အစိတ်အပိုင်းများ၊ အစည်းအရုံးများနှင့် သင်ခန်းစာများ။
+-   [Phone Assembly Tutorial](https://github.com/thermalling/FreeCADAsm4_TutorialSubassembly/) — ဖုန်း Assembly သင်ခန်းစာ။
 
 
 ---
-⏵ [documentation index](../README.md) > [Addons](Category_Addons.md) > [External Workbenches](Category_External%20Workbenches.md) > Assembly4 Workbench
+⏵ [စာတမ်းများ အညွှန်း](../README.md) > [Addons](Category_Addons.md) > [External Workbenches](Category_External%20Workbenches.md) > Assembly4 Workbench

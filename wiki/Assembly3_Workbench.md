@@ -1,26 +1,25 @@
 # <img alt="Assembly3 workbench icon" src=images/Assembly3_workbench_icon.svg  style="width:64px;"> Assembly3 Workbench
 
  
-
 ## Introduction
 
-<img alt="" src=images/Assembly3_workbench_icon.svg  style="width:24px;"> [Assembly3](Assembly3_Workbench.md) is an [external workbench](External_workbenches.md) that is used to perform assembly of different bodies contained in a single file or in multiple documents. The workbench is based on several core function changes done for the version of FreeCAD 0.19 (e.g. [App Link](App_Link.md)), so the Assembly3 Workbench can not be used with earlier versions.
+<img alt="" src=images/Assembly3_workbench_icon.svg  style="width:24px;"> [Assembly3](Assembly3_Workbench.md) သည် တစ်ဖိုင်အတွင်း သို့မဟုတ် မျိုးစုံသော မှတ်တမ်းများအတွင်း ပါဝင်သော အစိတ်အပိုင်းများကို တပ်ဆင်စုစည်းရန် အသုံးပြုသော [external workbench](External_workbenches.md) တစ်ခု ဖြစ်သည်။ ဤလုပ်ငန်းခွင်(Workbench) ကို ဖန်တီးရာတွင် FreeCAD 0.19 ဗားရှင်းအတွက် ပြုလုပ်ထားသည့် အဓိကလုပ်ဆောင်ချက် ပြောင်းလဲမှုများအပေါ် အခြေခံထားပါသည် (ဥပမာ [App Link](App_Link.md))၊ ထို့ကြောင့် Assembly3 Workbench ကို အရင်ဗားရှင်းများနှင့် အသုံးမပြုနိုင်ပါ။
 
-The main features of the Assembly3 Workbench are
+Assembly3 Workbench ၏ အဓိက လက္ခဏာများမှာ အောက်ပါအတိုင်း ဖြစ်ပါသည်။
 
--   **dynamic/interactive solver**. This means you can move parts with the mouse while the solver constrains the motion. This allows for example to connect a wheel to an axis and turn the wheel interactively with the mouse.
--   **links**. This means you can use one single part, e.g. a screw multiple times in an assembly (at different places) without duplicating geometry.
--   **external links**. It is possible to have a freecad document that only contains an assembly and no parts. All parts could be in separate files. The files even could be in a library or anywhere else in the file system. The only requirement is that the file must be loaded when the link is made. After the link is made, the file must be open to make updates to the links involving the file. Assembly3 solves this by opening files in the background as required.
--   **hierarchical assemblies**. As in real life a mechanical assembly may consist of sub-assemblies. Those might consists of sub-assemblies again and so on.
--   **assembly freeze**. As the CPU can only handle a restricted number of concurrent constraints in real time, to freeze an assembly allows to use constraints even for large assemblies. By freezing finished assemblies or constraints that are not required to remain dynamic (e.g. welded, bolted or glued parts) those are excluded from update calculations and considered fixed geometry by the Assembly3 solver.
+-   အမြန်/အပြန်လှန် ဖြေရှင်းသူ (dynamic/interactive solver) — ၎င်းသည် မောင်းနှင်ရာတွင် mouse ဖြင့် အစိတ်အပိုင်းများကို ရွေ့အောင်လုပ်ထားချိန်တွင် solver က တရားဝင် ပစ္စည်းများ၏ ကိုက်ညီမှုကို ကန့်သတ်ပေးနိုင်သည်ကို ဆိုလိုသည်။ ဥပမာ အဘို့ဘီးကို အယ်ခွက် (axis) နှင့် ချိတ်ဆက်ပြီး ဘီးကို mouse ဖြင့် အကောင့်ချိန်တွင် လှုံ့ဆော်နိုင်သည်။
+-   links — ဤသည်သည် အစုံတစ်ခုကိုတစ်ခုတည်းသာ အသုံးပြုပြီး (ဥပမာ သံချောင်းတစ်ခုကို) assembly အတွင်း များစွာ တည်နေရာများတွင် အသုံးပြုနိုင်စေပြီး geometry ကို မလုပ်မဟုတ် duplication မလုပ်ဘဲ အသုံးပြုခွင့်ပေးသည်။
+-   external links — assembly သာပါတဲ့ freecad စာရွက်တစ်ခုကို ဖန်တီးထား၍ အစိတ်အပိုင်းများအားလုံးကို သီးသန့်ဖိုင်များတွင် သိမ်းဆည်းနိုင်သည်။ ဖိုင်များကို library သို့မဟုတ် ဖိုင်စနစ်အတွင်း ဂဏန်းမျိုးရာနေရာတွင်ထားနိုင်သည်။ တစ်သာသာလိုအပ်ချက်မှာ link ဖန်တီးချိန်၌ ဖိုင်ကို load လုပ်ထားရမည်ဆိုတာသာဖြစ်သည်။ link ဖန်တီးပြီးနောက် ထိုဖိုင်ကို ဖြင့်ထားရမည်ဖြစ်ပြီး ဖိုင်နှင့် ဆိုင်သော links များကို ပြုပြင်ရန် ဖိုင်ကိုဖွင့်ထားရန် လိုအပ်သည်။ Assembly3 သည် လိုအပ်သလို ဖိုင်များကို နောက်ခံတွင် ဖွင့်ပေးခြင်းဖြင့် ဤပြဿနာကို ဖြေရှင်းပေးပါသည်။
+-   hierarchical assemblies — အမှန်တကယ် မော်ကွန်းတပ်ဆင်မှုများတွင် sub-assemblies များ ပါဝင်နိုင်သလို၊ ၎င်း sub-assemblies များတွင် ထပ်မံ sub-assemblies များ ပါဝင်နိုင်သည်။
+-   assembly freeze — CPU သည် တစ်ပြိုင်နက်လက်ခံနိုင်သည့် ကန့်သတ်ချက်များပမာဏကို အကန့်အသတ်ရှိသဖြင့် assembly ကို freeze ပြုလုပ်ခြင်းဖြင့် ကြီးမားသော assemblies များတွင်တောင် ကန့်သတ်ချက်များကို အသုံးပြုနိုင်စေသည်။ ပြီးပြည့်စုံပြီးသော assembly များ သို့မဟုတ် dynamic ဖြစ်နေစေဖို့ မလိုအပ်သော ကန့်သတ်ချက်များ (ဥပမာ welding, bolting, glue လုပ်ထားသောအစိတ်အပိုင်းများ) ကို freeze ပြုလုပ်လိုက်လျှင် ၎င်းများကို update တွက်ချက်ချက်အတွက် ထည့်စရာမလိုဘဲ Assembly3 solver မှ fixed geometry အနေဖြင့် သတ်မှတ်ပေးမည်။
 
-    :   Note that other approaches offer different solution to this problem, e.g. the <img alt="" src=images/Assembly4_workbench_icon.svg  style="width:24px;"> [Assembly4 Workbench](Assembly4_Workbench.md).
+    :   မှတ်ချက် — ဤပြဿနာအတွက် အခြားနည်းလမ်းများလည်း ရှိနိုင်ပြီး ဥပမာ <img alt="" src=images/Assembly4_workbench_icon.svg  style="width:24px;"> [Assembly4 Workbench](Assembly4_Workbench.md) ကွဲပြားသော ဖြေရှင်းချက်တစ်ခုကို ပေးနိုင်ပါသည်။
 
 [top](#top.md)
 
 ### Toolbars
 
-As of 2020 the Assembly3 workbench features the following toolbars.
+2020 ခုနှစ်မှစ၍ Assembly3 လုပ်ငန်းခွင်တွင် အောက်ပါ toolbars များ ပါဝင်သည်။
 
 #### Main Toolbar 
 
@@ -34,7 +33,7 @@ As of 2020 the Assembly3 workbench features the following toolbars.
 <div class="mw-collapsible mw-collapsed">
 
 
-:   The **Main Toolbar** contains tools that cover the most often used features of the workbench. The tooltips will give the keyboard short cuts.
+:   The **Main Toolbar** တွင် မကြာခဏအသုံးများသော လုပ်ဆောင်ချက်များကို ဖုံးလွှမ်းသော ကိရိယာများ ပါဝင်သည်။ tooltip များတွင် keyboard shortcut များကို ပြပါမည်။
 
 
 <div class="mw-collapsible-content toccolours">
@@ -125,40 +124,40 @@ As of 2020 the Assembly3 workbench features the following toolbars.
 <div class="mw-collapsible mw-collapsed">
 
 
-:   Some tools are actually a menu for more tools.
+:   အချို့ ကိရိယာများမှာ အခြား ကိရိယာများအတွက် မီနူး အဖြစ် လုပ်ဆောင်ကြပါသည်။
 
 
 <div class="mw-collapsible-content toccolours">
 
-  - <img alt="" src=images/Assembly_ConstraintLock.svg‎‎  style="width:32px;"> [Locked](Assembly3_ConstraintLock.md): Add a \"Locked\" constraint to fix one or more parts.
+  - <img alt="" src=images/Assembly_ConstraintLock.svg‎‎  style="width:32px;"> [Locked](Assembly3_ConstraintLock.md): Add an \"Locked\" constraint to fix one or more parts.
 
-  -: You must select a geometry element of the part.
+  -: သင်သည် part ၏ geometry element တစ်ခုကို ရွေးရွတ်ရမည်။
 
-  -: If you fix a vertex or an edge the part is still free to rotate around the vertex or edge.
+  -: vertex သို့မဟုတ် edge ကို ဖစ်ရှင်းပါက part သည် ထို vertex သို့မဟုတ် edge ကို ဗဟိုထား၍ ဖြတ်လှန်လှည့်ပတ်နိုင်သည်။
 
-  -: Fixing a face will completely lock the part.
+  -: face တစ်ခုကို ဖစ်ရှင်းပါက part ကို အပြည့် lock ပြုလုပ်မည်။
 
   - <img alt="" src=images/Assembly_ConstraintAlignment.svg‎‎  style="width:32px;"> [Plane Alignment](Assembly3_ConstraintAlignment.md): Add a \"Plane alignment\" constraint to align planar faces of two or more parts.
 
-  -: The faces become coplanar or parallel with an optional distance.
+  -: မျက်နှာပြင်များသည် coplanar သို့မဟုတ် parallel ဖြစ်စေပြီး ရွေးချယ်လျှင် အကွာအဝေးပါနိုင်သည်။
 
   - <img alt="" src=images/Assembly_ConstraintCoincidence.svg‎‎  style="width:32px;"> [Plane Coincidence](Assembly3_ConstraintCoincidence.md): Add a \"Plane coincidence\" constraint to coincide planar faces of two or more parts.
 
-  -: The faces are coincided at their centers with an optional distance.
+  -: မျက်နှာပြင်များသည် ၎င်းတို့၏စင်တာတွင် အတူတက်နေပြီး ရွေးချယ်လျှင် အကွာအဝေး ရှိနိုင်သည်။
 
   - Attachment. This has two settings
 
   -\* <img alt="" src=images/Assembly_ConstraintAttachment.svg‎‎  style="width:32px;"> [Attachment](Assembly3_ConstraintAttachment.md): Add an \"Attachment\" constraint to attach two parts with the selected geometry elements.
 
-  -\*: This constraint completely fixes the parts relative to each other.
+  -\*: ဤကန့်သတ်ချက်သည် ပါဝင်သော အစိတ်အပိုင်းများကို အပြန်အလှန်တစ်စုတည်းအဖြစ် အပြည့်အဝ စောင့်တားပေးသည်။
 
   -\* <img alt="" src=images/Assembly_ConstraintAttachmentOffset.svg‎‎  style="width:32px;"> [AttachmentOffset](Assembly3_ConstraintAttachmentOffset.md): Same as \"Attachment\" constraint, but maintaining the current relative placement of the involved parts by applying an element offset.
 
-  -\*: This constraint completely fixes the parts relative to each other.
+  -\*: ဤကန့်သတ်ချက်သည် ပါဝင်သော အစိတ်အပိုင်းများကို အပြန်အလှန် တိကျစွာ ပြန်ထားပေးသည်။
 
   - <img alt="" src=images/Assembly_ConstraintAxial.svg‎‎  style="width:32px;"> [Axial Alignment](Assembly3_ConstraintAxial.md): Add an \"Axial alignment\" constraint to align edges/faces of two or more parts.
 
-  -: The constraint accepts
+  -: ဤကန့်သတ်ချက်တွင် လက်ခံနိုင်သော geometry များမှာ
 
   -:: linear edges, which become collinear,
 
@@ -166,11 +165,11 @@ As of 2020 the Assembly3 workbench features the following toolbars.
 
   -:: and cylindrical face, which are aligned using the axial direction.
 
-  -: Different types of geometry elements can be mixed.
+  -: မတူညီသော geometry element များကို ပြောစပ် အသုံးပြုနိုင်သည်။
 
   - <img alt="" src=images/Assembly_ConstraintSameOrientation.svg‎‎  style="width:32px;"> [Same orientation](Assembly3_ConstraintSameOrientation.md): Add a \"Same orientation\" constraint to align faces of two or more parts.
 
-  -: The planes are aligned to have the same orientation (i.e. rotation)
+  -: planes များကို rotation အရ တူညီအောင် ရှိအောင် ပြုလုပ်သည်။
 
   - <img alt="" src=images/Assembly_ConstraintMultiParallel.svg‎‎  style="width:32px;"> [Multi parallel](Assembly3_ConstraintMultiParallel.md): Add a \"Multi parallel\" constraint to make planar faces or linear edges of two or more parts parallel.
 
@@ -186,9 +185,9 @@ As of 2020 the Assembly3 workbench features the following toolbars.
 
   - <img alt="" src=images/Assembly_ConstraintPointOnCircle.svg‎‎  style="width:32px;"> [Point on circle](Assembly3_ConstraintPointOnCircle.md): Add a \"Point on circle\" to constrain one or more points on to a clyndrical surface defined by a cricle.
 
-  -: Note that you must select a point (any geometry element can define a point), and then select the circle (or clyndrical surface),
+  -: သင့်အား အရင်ဆုံး point (မည်သည့် geometry element မဆို point သတ်မှတ်နိုင်သည်) ကို ရွေး၍ ထို့နောက် circle (သို့မဟုတ် cylindrical surface) ကို ရွေးရမည်ဖြစ်သည်။
 
-  -: after which you can add more points to your selection if you want.
+  -: ထို့နောက် သင် ဆက်လိုလျှင် အပို point များကို ရွေးထပ်ထည့်နိုင်သည်။
 
   - <img alt="" src=images/Assembly_ConstraintPointsDistance.svg‎‎  style="width:32px;"> [Points distance](Assembly3_ConstraintPointsDistance.md): Add a \"Points distance\" to constrain the distance of two or more points.
 
@@ -198,11 +197,11 @@ As of 2020 the Assembly3 workbench features the following toolbars.
 
   - <img alt="" src=images/Assembly_ConstraintSymmetric.svg‎‎  style="width:32px;"> [Symmetric](Assembly3_ConstraintSymmetric.md): Add a \"Symmetric\" constraint to make geometry elements of two parts symmetric about a plane.
 
-  -: The supported elements are linear edge and planar face.
+  -: supported elements များမှာ linear edge နှင့် planar face တို့သာ ဖြစ်ပါသည်။
 
   - <img alt="" src=images/Assembly_ConstraintMore.svg‎‎  style="width:32px;"> [More](Assembly3_ConstraintMore.md): Toggle toolbars for more constraints
 
-  -: Not really a constraint but a toggle switch to show/hide the **Additional Constraints Toolbars**.
+  -: အမှန်တကယ် constraint တစ်ခု မဟုတ်ပေမယ့် **Additional Constraints Toolbars** ကို ပြ/ဖျောက် မော်ဒျူး လုပ်ရန် toggle switch တစ်ခုဖြစ်သည်။
 
 
 </div>
@@ -228,7 +227,7 @@ As of 2020 the Assembly3 workbench features the following toolbars.
 <div class="mw-collapsible mw-collapsed">
 
 
-:   You can enable these by selecting the **<img src="images/Assembly_ConstraintMore.svg‎‎" width=16px> [More](Assembly3_ConstraintMore.md)** button on the Main Constraints toolbar.
+:   သင်သည် Main Constraints toolbar ပေါ်မှ **<img src="images/Assembly_ConstraintMore.svg‎‎" width=16px> [More](Assembly3_ConstraintMore.md)** ခလုတ်ကို နှိပ်ခြင်းဖြင့် ဤ toolbars များကို ဖွင့်နိုင်ပါသည်။
 
 
 <div class="mw-collapsible-content toccolours">
@@ -294,13 +293,13 @@ As of 2020 the Assembly3 workbench features the following toolbars.
 </div>
 
 
-:   The **Constraints Toolbars** will be the main interface used when assembling parts.
-:   They are greyed out by default but are activated once at least one face, line or point of a part is selected.
-:   Generally you select the Elements that should be joined and then select the constraint type.
-:   The different colored frames mark different characteristics of the constraints:
+:   The **Constraints Toolbars** သည် parts များကို တပ်ဆင်ရာတွင် အသုံးပြုမည့် အဓိက အင်တာဖေ့ စာမျက်နှာ ဖြစ်ပါသည်။
+:   မူလတွင် မရရှိနိုင်သလို greyed out ဖြစ်သည်၊ သို့သော် part ၏ face, line သို့မဟုတ် point တစ်ခုခုကို အနည်းဆုံး တစ်ခု ရွေးလိုက်လျှင် အတွင်းကိရိယာများ တက်လာပါမည်။
+:   ယေဘုယျအားဖြင့် သင်သည် ချိတ်ဆက်လိုသည့် Element များကို ရွေးထားပြီး ထို့နောက် ကန့်သတ်ချက်အမျိုးအစားကို ရွေးရပါမည်။
+:   ကန့်သတ်ချက်များ၏ အထူးပြားပုံများသည် ကန့်သတ်ချက်၏ လက္ခဏာနှင့် ကိုက်ညီမှုများကို ဖော်ပြပေးပါသည်။
 
-    :   whether 2D/3D or if more than 2 Elements can be added.
-:   A detailed description can be found in the GitHub wiki.
+    :   ၎င်းတို့သည် 2D/3D ဖြစ်မဖြစ် သို့မဟုတ် 2 ထက်မပိုသော Element များကို ထည့်နိုင်မည်ဟု ဖော်ပြပေးသည်။
+:   အသေးစိတ် ဖော်ပြချက်များကို GitHub wiki တွင် တွေ့လိမ့်မည်။
 
 #### Navigation Toolbar 
 
@@ -310,7 +309,7 @@ As of 2020 the Assembly3 workbench features the following toolbars.
 <div class="mw-collapsible mw-collapsed">
 
 
-:   Theses functions are useful when working with an assembly with a hierarchy of linked external files
+:   ဤလုပ်ဆောင်ချက်များသည် linked external files များပါသော hierarchy ရှိ assembly များနှင့် အလုပ်လုပ်စဉ် အထူးအသုံးဝင်ပါသည်။
 
 
 <div class="mw-collapsible-content toccolours">
@@ -339,7 +338,7 @@ As of 2020 the Assembly3 workbench features the following toolbars.
 <div class="mw-collapsible mw-collapsed">
 
 
-:   The **Measurement toolbar** adds functions to measure the distance or the angle between two objects
+:   The **Measurement toolbar** သည် အရာနှစ်ခုအကြား အကွာအဝေး သို့မဟုတ် ထောင့်ကို တိုင်းတာရန် လုပ်ဆောင်ချက်များကို ပေးသည်။
 
 
 <div class="mw-collapsible-content toccolours">
@@ -352,9 +351,9 @@ As of 2020 the Assembly3 workbench features the following toolbars.
 
   - <img alt="" src=images/Assembly_MeasureAngle.svg‎‎  style="width:32px;"> [Measure angle](Assembly3_MeasureAngle.md): Add a \"Measure angle\" to measure the angle of planar faces or linear edges of two parts.
 
-:   There is no function to measure a radius or diameter.
-:   The measurement tools survive part changes, e.g. the distance between edges of a cube when the cube is re-sized.
-:   As the constraints the calculations are done in real time and updated upon any change. Behind the scenes, the function is very similar to the [constraints](#Constraints.md). The distance or angle is calculated between [Elements](#Elements.md) in the same way as for [constraints](#Constraints.md). The display in the tree works in the same way.
+:   radius သို့မဟုတ် diameter တိုင်းတာရန် function မရှိသေးပါ။
+:   measurement tools များသည် part ပြောင်းလဲမှုများကို သက်တမ်းခံနိုင်ပြီး ဥပမာ ကောက်ပတ်တလုံး၏ edge များအကြား အကွာအဝေးကို cube ကို ပြန်အရွယ်ပြောင်းလည်း ထိန်းသိမ်းထားနိုင်သည်။
+:   constraints များကဲ့သို့ အကန့်သတ်ချက်များသည် တပြိုင်နက်အချိန်တွင် တွက်ချက်နှင့် update လုပ်ပေးသည်။ အတွင်းက အလုပ်လုပ်ပုံသည် [constraints](#Constraints.md) နှင့် အလွန်ဆင်တူသည်။ အကွာအဝေး သို့မဟုတ် ထောင့်ကို [Elements](#Elements.md) များအကြား တိုင်းတာပြီး [constraints](#Constraints.md) ကဲ့သို့ပင် တွက်ချက်သည်။ tree တွင် ပြသခြင်းလည်း ထိုပင်အတိုင်း ဖြစ်သည်။
 
 
 </div>
@@ -362,97 +361,97 @@ As of 2020 the Assembly3 workbench features the following toolbars.
 
 </div>
 
-As usual you can modify the tool bars and add or remove single tools. Be sure to check the menu Assembly3 for functions that may not be present in the tool bars.
+သင်သလိုမျှ tool bars များကို ပြင်ဆင်၍ တစ်ခုချင်းသိုင်း ကိရိယာများကို ထည့်/ဖယ်ရှားနိုင်သည်။ Toolbars တွင် မတွေ့ရသည့် လုပ်ဆောင်ချက်များအတွက် Assembly3 menu ကို စစ်ဆေးရန် မမေ့ပါနှင့်။
 
 [top](#top.md)
 
 ### Constraints
 
-The designer uses constraints to achieve the desired result for the relation of two parts. The art is the selection of the right constraints best suited to deal with each problem. Each eliminated DOF should in theory only be eliminated once between two objects, but in practice with many CAD tools selected constraints cause over-constrained combinations, often compensated by complex algorithms, sometimes not. Assembly3 does use algorithms to detect and compensate over-constraints, but clearly they are not very matured yet. So in practice for Assembly3 constraints avoid trouble by being aware of how many degrees of freedom (DOF) have been used and which ones are still to be locked down by constraints. No part should have a connection by constraints using more than 6 DOF.
+ဒီဇိုင်နာသည် အစိတ်အပိုင်း နှစ်ခု၏ ဆက်ဆံရေးကို ဆန္ဒရှိသည့် အတိုင်း ရရှိစေရန် ကန့်သတ်ချက်များ (Constraints) ကို အသုံးပြုသည်။ မှန်ကန်သည့် ကန့်သတ်ချက်ကို ရွေးချယ်နိုင်ခြင်းမှာ အနုပညာပင်ဖြစ်သည်။ အစစ်အမှန်အားဖြင့် တစ် object နှစ်ခုအကြား မည်သည့် DOF ကို ဖယ်ရှားလိုက်လည်း တစ်ကြိမ်တည်းသာ ဖယ်ရှားသင့်သည်ဟု ဆိုနိုင်သော်လည်း လက်တွေ့တွင် CAD ကိရိယာများတွင် ရွေးထားသော ကန့်သတ်ချက်များကြောင့် over-constrained ဖြစ်လာခြင်းကို တွေ့ရသည်၊ ၎င်းကို ချိတ်ဆက်ဆော့ဝဲများက အဆင့်မြှင့် algorithm များဖြင့် ချိန်ညှိကာ ဖြေရှင်းကြသည်။ Assembly3 သည် over-constraint များကို တွေ့ရှိ၍ တိုက်ရိုက် ထပ်ဆောင်ရန် algorithm များကို အသုံးပြုသော်လည်း အခုချိန်တွင် ထို algorithm များသည် အလွန် parfect မဟုတ်သေးပါ။ ထို့ကြောင့် Assembly3 အသုံးပြုရာတွင် လက်တွေ့တွင် ကန့်သတ်ချက်များကို သုံးစွဲသည့် DOF များကို သတိထားခြင်း၊ ဘာတွေ lock လုပ်ထားပြီး ဘာတွေ မထိနိုင်သေးကြောင်းကို သိရှိထားခြင်းဖြင့် ပြဿနာများကို ကာကွယ်နိုင်သည်။ ဗဟုသုတအရ တစ်ခုချင်း part သည် 6 DOF ထက် မပိုသော constraint များဖြင့် ဆက်သွယ်ထားသင့်သည်။
 
-:   Note: If the solver meets a combination that can not be solved, it will give an error. It is very difficult for the solver to find out what caused the problem, so typically from this error given it will not be clear *where* the problem is. In larger assemblies this can lead to complex problem searches. Unfortunately there is no easy way to avoid this. However, it helps to be fully aware how the system works (.e.g see [Elements](#Elements.md) below), use clear names for all components involved and only ever add additional constraints when the solver solves the current assembly. Very helpful to track down a problem is the \"ContexMenu/Deactivate\" function of each constraint.
+:   မှတ်ချက် — solver သည် မဖြေရှင်းနိုင်သော ပေါင်းစပ်မှုတစ်ခုနှင့် တွေ့ဆုံပါက error ကို ပြမည်။ ပြဿနာ၏ အကြောင်းရင်းကို solver က ရှာဖွေဖော်ထုတ်ရရန် အလွန်ခက်ခဲသည်၊ ထို့ကြောင့် ထို error မှ တဆင့် မည်သည့်နေရာတွင် ပြဿနာရှိကြောင်း ထင်ရှားစွာ မရှင်းလင်းနိုင်သော အခြေအနေများ ဖြစ်တတ်သည်။ ကြီးမားသော assembly များတွင် ၎င်းသည် စူးစမ်းရှာဖွေရေးကို ရှုပ်ထွေးစေသည်။ ယခုအခါ သည်ကို ရှောင်ရှားဖို့ လွယ်ကူသော နည်းလမ်း မရှိသေးပါ။ သို့ဖြစ်လျင် စနစ်၏ အလုပ်လုပ်ပုံကို ကောင်းစွာနားလည်ထားခြင်း (.e. [Elements](#Elements.md) ကို ကြည့်ပါ), ပါဝင်သော component များကို တိတိကျကျ အမည်ပေးခြင်း နှင့် solver သော current assembly ကို ဖြေရှင်းနေသည့်အချိန်တွင်သာ ထပ်၍ ကန့်သတ်ချက်များ ထည့်ရန်သာ အကြံပြုပါသည်။ ပြဿနာကို တွေ့ဖော်ရာတွင် အထူးကို အသုံးဝင်သည်မှာ constraint တစ်ခုချင်း၏ \"ContextMenu/Deactivate\" လုပ်ဆောင်ချက်ဖြစ်ပါသည်။
 
-Assembly3 Constraints define restrictions in the position or orientation between two [Elements](#Elements.md). Some constraints even work with more than two [Elements](#Elements.md). An [Elements](#Elements.md) can be a face, a line or edge or a point of a part. Generally constraints are defined by selecting the desired [Elements](#Elements.md) and then select the constraint from the Constraints [toolbar](#Toolbars.md).
+Assembly3 Constraints များသည် နှစ်ခု [Elements](#Elements.md) ကြားရှိ အနေအထား သို့မဟုတ် အလှည်းထောင့်ကို ကန့်သတ်ပေးသည်။ တချို့ ကန့်သတ်ချက်များတွင် ၂ခုထက်ပိုသော [Elements](#Elements.md) များနှင့်တင်ဆက်ပြီး အလုပ်လုပ်နိုင်သည်။ [Elements](#Elements.md) တစ်ခုသည် part ၏ face, line/edge သို့မဟုတ် point တစ်ခု ဖြစ်နိုင်သည်။ ယေဘုယျအားဖြင့် ကန့်သတ်ချက်များကို သတ်မှတ်လိုပါက သင်ဧ။ [Elements](#Elements.md) များကို ရွေး၍ ထို့နောက် Constraints [toolbar](#Toolbars.md) မှ ကန့်သတ်ချက်အမျိုးအစားကို ရွေးပါ။
 
--   Fixes 6 DOF, leaves 0 DOF:
-    -   **Lock**: The lock constraint fixes all DOFs for a face. It should be used for one base part in each assembly. You may also want to enable the \"MoveLock\" function (in the tool bar) so that the part can not be moved accidentially. Normally it does not matter which face/line/point you use to fix a part. Also note that the lock is only valid for the direct assembly, i.e. in case of a sub-assembly the parent assembly would still require a locked part on its own.
-    -   **Attachment**: Makes both elements coordinate systems equal for all axes. This is computation wise the most inexpensive function and should be used where ever possible. Note that you could use the element properties to compensate for offsets and angles if the two [elements](#Elements.md) are not perfectly aligned.
--   Fixes 5 DOF, leaves 1 DOF:
-    -   **Plane Coincident**: fixes Tx,Ty,Tz, Rx,Ry. Only Rz is free. There remains the rotation around the normal passing through the ''center of the plane''.
--   Fixes 4 DOF, leaves 2 DOF:
-    -   **Axial Alignment**: fixes Tx,Ty, Rx,Ry. Only Tz, Rz are free. There remains the rotation around the axis of the shape and the translation along this same axis. Two *PointOnLine* constraints (if the two points are different) give the same result. The \''Colinear\'' constraint too.
-    -   **PointOnLine**: This eliminates the translation and rotation along the normals to the reference line. Only the translation and rotation along the line axis is allowed.
--   Fixes 3 DOF, leaves 3 DOF:
-    -   **Same Orientation**: fixes Rx,Rz,Rz. All T\'s remain free.
-    -   **Points Coincident**: fixes Tx,Ty,Tz. All R\'s remain free.
-    -   **PointOnPoint** constraint eliminates the 3 translations.
-    -   **Plane Alignment**: fixes Tz, Rx,Ry (plane motion). This eliminates the translation along the normal to the reference plane and the two rotations around the axes of this plane.
--   Fixes 2 DOF, leaves 4 DOF:
-    -   **Multi Parallel**: fixes Rx,Ry. all T\'s and Rz remain. This eliminates the two rotations around the axes of the reference plane.
--   Fixes 1 DOF, leaves 5 DOF:
-    -   **Points in Plane**: Fixes Tz. This eliminates the translation along the normal to the reference plane.
-    -   **Points Distance**: fixes the distance between the Element origins.
+-   6 DOF ကို မြင့်မားစွာ ဖစ်ရှင်းပြုပြီး 0 DOF ကျန်ရစ်စေသည်:
+    -   **Lock**: lock ကန့်သတ်ချက်သည် face တစ်ခုအတွက် အားလုံး DOF များကို ဖစ်ရှင်းပမ်းသည်။ ဤသည်ကို assembly တစ်ခုစီတွင် base part တစ်ခုအတွက် အသုံးပြုသင့်သည်။ သင့်အား \"MoveLock\" function ကို (toolbar တွင်) ဖွင့်ထားချင်စရာရှိနိုင်သည်၊ ထို့ကြောင့် part ကို မအမှားဖြင့် ရွေ့လျားနိုင်ခြင်း မရှိစေရန် ဖြစ်သည်။ သာမန်အားဖြင့် part ကို ဖစ်ရှင်းရာတွင် မည်သည့် face/line/point ကို အသုံးပြုမည်ဆိုသည်မှာ အဓိက မဟုတ်ပါ။ သို့သော် lock သည် တိုက်ရိုက် assembly အတွက်သာ သက်ရောက်သည်ကို မှတ်သားပါ (ဥပမာ sub-assembly ဖြစ်ပါက parent assembly သည် မည်သည့် locked part ကို ကျွန်ုပ်တို့ စီမံရန် မလိုအပ်သေး)။
+    -   **Attachment**: Element နှစ်ခု၏ coordinate systems ကို အချင်းချင်း တူညီအောင် ပြုလုပ်သည်။ တွက်ချက်အရ ဤလုပ်ဆောင်ချက်သည် အကန့်အသတ်ဆုံး မျိုးဖြစ်သဖြင့် ဖြစ်နိုင်သမျှ အသုံးပြုရန် သင့်တော်သည်။ ထို [elements](#Elements.md) များ အချိုးအကာ မတိကျပါက element properties ကို အသုံးပြု၍ offset များနှင့် angle များကို ဖြည့်ဆည်းနိုင်သည်။
+-   5 DOF ကို ဖစ်ရှင်းပြီး 1 DOF ကျန်ရစ်စေသည်:
+    -   **Plane Coincident**: Tx, Ty, Tz, Rx, Ry ကို ဖစ်ရှင်းသည်။ မကျန်သော Rz သာ ပျောက်နေသည်။ plane ၏ \"center\" ဖြတ်သန်းသည့် normal အပေါ် တလှည့်လှည့်ခြင်း ကိုသာ ကျန်ရှိစေပါသည်။
+-   4 DOF ကို ဖစ်ရှင်းပြီး 2 DOF ကျန်ရစ်စေသည်:
+    -   **Axial Alignment**: Tx, Ty, Rx, Ry ကို ဖစ်ရှင်းပေးသည်။ Tz, Rz တို့သာ ခွင့်ပြုသည်။ ၎င်းသည် အပေါ်ယံ ပုံသဏ္ဍာန်၏ axis အပေါ်တွင် လှည့်ပတ်ခြင်းနှင့် အဲဒီ axis အတိုင်း တည်နေရာပြောင်းရွှေ့ခြင်းကို ခွင့်ပြုထားသည်။ အကယ်၍ သင်အတွက်ရှိပါက နှစ်ခုသော *PointOnLine* ကန့်သတ်ချက်များ (နှစ်နေရာ point မတူပါက) က ဤသို့ပင် အပြီးသတ်ရလဒ်ပေးသည်။ \''Colinear\'' ကန့်သတ်ချက်လည်း ထိုပုံစံနှင့် ဆင်တူသည်။
+    -   **PointOnLine**: ဤကန့်သတ်ချက်သည် reference line ၏ normal များအပေါ်ရှိ translation နှင့် rotation များကို ဖယ်ရှားပေးသည်။ တစ်ခုသာ ကျန်မှာ line axis အပေါ် translation နှင့် rotation ဖြစ်သည်။
+-   3 DOF ကို ဖစ်ရှင်းပြီး 3 DOF ကျန်ရစ်စေသည်:
+    -   **Same Orientation**: Rx, Ry, Rz ကို ဖစ်ရှင်းသည်။ T များအားလုံး ကျန်ရှိသည်။
+    -   **Points Coincident**: Tx, Ty, Tz ကို ဖစ်ရှင်းသည်။ R များအားလုံး ကျန်ရှိသည်။
+    -   **PointOnPoint** ကန့်သတ်ချက်သည် translation 3 ခုကို ဖယ်ရှားပေးသည်။
+    -   **Plane Alignment**: Tz, Rx, Ry (plane motion) ကို ဖစ်ရှင်းသည်။ ဤကန့်သတ်ချက်သည် reference plane အပေါ် normal အတိုင်း ရွေ့လျားမှုပေါ် နှင့် plane ၏ အ axis နှစ်ခုပတ်လည် လှည့်ခေါက်မှုနှစ်ခုကို ဖယ်ရှားပေးသည်။
+-   2 DOF ကို ဖစ်ရှင်းပြီး 4 DOF ကျန်ရစ်စေသည်:
+    -   **Multi Parallel**: Rx, Ry ကို ဖစ်ရှင်းသည်။ T များနှင့် Rz ကျန်သည်။ ဤကန့်သတ်ချက်သည် reference plane ၏ axis နှစ်ခုပတ်လည် လှည့်ခေါက်မှုနှစ်ခုကို ဖယ်ရှားပေးသည်။
+-   1 DOF ကို ဖစ်ရှင်းပြီး 5 DOF ကျန်ရစ်စေသည်:
+    -   **Points in Plane**: Tz ကို ဖစ်ရှင်းသည်။ ဤကန့်သတ်ချက်သည် reference plane ၏ normal အပေါ်ဖြစ်သော translation ကို ဖယ်ရှားပေးသည်။
+    -   **Points Distance**: Element origins အကြား အကွာအဝေးကို ဖစ်ရှင်းပေးသည်။
 
-        :   This gives you more freedom than *Points in Plane*
+        :   ဤသည်သည် *Points in Plane* ထက် ပို၍ လွတ်လပ်ခွင့် ထားပေးသည်။
 
-Other
+အခြား
 
--   **Points on Circle**: fixes Tz and partially Tx,Ty. Freezes the point translation (or several points) on a circle or disk area. You must pick the circle second. This leaves all rotations free and gives limited translation in the circle reference plane.
+-   **Points on Circle**: Tz နှင့် အချို့ Tx, Ty ကို အနည်းငယ် ဖစ်ရှင်းပေးသည်။ အဆိုပါ point translation (သို့မဟုတ် point များစွာ) ကို circle သို့မဟုတ် disk ဒေသပေါ်တွင် ဖျောက်ထားသည်။ သင့်အား circle ကို ဒုတိယအနေဖြင့် ရွေးရမည်။ ဤကန့်သတ်ချက်သည် အားလုံး rotation များအား အခွင့်လွင့်ထားပြီး circle reference plane တွင် translation အနည်းငယ်သာ ခွင့်ပြုသည်။
 
-*: Note: In the following list Tx,Ty,Tz and Rx,Ry,Rz are used to describe translations and rotations about the reference coordinate systems of the involved Element\'s. This is not always exact or fully defined, e.g. when a line is involved it is not defined if it runs in X, Y or any angle in betweeen. The system is used for bevity and easy comparison in favour of a correct but more complex definition. So Z is generally the normal direction of any faces involved. Please feel free to modify this with a better approach with improved readability.*
+*: မှတ်ချက် — အောက်ပါ စာရင်းတွင် Tx, Ty, Tz နှင့် Rx, Ry, Rz များကို involved Element များ၏ reference coordinate systems အပေါ် translation နှင့် rotation များကို ဖော်ပြရန် အသုံးပြုထားသည်။ ၎င်းသည် အားလုံး၏ တိကျသည့် သတ်မှတ်ချက် မဟုတ်နိုင်ပေ၊ ဥပမာ line တစ်ခု ပါဝင်ပါက ၎င်းသည် X, Y သို့မဟုတ် အလယ်တန်း အကွာအလတ်တစ်ခုတွင် ရှိမည်ဟု သတ်မှတ်ထားခြင်း မရှိနိုင်ပါ။ ယခုစနစ်ကို သေးငယ်ခြင်းနှင့် နှိုင်းယှဉ်ရလွယ်ကူစေရန် အသုံးပြုထားခြင်းဖြစ်သည်။ ထို့ကြောင့် Z သည် မျက်နှာများပါက ယေဘုယျအားဖြင့် normal direction ကို ကိုယ်စားပြုသည်။ ဖတ်ရှုရ အဆင်ပြေစေရန် သင့်အား ပိုသေချာမြန်ဆန်သော ဖော်ပြချက်ဖြင့် ပြုပြင်လိုပါက လိုလားပါသည်။*
 
 [top](#top.md)
 
 ### Elements
 
-Elements is a specific term used in the Assembly3 workbench and it is important to understand Elements for understanding how Assembly3 should be used.
+Elements သည် Assembly3 workbench တွင် သတ်မှတ်ထားသည့် အထူးသော အဓိပ္ပါယ်ရှိသော term ဖြစ်ပြီး Assembly3 ကို မှန်ကန်စွာ အသုံးပြုရန် ဤ Elements များကို နားလည်ထားခြင်း အလွန် အရေးကြီးသည်။
 
-It is helpul to think of an Element as a general word for a \'selectable item\' of a part, i.e. a face, an edge, a circle or a corner or other point. The items you select to constrain them, are those Elements. In the tree an Assembly folder has three sub-folders. Beside \'Parts\' and \'Constraints\' there is a folder named \'Elements\', which is emtpy as long as there are no constraints added. When adding a constraint the constraint itself gets two (or more) leafs, these are the selected \'Elements\'. Also these get added in the \'Elements\' folder which is just a list of all Elements used in the assembly. Its a good idea to change their names (with F2 key), especially in bigger assemblies.
+Element ကို part ၏ 'selectable item' တစ်ခု ဟု တွေးပါ — ဥပမာ face, edge, circle, corner သို့မဟုတ် အခြား point တစ်ခု။ သင်ကန့်သတ်ချက်များ ထည့်သည့်အခါ ရွေးချယ်သည့် အရာများ ဖြစ်ကြသည်။ tree တွင် Assembly folder တစ်ခုတွင် sub-folders သုံးခု ရှိသည်။ 'Parts' နှင့် 'Constraints' သို့ ပြင်ပတွင် 'Elements' ဟူသော folder ရှိပြီး constraint မထည့်သေးသောအခါ၌ ဤ folder သည် ဖွင့်လွတ်တစ်ခုအဖြစ် ရှိနေမည်။ ကန့်သတ်ချက်တစ်ခုထည့်ပါက ဤ constraint သည် နှစ်ခု (သို့မဟုတ် ပို) 的 child nodes များကို ရရှိမည်၊ ၎င်း child nodes များသည် ရွေးထားသည့် 'Elements' ဖြစ်သည်။ ထို့ပြင် ၎င်းတို့သည် 'Elements' folder တွင်လည်း ထည့်သွင်းမည်ဖြစ်ပြီး ၎င်းသည် assembly တွင် အသုံးပြုထားသည့် 모든 Elements များကို စာရင်းတစ်ခုအဖြစ် ဖော်ပြထားသည်။ ကြီးမားသော assembly များတွင် အမည်များကို ပြောင်းရန် (F2 key) သတ်မှတ်ခြင်း လုပ်သင့်သည်။
 
-Let\'s look at an example
+ဥပမာတစ်ခုကြည့်ကြပါစို့
 
-:   Create a new file and add from the Part workbench a cube and a cylinder. We will stack the cylinder onto the cube. First we fix the base part, in out case the cube. Select the bottom face of the cube and select the \"Locked\" constraints (first icon in the Constraints [toolbar](#Toolbars.md)). Select the top face of the cylinder and the top face of the cube. Then select the \"Plane Coincident\" constraint. Now the cylinder is moved into the cube and in the tree a new leaf with two childe nodes was added under \'Constraints\'. Additionally the same two child nodes were added under \'Elements\'. If your cylinder is inside the cube instead of on top of the cube, let\'s correct that first: select the child node under \'Constraints\' that shows the cylinder face and with a right click in the context menu select \'Flip Part\'. Now the cylinder is stacked onto the box.
+:   ဖိုင်အသစ်တစ်ခု ဖန်တီး၍ Part workbench မှ cube နှင့် cylinder တို့ကို ထည့်ပါ။ cylinder ကို cube ပေါ်တွင် တင်စီးချင်သည်။ အရင်ဆုံး base part ကို lock ပြုလုပ်ပါ၊ ဤဥပမာတွင် cube ကို base အဖြစ် သတ်မှတ်မည်။ cube ၏ အောက်ဖက် face ကို ရွေးပြီး \"Locked\" ကန့်သတ်ချက် (Constraints [toolbar](#Toolbars.md) မှ ပထမ icon) ကို ရွေးပါ။ cylinder ၏ အပေါ်ဖက် face နှင့် cube ၏ အပေါ်ဖက် face ကို ရွေးပါ။ ထို့နောက် \"Plane Coincident\" constraint ကို ရွေးပါ။ ယခု cylinder သည် cube ထဲသို့ တက်သွားပြီး tree တွင် 'Constraints' အောက်တွင် child nodes နှစ်ခုပါသော leaf အသစ်တစ်ခု ထည့်သွင်းမည်ဖြစ်သည်။ ထို့ပြင် နှစ်ခုသော child nodes များသည် 'Elements' အောက်တွင်လည်း ထည့်သွင်းထားမည်။ သင့် cylinder သည် cube ထဲတွင် တင်ထားနေက င်ား အပေါ်တွင် မရှိလျှင် အောက်ပါပုံစံအတိုင်း ပြုလုပ်ပါ — 'Constraints' အောက်ရှိ child node ကို ရွေး၍ context menu တွင် 'Flip Part' ကို ရွေးပါ။ ယခု cylinder သည် box ပေါ်တွင် တင်ထားမည်။
 
-The key thing to understand is that the constraint operates on links to Elements in the list in the \'Elements\' tree folder. This allows keeping the constraint structure intact while changing the parts. This is very difficult to see without an example.
+အဓိက နားလည်ရမည့် အချက်မှာ constraint သည် 'Elements' tree folder ၌ ရှိသည့် Elements များအပေါ် လင့်ခ်များကို အလုပ်လုပ်စေသည်။ ၎င်းကြောင့် parts များကို အစားထိုးသော်လည်း constraint ဖွဲ့စည်းပုံကို ထိန်းသိမ်းထားနိုင်သည်။ ဤအရာကို ဥပမာမရှိဘဲ မလွယ်ကူစွာ မမြင်နိုင်နိုင်ပါ။
 
-Let\'s get back to the example above
+ဤဥပမာသို့ ပြန်မရောက်မီ —
 
-:   Note: make sure you added the \"Locked\" constraint to the cube or this will look confusing
-:   In the CAD window select another face of the cube. Now we will only work in the tree view. Use your mouse in the tree view; make sure the cube is selected. Drag&Drop the cube to the \'Elements\' folder. Drop it on the \'Elements\' name, not anywhere else in the folder - we will see why later. You should see that another Element is added to the \'ELements\' list. Now select in the \'Constraints\' folder the child node of the cube face in the \"Plane Coincident\" constraint and delete it. The Constraint will show an exclamation mark since it is missing one Element. Note that by deleting the Element in the Constraint we did *not* delete it in the list. That is because in the constraint it was only a link to the Element in the list. Now take the newly added Element in the \'Elements\' list and drag&drop it onto the \"Plane Coincident\" constraint. Now the cylider moves to the other face we selected. We might need to select \'context menu/flip part\' again if the cylinder is again inside the cube.
+:   မှတ်ချက် — cube တွင် \"Locked\" constraint ထည့်ထားမှုရှိသည်ဟု သေချာစေပါက မဟုတ်ရင် ရုပ်ပုံတွင် ဝေယျဉ်မှု ဖြစ်နိုင်သည်။
+:   CAD window တွင် cube ၏ အခြား face တစ်ခုကို ရွေးပါ။ ယခု ငါတို့ tree view တွင်သာ အလုပ်လုပ်မည်။ mouse ဖြင့် tree view ထဲတွင် cube ကို ရွေးထားစေပါ။ cube ကို 'Elements' folder ထဲသို့ Drag&Drop လုပ်ပါ။ folder အမည် 'Elements' အပေါ် drop လုပ်ရန် သတိပြုပါ — ဒါဟာ အဓိက ဖြစ်ရမည်။ ထို့နောက် 'Elements' စာရင်းတွင် element အသစ်တစ်ခု ထည့်သွင်းပါသည့် အရာကို မြင်ရမည်။ ထို့နောက် 'Constraints' folder ၌ သင့် cube face ကို ပြထားသည့် child node ကို ရွေး၍ ဖျက်ပါ။ Constraint တွင် element တစ်ခု လိုအပ်မှုရှိ၍ exclamation mark ပြမည်။ သတိပေးချက်က အရေးကြီးတာက constraint အတွင်း element ကို ဖျက်လိုက်လျှင် list ထဲမှ ဖျက်သွားခြင်း မဟုတ်ပါ — အကြောင်းက constraint အတွင်းရှိ element သည် list အတွင်းရှိ element ကို ရည်ညွှန်းသည့် link တစ်ခုသာ ဖြစ်ပါသည်။ ယခု 'Elements' စာရင်းရှိ အသစ်ထည့်ထား element ကို ရယူ၍ 'Plane Coincident' constraint ၌ drag&drop ပြန်ထည့်ပါ။ ယခု cylinder သည် သင့်ရွေးချယ်ထားသော အခြား face သို့ ရွေ့သွားမည်။ cylinder သည် ထပ်မံ inside ဖြစ်လျှင် context menu မှ 'Flip Part' ကို ထပ်ရွေးရနိုင်သည်။
 
-The example showed that without removing the constraint we can change the Elements that are used for the constraint. In the same way we can move the cylinder to a totally different part. After playing around with this example a bit more, you will note some additional things such as:
+ဤဥပမာမှ constraint ကို ဖျက်ရန်မလိုဘဲ constraint တွင် အသုံးပြုသော Elements များကို ပြောင်းနိုင်သည်ဟု ပြသခဲ့သည်။ အတူတူပုံစံဖြင့် cylinder ကို မည်သည့် part နှင့်မဆို အပြောင်းအလဲ ပြုလုပ်နိုင်သည်။ ဤဥပမာနှင့် ပိုမို ကစားသဖြင့် အောက်ပါ အချက်များကို တွေ့မြင်ရမည် —
 
--   If you rename an Element in the list, the name will be changed in all Constraints.
--   You can use one Element in the list in several constraints.
--   You can use the Property Window of an Element to add **Offsets**. In the example this could move the cylinder around on the cube face.
--   You can use the \"Show Element Coordinate System\" button in the main toolbar to see what \'ContextMenu/Flip Part\' and \'ContextMenu/Flip Element\' are doing. Be sure to look what happens in the Property Window.
--   You can add a constraint in a totally different order: First add some Elements to the \'Elements List\' (naming is useful, e.g. \"Cube Top Face\" or \"Cube Front Face\"), then add a constraint without selecting anything - it will be an empty constraint. Then drag Elements from the \'Elements\' list. The result is the same as what we did in the first example. After doing that exercise the nature of how constraints work with Elements should be clear.
--   You can change an existing constraint between existing elements by just selecting a different item in the PropertyWindow/ConstraintType property.
+-   Element အမည်ကို စာရင်းတွင် ပြောင်းလဲပါက ၎င်း၏ အမည်သည် 모든 Constraints များတွင် ပြောင်းလဲသက်ရောက်မည်။
+-   တစ် Element ကို စာရင်းတွင် 여러 constraints တွင် အသုံးပြုနိုင်သည်။
+-   Element ၏ Property Window ကို အသုံးပြု၍ **Offsets** များ ထည့်နိုင်သည်။ ဥပမာ၌ cylinder ကို cube မျက်နှာပေါ်တွင် ရွေ့လျားစေမည်။
+-   Main toolbar ၌ \"Show Element Coordinate System\" ခလုတ်ကို အသုံးပြု၍ 'ContextMenu/Flip Part' နှင့် 'ContextMenu/Flip Element' ကြိုက်ရာ ပြောင်းလဲမှုများကို ကြည့်ရှုနိုင်သည်။ Property Window တွင် မည်သို့ပြောင်းလဲနေသည့် အရာကို သေချာကြည့်ပါ။
+-   Elements စာရင်းထဲ သို့ အရင်တင်ပြီးနောက် constraint ကို ထည့်လိုက်သည့် နည်းလမ်းကို သုံးနိုင်သည် — ဥပမာ Elements အချို့ကို 'Elements List' ထဲသို့ ထည့်၍ (အမည်ပေးခြင်း အထူးအသုံးဝင်သည်၊ ဥပမာ \"Cube Top Face\" သို့မဟုတ် \"Cube Front Face\") ထို့နောက် ကန့်သတ်ချက်ကို တစ်စုံတစ်ရာရွေးခြင်းမပြုဘဲ ထည့်ပါ၊ ၎င်းသည် empty constraint ဖြစ်မည်။ ထို့နောက် 'Elements' list မှ Elements များကို drag လုပ်၍ ထည့်ပါ။ ရလဒ်သည် ပထမဥပမာတွင် သင်လုပ်သည့် အရာနှင့် တူညီပါမည်။ ဤလေ့ကျင့်မှုကို ပြီးလျှင် constraint များသည် Elements များနှင့် မည်သို့ ဆက်ဆံကြောင်း ပိုပြတ်သားစွာနားလည်လာမည်။
+-   PropertyWindow/ConstraintType property ထဲတွင် မည်သည့် item ကိုမဆို ရွေးချယ်ခြင်းဖြင့် အကြောင်းအရာရှိ constraint တစ်ခုကို ပြောင်းနိုင်သည်။
 
 [top](#top.md)
 
 ## Compatibility
 
-Assembly3 was inspired by [Assembly2](Assembly2_Workbench.md), but it is not compatible with it. If you have older models made in Assembly2, you should stay with FreeCAD 0.16 and use Assembly2 there.
+Assembly3 သည် [Assembly2](Assembly2_Workbench.md) မှ အလားအလာရရှိခဲ့သော်လည်း အဲဒီနှင့် ကိုက်ညီမနေပါ။ Assembly2 ဖြင့် ပြုလုပ်ထားသည့် အဟောင်းများရှိပါက FreeCAD 0.16 ကို သက်ဆိုင်ရာ Assembly2 နှင့် အသုံးပြုနေဆဲ ဖြစ်ရန် အကြံပြုပါသည်။
 
-New models developed with Assembly3 should only be opened and edited with this workbench.
+Assembly3 ဖြင့် ဖန်တီးသော မော်ဒယ်များကို သာ Assembly3 workbench ဖြင့်သာ ဖွင့်၍ တည်းဖြတ်ရန်သာ သင့်တော်ပါသည်။
 
-Although they may have similar tools, Assembly3 is not compatible with [A2plus](A2plus_Workbench.md) nor [Assembly4](Assembly4_Workbench.md). Models created with these workbenches should be opened only with their respective workbench.
+Assembly3 သည် [A2plus](A2plus_Workbench.md) သို့မဟုတ် [Assembly4](Assembly4_Workbench.md) တို့နှင့် ကိုက်ညီမှု မရှိပါ။ တိုင်းထွာထားသော workbench များဖြင့် ဖန်တီးထားသော မော်ဒယ်များကို အဲဒီ respective workbench ဖြင့်သာ ဖွင့်သင့်သည်။
 
 [top](#top.md)
 
 ## Installation
 
-The [Assembly3 Workbench](Assembly3_Workbench.md) is available (as of March 2022) through the [Addon Manager](Std_AddonMgr.md). Any Assembly3 3rd party dependencies should be managed automatically through the Addon Manager.
+[Assembly3 Workbench](Assembly3_Workbench.md) ကို (March 2022 အခြေအနေအရ) [Addon Manager](Std_AddonMgr.md) မှတဆင့် ရနိုင်ပါသည်။ Assembly3 ၏ ဒုတိယပါတီ အားလိုအပ်ချက်များသည် Addon Manager မှ အလိုအလျောက် စီမံပေးမည်ဖြစ်သည်။
 
 #### Alternate installations 
 
-There are 2 alternate ways to install Assembly3:
+Assembly3 ကို स्थापनाလုပ်ရန် အခြား နည်းလမ်း 2 မျိုး ရှိပါသည်။
 
--   A special fork of FreeCAD made by realthunder; see [here](https://github.com/realthunder/FreeCAD/releases). This fork is based on a particular commit of the master branch of FreeCAD, but it also has additional features currently not present in the master branch. Due to this fork being based on a particular development snapshot, it does not have the latest features merged daily to the master branch.
--   The development [AppImage](AppImage.md); this is based on the current master branch, and includes the dependencies needed for working with Assembly3 such as the SolveSpace solver.
+-   realthunder မှ ဖန်တီးထားသော FreeCAD fork အထူးဗားရှင်း။ အသေးစိတ် အချက်အလက်များကို [here](https://github.com/realthunder/FreeCAD/releases) တွင် ကြည့်ရှုပါ။ ဤ fork သည် FreeCAD master branch ၏ တိကျသော commit တစ်ခုအပေါ် အခြေခံထားသော်လည်း master branch တွင် မရှိသေးသော အပို features များကိုပါ ဆောင်ထားသည်။ ယင်းသည် တိကျသော development snapshot အပေါ် အခြေခံထားသောကြောင့် master branch သို့ နေ့စဉ် merge လုပ်ခံရသည့် နောက်ဆုံး features များ မပါဝင်နိုင်ပါ။
+-   development [AppImage](AppImage.md) — ဤသည်သည် current master branch အပေါ် အခြေခံပြီး Assembly3 အသုံးပြုရန် လိုအပ်သော dependency များ (ဥပမာ SolveSpace solver) ကိုပါ ထည့်သွင်းထားသည်။
 
-Since the AppImage only works for Linux, for Windows users (who want an alternate install of Assembly3) option to test Assembly3 is the first option (realthunder\'s fork).
+AppImage သည် Linux အတွက်သာ အလုပ်လုပ်သောကြောင့် Windows အသုံးပြုသူများအတွက် Assembly3 အခြားတစ်ခုအဖြစ် စမ်းသပ်နိုင်ရန် realthunder ၏ fork ကို စမ်းသပ်ရန် အကြံပြုပါသည်။
 
 [top](#top.md)
 
@@ -460,144 +459,141 @@ Since the AppImage only works for Linux, for Windows users (who want an alternat
 
 ### Get Started 
 
-There are many ways to create an assembly with Assembly3. Here is the most simple one you can do.
+Assembly3 ဖြင့် assembly တစ်ခု ဖန်တီးရန် နည်းလမ်းများ များစွာ ရှိသည်။ အောက်တွင် အလျင်အမြန်နှင့် တိုတောင်းသော နည်းလမ်းတစ်ခုကို ဖော်ပြထားသည်။
 
 :   <img alt="" src=images/Assembly3_Example-GettingStarted.jpg  style="width:600px;">
 
-:   *Final Result of the Getting Started Example. In the image the Assembly3 Workbench is selected, so its multiple toolbars are visible. Note that the vertical \"TabBar\" left of the tree view is an AddOn Workbench that is not contained in standard FreeCAD (but can be installed with the Addon-Manager).*
+:   *Getting Started ဥပမာ၏ နောက်ဆုံးရလဒ်။ ပုံတွင် Assembly3 Workbench ရွေးထား၍ နောက်ထပ် toolbars များကို မြင်နိုင်သည်။ tree view ၏ ဘယ်ဘက်ရှိ ထိပ်တန်းရှိ vertical \"TabBar\" သည် standard FreeCAD အတွင်း မပါဝင်သော AddOn Workbench တစ်ခုဖြစ်ပြီး Addon-Manager ဖြင့် ထည့်သွင်းနိုင်သည်။*
 
--   Press **<img src="images/Std_New.svg" width=16px> [New](Std_New.md)** to create a new FreeCAD file
--   Change to <img alt="" src=images/Assembly3_workbench_icon.svg  style="width:16px;"> [Assembly3](Assembly3_Workbench.md) workbench
--   Select **<img src="images/Assembly_New_Assembly.svg‎‎" width=16px> [Create assembly](Assembly3_CreateAssembly.md)
-**
--   Change to <img alt="" src=images/Workbench_Part.svg  style="width:16px;"> [Part](Part_Workbench.md) workbench and add a <img alt="" src=images/Part_Cylinder.svg  style="width:16px;"> [Cylinder](Part_Cylinder.md) and a <img alt="" src=images/Part_Box.svg  style="width:16px;"> [Cube](Part_Box.md)
--   <img alt="" src=images/Std_Save.svg  style="width:16px;"> [Save](Std_Save.md) the file with any filename you like. <img alt="" src=images/Std_CloseActiveWindow.svg  style="width:16px;"> [Close](Std_CloseActiveWindow.md) and <img alt="" src=images/Std_Open.svg  style="width:16px;"> [Open\...](Std_Open.md) the file again
+-   **<img src="images/Std_New.svg" width=16px> [New](Std_New.md)** ကို နှိပ်၍ ဖရီးကက် (FreeCAD) ဖိုင်အသစ် ဖန်တီးပါ။
+-   <img alt="" src=images/Assembly3_workbench_icon.svg  style="width:16px;"> [Assembly3](Assembly3_Workbench.md) လုပ်ငန်းခွင် (Workbench) သို့ ပြောင်းပါ။
+-   **<img src="images/Assembly_New_Assembly.svg‎‎" width=16px> [Create assembly](Assembly3_CreateAssembly.md)
+** ကို ရွေးပါ။
+-   <img alt="" src=images/Workbench_Part.svg  style="width:16px;"> [Part](Part_Workbench.md) workbench သို့ ပြောင်း၍ <img alt="" src=images/Part_Cylinder.svg  style="width:16px;"> [Cylinder](Part_Cylinder.md) နှင့် <img alt="" src=images/Part_Box.svg  style="width:16px;"> [Cube](Part_Box.md) ကို ထည့်ပါ။
+-   <img alt="" src=images/Std_Save.svg  style="width:16px;"> [Save](Std_Save.md) ဖြင့် ဖိုင်ကို သင်နှစ်သက်သည့်နာမည်ဖြင့် သိမ်းဆည်းပါ။ <img alt="" src=images/Std_CloseActiveWindow.svg  style="width:16px;"> [Close](Std_CloseActiveWindow.md) ပြီး <img alt="" src=images/Std_Open.svg  style="width:16px;"> [Open\...](Std_Open.md) ဖြင့် ဖိုင်ကို ထပ်မံဖွင့်ပါ။
 
-The tree view should look like this (0.20.pre and Link Branch):
+Tree view သည် အောက်ပါအတိုင်း ဖြစ်သင့်သည် (0.20.pre and Link Branch):
 
 <img alt="" src=images/Assembly3_Example-Tree-01.png  style="width:300px;"> <img alt="" src=images/Assembly3_Example-Tree-02.png  style="width:280px;">
 
--   Now *Drag&Drop* with the mouse both **Cylinder** and **Cube** onto the **Parts** folder. They are moved into that folder.
+-   ယခု Cylinder နှင့် Cube နှစ်ခုစလုံးကို mouse ဖြင့် *Drag&Drop* လုပ်၍ **Parts** ဖိုလ်ဒါအောက်သို့ တင်ပါ။ ၎င်းများ သည် ထို folder ထဲသို့ ကူးပြောင်းမည်။
 
-    :   That is the quickest way and suitable for simple cases like this. A better way is via the use of link objects:
-    :   Select **Cube** and **Cylinder** and then **<img src="images/Std_LinkMake.svg" width=16px> [Make link](Std_LinkMake.md)** either from the **Context menu** (-\> LinkActions -\> MakeLink) or the **Structure** panel.
-    :   This adds two link objects. Then *Drag&Drop* the link objects to the **Parts** folder.
--   Click both top surfaces of **Cylinder** and **Cube** (keep Ctrl pressed (Cmd on a Mac))
--   Change to <img alt="" src=images/Assembly3_workbench_icon.svg  style="width:16px;"> [Assembly3](Assembly3_Workbench.md) workbench
--   Select **<img src="images/Assembly_ConstraintCoincidence.svg‎‎" width=16px> [Plane Coincidence](Assembly3_ConstraintCoincidence.md)** from the [Main constraints toolbar](#Main_Constraints_Toolbar.md).
+    :   ၎င်းသည် အလျင်အမြန်နည်းလမ်းဖြစ်၍ ဤလိုမျိုး ရိုးရှင်းသောကိစ္စများအတွက် သင့်တော်သည်။ link objects ကို အသုံးပြုခြင်းဖြင့် ပိုကောင်းသော နည်းလမ်းတစ်ခုလည်း ရှိသည်။
+    :   Cube နှင့် Cylinder ကို ရွေး၍ **<img src="images/Std_LinkMake.svg" width=16px> [Make link](Std_LinkMake.md)** ကို Context menu (-> LinkActions -> MakeLink) သို့မဟုတ် Structure panel မှ ရွေးပါ။
+    :   ၎င်းက link objects နှစ်ခု ထည့်လိမ့်မည်။ ထို့နောက် link objects များကို *Drag&Drop* ပြန်လုပ်၍ **Parts** ဖိုလ်ဒါသို့ ထည့်ပါ။
+-   Cylinder နှင့် Cube ၏ top surfaces နှစ်ခုကို Ctrl ကို ဆက်ထား၍ (Mac တွင် Cmd) နှိပ်၍ ရွေးပါ။
+-   <img alt="" src=images/Assembly3_workbench_icon.svg  style="width:16px;"> [Assembly3](Assembly3_Workbench.md) workbench သို့ ပြန်လည်ရွေးပါ။
+-   [Main constraints toolbar](#Main_Constraints_Toolbar.md) မှ **<img src="images/Assembly_ConstraintCoincidence.svg‎‎" width=16px> [Plane Coincidence](Assembly3_ConstraintCoincidence.md)** ကို ရွေးပါ။
 
-Now the parts should be joined into each other and your tree should look like this (0.20.pre and Link Branch):
+ယခု parts များသည် အချိတ်ဆက်သွားပြီး tree သည် အောက်ပါအတည်အကျ ဖြစ်သင့်သည် (0.20.pre and Link Branch):
 
 <img alt="" src=images/Assembly3_Example-Tree-03.png  style="width:300px;"> <img alt="" src=images/Assembly3_Example-Tree-04.png  style="width:280px;">
 
--   Right click **\_Element** (either of the two) and select **Flip Part**.
+-   \_Element (နှစ်ခုထဲမှ သို့မဟုတ် တစ်ခု) ကို မျက်နှာချင်းဆိုင် Click နှိပ်၍ Context Menu မှ **Flip Part** ကို ရွေးပါ။
 
-Now the **Cylinder** should be on top of the **Cube**. If the whole thing is upside down, go back and select **Flip Part** on the other element.
+ယခု Cylinder သည် Cube ၏ အပေါ်တွင် တင်ထားသင့်သည်။ အကယ်၍ အဝပြန်လှည့်နေပါက အခြား element ကို Flip Part ပြန်ရွေးပါ။
 
-:   We omitted one important step that should be done in larger assemblies: Locking a base part.
-:   That means to define one part that should not be moved by constraints. In this example we use the **Cube** for that:
-    -   Select the lower face of the **Cube**. Only the lower face, not the whole **Cube**
-    -   select the **<img src="images/Assembly_ConstraintLock.svg‎‎" width=16px> [Locked](Assembly3_ConstraintLock.md)** constraint from the [Main constraints toolbar](#Main_Constraints_Toolbar.md)
+:   ကြီးမားသော assembly များတွင် လုပ်သင့်သော အရေးကြီးအဆင့်တစ်ခုချို့် — base part ကို Lock လုပ်ခြင်းကို မမေ့ပါနှင့်။
+:   ၎င်းသည် constraint များကနေ ကူးနှောင့်မရအောင် part တစ်ခုကို သတ်မှတ်ခြင်းဖြစ်သည်။ ဤဥပမာတွင် **Cube** ကို base အဖြစ် သတ်မှတ်ပါမည်။
+    -   Cube ၏ အောက်ဖက် face ကို ရွေးပါ။ အောက်ဖက် face သာ ရွေးထားပါ၊ Cube ทั้งပိတ်မဟုတ်။
+    -   [Main constraints toolbar](#Main_Constraints_Toolbar.md) မှ **<img src="images/Assembly_ConstraintLock.svg‎‎" width=16px> [Locked](Assembly3_ConstraintLock.md)** ကို ရွေးပါ။
 
-Done.
+ပြီးပါပြီ။
 
-The finished assembly tree should look like (0.20.pre and Link Branch):
+ပြီးစီးသည့် assembly tree သည် အောက်ပါအတိုင်း ဖြစ်သင့်သည် (0.20.pre and Link Branch):
 
 <img alt="" src=images/Assembly3_Example-Tree-05.png  style="width:300px;"> <img alt="" src=images/Assembly3_Example-Tree-06.png  style="width:280px;">:
 
-If you like you can move the **Locked** constraint upwards in the tree. Use the **<img src="images/Assembly_TreeItemUp.svg‎‎" width=16px> [Move item up](Assembly3_MoveItemUp.md)** button on the [Main toolbar](#Main_Toolbar.md) for that.
+သင့်စိတ်ကြိုက် Locked constraint ကို tree မှ ထိပ်သို့ ရွှေ့နိုင်သည်။ ၎င်းအတွက် [Main toolbar](#Main_Toolbar.md) တွင် **<img src="images/Assembly_TreeItemUp.svg‎‎" width=16px> [Move item up](Assembly3_MoveItemUp.md)** ခလုတ်ကို အသုံးပြုပါ။
 
-**Note:** all new external files must be **saved**, **closed** and re-**opened** at least once, so that Assembly3 can find it.
+**သတိပေးချက်:** external ဖိုင် အသစ်များအားလုံးကို **save**, **close** နှင့် ပြန် **open** လုပ်ထားရန် လိုအပ်သည်၊ အဘယ်ကြောင့်ဆိုသော် Assembly3 သည် အဲဒီဖိုင်ကို ရှာဖွေရန် အကြောင်းပြချက် လိုအပ်ရန်ဖြစ်သည်။
 
-:   Without doing that FreeCAD can not give a file handle to the Assembly3 Workbench and it can not find the new part.
-:   When all parts are in the same file, you should **save**, **close** and re-**open** this file, too.
+:   ဤအဆင့်ကို မလုပ်ပါက FreeCAD သည် Assembly3 Workbench တွင် file handle မပေးနိုင်ပါ၊ ဤသို့ဖြင့် new part ကို ရှာမတွေ့နိုင်ပါ။
+:   အားလုံး parts များသည် တစ်ဖိုင်တွဲတွင် ရှိပါကလည်း ထိုဖိုင်ကို **save**, **close** နှင့် ပြန် **open** လုပ်ရန် မမေ့ပါနှင့်။
 
 [top](#top.md)
 
 ### Add an Offset 
 
-Assembly3 does not offer Offset with the constaints in the way the [A2plus Workbench](A2plus_Workbench.md) or other CAD tools do. Instead it offers a more general and flexible system to add offsets translations but also angles.
+Assembly3 သည် [A2plus Workbench](A2plus_Workbench.md) သို့မဟုတ် အခြား CAD ကိရိယာများကဲ့သို့ Constraint တွင် Offset ကို တိုက်ရိုက် ပံ့ပိုးပေးမှု မရှိသော်လည်း၊ ပို၍ ယေဘုယျနှင့် ချောမွေ့သော စနစ်တစ်ခုဖြင့် translation များနှင့် angle များကို ထည့်သွင်းနိုင်သည့် အင်္ဂါရပ်ကို ပေးထားပါသည်။
 
--   Add the offset in the properties of one [Elements](#Elements.md) of a [Constraint](#Constraint.md).
+-   Offset ကို [Elements](#Elements.md) တစ်ခု၏ properties တွင် ထည့်ပါ။
 
-    :   you can choose which one of the two you want to use.
+    :   သင်သည် ထိုနှစ်ခုထဲမှ မည်သည့် element ကို အသုံးချမည်ဆိုတာရွေးနိုင်သည်။
 
-Example:
+ဥပမာ:
 
--   Add 2 cubes to an assembly and select their side faces.
--   select \"PlaneCoincident\". The cubes will be attached inside each other.
--   select one Element and *ContextMenu/Flip Part*. The cubes will be attached side-by-side.
--   select one Element property Offset/Position/Zz and set to 5mm. The cubes will be 5mm apart.
+-   Assembly တွင် ကုလပ် 2 ခု ထည့်၍ ၎င်းတို့၏ ဘေးဖက် မျက်နှာများကို ရွေးပါ။
+-   \"PlaneCoincident\" ကို ရွေးပါ။ ကုလပ်များသည် အချင်းချင်းထဲတွင် တပ်ဆင်သွားမည်။
+-   Element တစ်ခုကို ရွေး၍ *ContextMenu/Flip Part* ကို လုပ်ပါ။ ကုလပ်များသည် ဘေးဘက်တလျှောက် တပ်ဆင်မည်။
+-   Element ၏ property ထဲမှ Offset/Position/Zz ကို ရွေး၍ 5mm ဟု သတ်မှတ်ပါ။ ကုလပ်များသည် 5mm အကွာလောက် ဆက်ထားမည်။
 
-  - Test with other axes or the angle/axis fields. Also verify that you get the same result when using the other Element. This is the same approach for all other constraints.
+  - အခြား axis များနှင့် angle/axis field များကို စမ်းသပ်ကြည့်ပါ။ အခြား Element ကို အသုံးပြုပါကလည်း အလားတူရလဒ် လက်ခံရမည်။ ဤနည်းပညာသည် အခြား constraints အားလုံးတွင်လည်း တူညီသည်။
 
 [top](#top.md)
 
 ### Solve a Solver Failure 
 
-This often happens when parts are over-constrained, i.e. more than 6 DOF are locked.
+ဤအခြေအနေသည် မကြာခဏ over-constrained ဖြစ်သောအခါ ဖြစ်တတ်သည်၊ တမင် 6 DOF ထက်ပို၍ lock လုပ်ထားခြင်းကြောင့် ဖြစ်သည်။
 
-The easiest way to find the problem is to click relevant constraints in the tree and select *ContextMenu/Disable* and re-calculate. It is helpful to know the last added constraints before the solver failed and just undo them.
+ပြဿနာရှိသော constraint များကို ရှာဖွေရန် အလျြင်ဆုံးနည်းလမ်းမှာ tree ထဲတွင် သက်ဆိုင်ရာ constraints များကို click လုပ်၍ *ContextMenu/Disable* ကို ရွေး၍ ပြန်တွက်ချက်ခြင်း ဖြစ်သည်။ solver မပျက်မကွက် ဖြစ်မှီ ထိပ်ဆုံးထည့်သွင်းခဲ့သော constraint များကို ကြည့်ရှု၍ undo ပြုလုပ်ခြင်းက အထောက်အကူ ဖြစ်နိုင်သည်။
 
-Note: as Assembly3 tries to compensate for over-constraint parts behind the scenes, sometimes the problem is just triggered by a new constraint but the root cause is somewhere different. Before deleting all and starting again, remember that you can re-use Elements. If you named them you can identify the required elements and re-build the constraints without using the 3D view at all. See [Elements](#Elements.md) seciton above.
+မှတ်ချက် — Assembly3 သည် over-constraint များကို အတွင်းသို့ ကြိုးစား၍ ဖြေရှင်းခင်းချိန်တွင် ပြဿနာသည် အချို့အခါ သင်ထပ်မံထည့်သည့် constraint တစ်ခု ဒီလိုဖြစ်စေသည်၊ သို့သော် အမြစ်ပြဿနာသည် အခြားနေရာ၌ ရှိနိုင်သည်။ အားလုံးကို ဖျက်၍ ပြန်စတင်ခြင်းမပြုမီ Elements များကို ထပ်အသုံးပြုနိုင်ကြောင်း မှတ်သားပါ။ သင့်အား အမည်ပေးထားပါက လိုအပ်သော element များကို ရှာကာ constraints များကို 3D view ကို မသုံးဘဲ ပြန်လည်ဆောက်နိုင်သည်။ အထက်တွင် ဖော်ပြထားသည့် [Elements](#Elements.md) အပိုင်းကို ကြည့်ပါ။
 
 [top](#top.md)
 
 ### Replace a part or rename a filename 
 
-When a part is removed or when a filename changes, the assembly breaks, it can not longer be solved and the solver will issue the message \"Inconsistent constraints\". The solver marks invalid Elements and Constrains with a question mark in the tree.
+Part တစ်ခုကိုဖျက်လိုက်သို့မဟုတ် filename ပြောင်းလိုက်ပါက assembly သည် ပျက်ကွက်သွား၍ solver သည် \"Inconsistent constraints\" ဆိုသည့် 메시ျကို ထုတ်ပေးမည်။ solver သည် tree ၌ မမှန်ကန်သော Elements နှင့် Constraints များကို question mark ဖြင့် အမှတ်အသားပေးမည်။
 
-One way to solve this is to just delete all invalid constraints and elements, import the new part and redo everything. But there is a better way:
+ဤကို ဖြေရှင်းနိုင်သည့် နည်းလမ်းတစ်ခုမှာ မမှန်ကန်သော constraints နှင့် elements များကို ဖျက်၍ new part ကို import ပြန်ထည့်ပြီး အသစ်ထပ်လုပ်ရခြင်း ဖြစ်သည်။ သို့သော် ပိုကောင်းသော နည်းလမ်းမှာ အောက်ပါအတိုင်း ဖြစ်ပါသည်။
 
--   Rename a file
-    1.  Use a file manager and copy the file you want renamed. Then give the new name to the copy.
-    2.  Open the copy in FreeCAD. The assembly and the old file should also be open
-    3.  Select the old object in the tree and click to change the propery \"Linked object\" (it does contain the old filename)
-    4.  A list dialog will open containing all open parts. It shows the filenames and objects of each part. The old part and object is selected. Locate the renamed part in the tree and select the same object in the new part. Then confim the selection.
-    5.  Delete the old part in the tree. Also the file can be deleted now.
-    6.  Constraints and elements of te old part became invalid. Open the constraint or Elements list in the tree. Then sequentially
-        -   select each element surface on the new part. An item in the tree will be highliged.
-        -   Take that item and drag&drop it over the old element (either in the element list or in one of the constraints where it was used). That element should become valid.
-        -   Repeat the procedure for the remaining elements. Often a single element is enough to allow Assembly3 to identify the remaining elements of the part automatically.
-        -   If an element was assigned to the wrong surface by accident, just repeat with the correct surface.
-    7.  Change the object name in FreeCAD, if desired
+-   ဖိုင်အမည် ပြောင်းခြင်း
+    1.  ဖိုင်မန်နေဂျာကို အသုံးပြုပြီး ပြောင်းလိုသော ဖိုင်ကို ကော်ပီ ပြုလုပ်ပါ။ ကော်ပီကို အမည်အသစ်ပေးပါ။
+    2.  ကော်ပီကို ဖရီးကက် (FreeCAD) တွင် ဖွင့်ပါ။ နောက်ပိုင်းတွင် assembly နှင့် အဟောင်းဖိုင်ကိုလည်း ဖွင့်ထားရမည်။
+    3.  tree မှ အဟောင်း object ကို ရွေး၍ property ထဲရှိ \"Linked object\" ကို ပြောင်းရန် နှိပ်ပါ (၎င်းတွင် အဟောင်း filename ပါရှိမည်)။
+    4.  ပြဿနာ dialog တစ်ခု ဖွင့်၍ ဖွင့်ထားသော 모든 parts များကို ပြပါမည်။ အဟောင်း part နှင့် object ကို ရှာဖွေ၍ ရွေးထားမည်။ ပြောင်းလိုက်သော part ကို tree မှ ရှာ၍ အစားထိုးလိုသည့် object ကို ရွေးချယ်၍ confirm ပါ။
+    5.  tree ထဲမှ အဟောင်း part ကို ဖျက်ပါ။ ဖိုင်ကိုလည်း ဖျက်နိုင်သည်။
+    6.  အဟောင်း part ၏ constraints နှင့် elements များသည် မမှန်ကန်သွားမည်။ tree ၌ constraint သို့မဟုတ် Elements list ကို ဖွင့်ပါ။ ထို့နောက် တစ်ဆင့်ချင်း လုပ်ဆောင်ပါ —
+        -   new part ပေါ်ရှိ element surface တစ်ခုကို ရွေးပါ။ tree တွင် item တစ်ခု highlight ဖြစ်ပါမည်။
+        -   ထို item ကို သင်ယခင်တွင် အသုံးပြုခဲ့သော အဟောင်း element (Elements list ထဲ သို့မဟုတ် သုံးထားသည့် constraints တစ်ခုအောက်တွင်) အပေါ် drag&drop လုပ်ပါ။ ထို element သည် ထပ်မံ မှန်ကန်လာမည်။
+        -   ကျန်သော elements များအတွက် ဤလုပ်ငန်းစဉ်ကို ထပ်မံ လုပ်ဆောင်ပါ။ အများအားဖြင့် element တစ်ခုသာ ဖြစ်စေ Assembly3 သည် အပိုင်း၏ ဖြစ်စဉ်များကို အလိုအလျောက် သက်မှတ်နိုင်သလို ကျန် elements များကို အလိုအလျောက် တွေ့ရှိနိုင်သည်။
+        -   အမှားယာ element တစ်ခုကို တားပေးထားခဲ့ပါက ထိုအရာကို မမှန်ကန်ရင် ထပ်မံ နေရာတစ်ခုတွင် တင်ပါ။
+    7.  လိုလျှင် FreeCAD တွင် object အမည်ကို ပြောင်းနိုင်သည်။
 
--   Replace a part with another part
+-   Part တစ်ခုကို အခြား part ဖြင့် အစားထိုးခြင်း
 
-    :   *which is simular enough to the original part that the original constraints still make sense, of course*
+    :   *အဲဒါသည် မူလ part နှင့် ဆင်တူမှု များလုံလောက်၍ မူလ constraints များ အကောင်အထည်ဖော်နိုင်သည့် အခါသာ သက်မှတ်ထားပါ။*
 
-    1.  Delete the old part in the tree. Also the file can be deleted.
-    2.  Constraints and elements of te old part became invalid. Open the constraint or Elements list in the tree.
-        -   Select an element surface on the new part. An item in the tree will be highliged.
-        -   Take that item and drag&drop it over the old element (either in the element list or in one of the constraints where it was used). That element should become valid.
-        -   repeat the procedure for the remaining elements.
-        -   If an element was assigned to the wrong surface by accident, just repeat with the correct surface.
-    3.  Change the object name in FreeCAD, if desired
+    1.  tree ထဲမှ အဟောင်း part ကို ဖျက်ပါ။ ဖိုင်ကိုလည်း ဖျက်နိုင်သည်။
+    2.  အဟောင်း part ၏ constraints နှင့် elements များသည် မမှန်ကန်သွားမည်။ tree ၌ constraint သို့မဟုတ် Elements list ကို ဖွင့်ပါ။
+        -   new part ပေါ်ရှိ element surface တစ်ခုကို ရွေးပါ။ tree ၌ item တစ်ခု highlight ဖြစ်မည်။
+        -   ထို item ကို အဟောင်း element (Elements list ထဲ သို့မဟုတ် constraints တစ်ခုအောက်တွင်) အပေါ် drag&drop လုပ်ပါ။ ထို element သည် သက်သာသင့်ကျန်ရှင်းလာမည်။
+        -   ကျန်သော elements များအတွက် ဤလုပ်ငန်းစဉ်ကို ထပ်မံ လုပ်ပါ။
+        -   အမှားယာ element တစ်ခုကို ထပ်မံလေးလှမ်း၍ မှန်ကန်သော surface ကို ထပ်မံ သတ်မှတ်ပါ။
+    3.  လိုလျှင် FreeCAD တွင် object အမည်ကို ပြောင်းနိုင်သည်။
 
-\'\'Notes
-\* They are not as complicated as it may seem here. After 2-3 times they should become second nature and feel really easy to do.
+''Notes
+* ဤလုပ်ငန်းစဉ်များသည် အရွယ်အစားကြီးလှပေမယ့် တတ်တတ်များပြုလုပ်လေ့လာလျှင် 2-3 ကြိမ် အပြီးသတ်ပါက ဒုတိယသဘာဝကဲ့သို့ လွယ်ကူသလောက် ဖြစ်လာမည်။
 
--   Its not only usually ways quicker than deleting and re-doing constraints, its also safer because an element could have been used in a parent assembly. Deleting the original would destroy that link, re-assingning would keep it.
--   Also this procedure becomes really quick and easy to do if constraints and elements are named. There is no guessing where the surfaces should be dragged&dropped to because the names tell it (see [Tips & Tricks](#Tips_.26_Tricks.md)).
+-   ဤနည်းလမ်းများသည် constraints များကို ဖျက်၍ ပြန်လုပ်ရန် ထက် မြန်ဆန်လွယ်ကူနိုင်သလို လုံခြုံမှုပိုရှိသည်။ အကြောင်းက element တစ်ခုသည် parent assembly တစ်ခုတွင် အသုံးပြုခဲ့နိုင်သဖြင့် မူလ element ကို ဖျက်ခြင်းက အဲဒီ link ကို ပျက်စီးစေမည်ဖြစ်ပြီး ပြန်ချိတ်ဆက်ခြင်းသည် အဲဒီ link ကို သိမ်းဆည်းပေးမည်။
+-   constraints နှင့် elements များကို အမည်ပေးထားပါက ဤလုပ်ငန်းစဉ်များသည် အလွန်မြန်ဆန် လွယ်ကူစေမည်။ မည်သည့် surface တွင် drag&drop လုပ်ရမည်ကို အမည်များက ပြောပြထားမည်ဖြစ်ပါသည် (ကြည့်ရန် [Tips & Tricks](#Tips_.26_Tricks.md))။
 
-\'\'
+''
 
 [top](#top.md)
 
 ### Tips & Tricks 
 
--   Using hierarchical assemblies helps in avoiding solver issues and keeping you model fluid. You can freeze a subassembly with one click and save CPU resources easily (use the context menu in the tree). When loading an assembly Assembly3 does not need to open external files for frozen subassemblies which keeps the tree compact.
--   Is very helpful to make it a habit to name the elements and constraints. Use the **F2** key to do this quickly in the tree. You will find the tree sorting tools in the main toolbar very useful. An assembly with fully named constraints and elements is very easy to understand for other people or for oneself when looking at an older file.
-
-    :   Examples for constraint names for a table could be \"Align_FrontLegs\", \"Align_FrameBottom-LegTops\" and element names could be \"Leg1_Top\" or \"TableTop_Front\", \"TableTop_Left\".
--   Please note that once external files are opened by an assembly its not possible easy to close them again without closing the assembly. Since the assembly keeps open those files in the backgound, the tab may disappear but the file remains visible in the tree. If you have several layers of subassemblies it becomes close to impossible to close single files. This behaviour may change, but until then a possible approach could be to regulary use the commands *File/Save All* and *File/Close All* to clean up the tree before working on another sub-assembly.
-
-    :   \'\'Example: consider you have a large CNC machine with a main assembly and a subassembly for each module. Once you have the main assembly open it may open literally hundreds of files down to a single ball bearing. Before working on the subassembly of the electronics cabinet of the machine it is a good idea to save and close all files to get an empty tree. Then open just the subassembly for the electronics cabinet. This will open all file it needs but ony those.
--   Using external files makes it easier to re-use a parts or do part versioning with systems like git or subversion. The workflow in FreeCAD with Assembly feels quite the same as with files that have all parts in the same file. For exchanging files often with other parties, single files might be more convenient.
--   Multiply linked parts. If you added a link into the assembly, it will have a property value named \"Element Count\", default 0. If you set this to 3 you get 3 instances of that part. They will be added into a subfolder and can be used like fully separte parts. Use this feature to keep the data footprint of your file low, because the part is saved only once. Each instance only contain the differences.
--   Insert multiple parts, e.g. Screws, with one click. Check out the [Assembly3 Wiki](https://github.com/realthunder/FreeCAD_assembly3/wiki/Constraints-and-Solvers) on the Github site. This is not only a stunning function (even a bit magic), but really really useful.
-
--   Using the [TabBar Workbench](https://github.com/triplus/TabBar) speeds up working with assembly. This adds a Toolbar with one button for each workbench. You can sort the toolbar and can put it where every you want it. Many people put it vertically on the left side just beside the tree view. Of you have Assembly3, Part, PartDesign and other often used workbenches close to the top switching between them becomes extremely easy.
+-   hierarchical assemblies ကို အသုံးပြုခြင်းဖြင့် solver ပျက်ပြားမှုများကို ရှောင်ရှားနိုင်ပြီး မော်ဒယ်ကို ချောမွေ့စေသည်။ subassembly တစ်ခုကို click တစ်ချက်ဖြင့် freeze ပြုလုပ်၍ CPU resource များကို လွယ်ကူစွာ သိမ်းဆည်းနိုင်သည် (tree ၌ context menu ကို အသုံးပြုပါ)။ Assembly ကို load လုပ်ချိန်တွင် Assembly3 သည် frozen subassemblies များအတွက် external files မဖွင့်သဖြင့် tree ကို လျှော့ချပေးနိုင်သည်။
+-   Elements နှင့် constraints များကို အမည်ပေးပေးခြင်းကို အလေ့အကျင့် ပြုပါ။ tree တွင် F2 key ဖြင့် အမြန်ပြောင်းနိုင်သည်။ tree sorting tools များကို main toolbar တွင် ရှာနိုင်သည်။ အမည်ပေးပြီးဖြစ်သော assembly သည် အခြားသူများ သို့မဟုတ် မိမိကိုယ်တိုင် အခြေသက်သက် ကြည့်ရှုသော အခါ လွယ်ကူစွာ နားလည်နိုင်မည်။
+    :   ဥပမာ constraint အမည်များအဖြစ် table တစ်လုံးအတွက် \"Align_FrontLegs\", \"Align_FrameBottom-LegTops\" အဖြစ် သတ်မှတ်နိုင်ပြီး element အမည်များကို \"Leg1_Top\" သို့မဟုတ် \"TableTop_Front\", \"TableTop_Left\" စသဖြင့် သတ်မှတ်နိုင်သည်။
+-   external files များကို assembly မှ ဖွင့်လိုက်ပြီးနောက် ထိုဖိုင်များကို assembly ကို ပိတ်မခြင်းက ဖွင့်ထားသော files များကို လွယ်ကူစွာ ပိတ်ပစ်ရန် မဖြစ်နိုင်ပါ။ assembly သည် ထိုဖိုင်များကို နောက်ခံတွင် ဖွင့်ထားသဖြင့် tab သည် ပျောက်သွားပေမယ့် file သည် tree တွင် မျက်နှာပြင်အဖြစ် ကျန်ရှိနေပါသည်။ subassemblies အလွှာများရှိလျှင် single files များကို ပိတ်ရန် မလွယ်ကူပါ။ ဤအပြုအမှုကာလအတွင်း workaround အနေနှင့် *File/Save All* နှင့် *File/Close All* ကို ကြာကြာ အသုံးပြု၍ tree ကို သန့်စင်ထားပြီး ကျန်သော sub-assembly တွင် အလုပ်လုပ်ရန် ဖိုင်များကိုသာ ပြန်ဖွင့်သင့်သည်။
+    :   ''ဥပမာ — သင်တွင် ကြီးမားသော CNC စက်တစ်ခုရှိပြီး main assembly နှင့် module တစ်ခုချင်းစီအတွက် subassembly များရှိပါက main assembly ကို ဖွင့်လိုက်ရုံမဟုတ်ဘဲ ဘောလုံးတံခြေတစ်ခုအထိ နှစ်ရာကျော်သော files များကို ဖွင့်ရန် ဖြစ်နိုင်သည်။ စက်၏ electronics cabinet subassembly အပေါ် အလုပ်လုပ်ရန်မတိုင်မီ file များအားလုံးကို save & close ပြီး ထပ်မံ ချက်ချင်း အလုပ်လုပ်လိုသည့် subassembly ကိုသာ ဖွင့်ပါ။ ၎င်းသည် မလိုအပ်သော files များကို ဖွင့်ခြင်းမှ ကာကွယ်ပေးပါမည်။''
+-   external files အသုံးပြုခြင်းဖြင့် parts များကို ပြန်လည်အသုံးပြုရ လွယ်ကူလာပြီး git သို့မဟုတ် subversion ကဲ့သို့သော versioning စနစ်များဖြင့် part versioning လုပ်နိုင်သည်။ FreeCAD ၏ workflow နှင့် Assembly ကို files အားလုံး တစ်ဖိုင်တည်းထဲထားသည့် လုပ်ငန်းစဉ်နှင့် ဆင်တူသော်လည်း အချို့ အခြေအနေများတွင် single files များဖြင့် အပြန်အလှန် မျှဝေရာတွင် ပိုဆင်လဲအဆင်ပြေတတ်သည်။
+-   Multiply linked parts — link ကို assembly တွင် ထည့်ပါက ၎င်းတွင် property value တစ်ခု \"Element Count\" (default 0) ရှိမည်။ ဤကို 3 သတ်မှတ်ပါက အစိတ်အပိုင်း 3 instances ရရှိမည်။ ၎င်းတို့သည် subfolder တစ်ခုအတွင်း ထည့်သွင်းပြီး အပြည့်အစုံ သီးခြား part များကဲ့သို့ အသုံးပြုနိုင်သည်။ ဤ feature ကို အသုံးပြု၍ ဖိုင်၏ ဒေတာ ထောက်လှမ်းမှုကို သက်သာစေပါ — part သည် တစ်ကြိမ်သာ သိမ်းဆည်းပြီး instance တစ်ခုချင်းစီတွင် ကွဲပြားချက်များသာ သိမ်းဆည်းပါမည်။
+-   တစ်ချက်နှိပ်ခြင်းဖြင့် မျိုးစုံသော parts (ဥပမာ screws များ) ထည့်သွင်းနိုင်သည် — [Assembly3 Wiki](https://github.com/realthunder/FreeCAD_assembly3/wiki/Constraints-and-Solvers) တွင် ကြည့်ရှုပါ။ ၎င်းသည် အံ့ဩဖွယ် feature အဖြစ်သာမက အသုံးဝင်မှုမြင့်ပါ။
+-   [TabBar Workbench](https://github.com/triplus/TabBar) ကို အသုံးပြုခြင်းဖြင့် assembly နှင့် အလုပ်လုပ်ရာတွင် အချိန်လျှော့နိုင်သည်။ ဤ tool သည် workbench တစ်ခုချင်းစီအတွက် ခလုတ်တစ်ခုစီပါဝင်သည့် Toolbar ကို ထည့်ပေးသည်။ သင် toolbar ကို စီစဉ်နိုင်ပြီး သင်လိုရာနေရာတွင် ထားနိုင်သည်။ လူအများစုသည် tree view ၏ ဘယ်ဘက်တွင် ထောင့်ကျောသို့ ထားသည်။ Assembly3, Part, PartDesign နှင့် အခြား အလုပ်များကို မကြာခဏ အသုံးပြုလျှင်၎င်းတို့ကို အမြင့်ဆုံး မျဉ်းတင်ရာတွင်ထားလျှင် workbench switching လုပ်ခြင်း အလွန်လွယ်ကူသည်။
 
 [top](#top.md)
 
