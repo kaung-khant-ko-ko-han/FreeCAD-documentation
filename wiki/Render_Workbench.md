@@ -1,80 +1,74 @@
-# <img alt="Render Workbench icon" src=images/Render_workbench_icon.svg  style="width:64px;"> Render Workbench
+## နိဒါန်း (Introduction)
 
- 
+ပုံရိပ်ဖော်ထုတ်ခြင်း လုပ်ငန်းခွင် (Render Workbench) သည် အိုးပင်းဆော့စ် ပြင်ပ ပုံရိပ်ဖော် အင်ဂျင်များ (external rendering engines) ကို အသုံးပြု၍ ဖရီးကက် (FreeCAD) မော်ဒယ်များမှ အရည်အသွေးမြင့် ပုံရိပ်များကို ထုတ်လုပ်ရန် ခွင့်ပြုသည်။
 
-## Introduction
-
-The Render Workbench let\'s you produce high-quality images from FreeCAD models, using open-source external rendering engines.
-
-Image:Pabellon_de_Barcelona.png\|Barcelona pavilion
-Screenshot Image:Pabellon_de_Barcelona_Pov_large.png\|Barcelona pavilion
-Povray rendering Image:Pabellon_de_Barcelona_Cycles.png\|Barcelona pavilion
+Image:Pabellon_de_Barcelona.png\|ဘာစီလိုနာ ပွဲကြည့်ဆောင် (Barcelona pavilion)
+Screenshot Image:Pabellon_de_Barcelona_Pov_large.png\|ဘာစီလိုနာ ပွဲကြည့်ဆောင်
+Povray rendering Image:Pabellon_de_Barcelona_Cycles.png\|ဘာစီလိုနာ ပွဲကြည့်ဆောင်
 Cycles rendering Image:Asm_V4.png\|Asm V4
 Screenshot Image:Asm_V4_lux.png\|Asm V4
 LuxCore rendering Image:Asm_V4_ospray2.png\|Asm V4
-Ospray rendering Image:Church_of_the_light.png\|Church of the light
-Screenshot Image:Church_of_the_light_lux2.png\|Church of the light
-LuxCore rendering Image:Church_of_the_light_cycles.png\|Church of the light
-Cycles rendering Image:Car.png\|Car
-Screenshot Image:Car_ospray.png\|Car
-Ospray rendering Image:Car_lux.png\|Car
-LuxCore rendering Image:Brick_assembly.png\|Brick assembly
-Screenshot Image:Brick_assembly_appleseed.png\|Brick assembly
-Appleseed rendering Image:Brick_assembly_luxcore.png\|Brick assembly
-Luxcore rendering Image:VillaSavoye.png\|Villa Savoye
-Screenshot Image:VillaSavoye appleseed.png\|Villa Savoye
-Appleseed rendering Image:VillaSavoye Cycles.png\|Villa Savoye
+Ospray rendering Image:Church_of_the_light.png\|အလင်းဘုရားကျောင်း (Church of the light)
+Screenshot Image:Church_of_the_light_lux2.png\|အလင်းဘုရားကျောင်း
+LuxCore rendering Image:Church_of_the_light_cycles.png\|အလင်းဘုရားကျောင်း
+Cycles rendering Image:Car.png\|ကား
+Screenshot Image:Car_ospray.png\|ကား
+Ospray rendering Image:Car_lux.png\|ကား
+LuxCore rendering Image:Brick_assembly.png\|အုတ်စီခြင်း အစုအဝေး (Brick assembly)
+Screenshot Image:Brick_assembly_appleseed.png\|အုတ်စီခြင်း အစုအဝေး
+Appleseed rendering Image:Brick_assembly_luxcore.png\|အုတ်စီခြင်း အစုအဝေး
+Luxcore rendering Image:VillaSavoye.png\|ဗီလာဆာဗွိုင်း (Villa Savoye)
+Screenshot Image:VillaSavoye appleseed.png\|ဗီလာဆာဗွိုင်း
+Appleseed rendering Image:VillaSavoye Cycles.png\|ဗီလာဆာဗွိုင်း
 Cycles rendering
 
-A pure Python workbench, Render is seamlessly integrated in FreeCAD: the whole rendering scene - objects, lighting, materials, camera, etc. - can be described with FreeCAD objects, to be exported to external renderers.
+ပိုင်သွန် (Python) သီးသန့်ဖြင့် ရေးသားထားသော လုပ်ငန်းခွင်ဖြစ်ပြီး၊ Render သည် ဖရီးကက်တွင် အဆင်ပြေချောမွေ့စွာ ပေါင်းစပ်ထားပါသည် - အရာဝတ္ထုများ၊ အလင်းအမှောင်၊ ပစ္စည်းများ (materials)၊ ကင်မရာ စသည့် ပုံရိပ်ဖော် မြင်ကွင်းတစ်ခုလုံးကို ဖရီးကက် အရာဝတ္ထုများဖြင့် ဖော်ပြနိုင်ပြီး ပြင်ပ ပုံရိပ်ဖော်စနစ်များသို့ တင်ပို့ (export) နိုင်ပါသည်။
 
-Compared with other approaches based on third-part computer graphics applications, Render aims to:
+အခြားသော တတိယပါတီ ကွန်ပျူတာဂရပ်ဖစ် အက်ပလီကေးရှင်းများအပေါ် အခြေခံသည့် နည်းလမ်းများနှင့် နှိုင်းယှဉ်ပါက Render သည် အောက်ပါတို့ကို ရည်ရွယ်ပါသည် -
 
--   Avoid the user to learn another 3D/computer graphics software: everything you need to know is in FreeCAD.
--   Simplify rendering workflow and relieve user from any intermediate file manipulation - like import, export, scene retouching etc.
--   Make scene configuration persistent and especially prevent rework in an external tool each time the model has been modified.
+-   အသုံးပြုသူအနေဖြင့် အခြားသော ၃ဘက်မြင်/ကွန်ပျူတာ ဂရပ်ဖစ် ဆော့ဖ်ဝဲလ်များကို ထပ်မံလေ့လာရန် မလိုအပ်စေရန် - သင်သိလိုသမျှသည် ဖရီးကက်တွင်သာ ရှိပါသည်။
+-   ပုံရိပ်ဖော်ခြင်း လုပ်ငန်းစဉ်ကို ရိုးရှင်းစေရန်နှင့် အသုံးပြုသူအား တင်သွင်းခြင်း၊ တင်ပို့ခြင်း၊ မြင်ကွင်း ပြင်ဆင်ခြင်း စသည့် ကြားခံဖိုင် ကိုင်တွယ်မှုများမှ သက်သာစေရန်။
+-   မြင်ကွင်း ပြင်ဆင်မှုများကို အမြဲတမ်း တည်ရှိနေစေရန် (persistent) ပြုလုပ်ပေးပြီး၊ အထူးသဖြင့် မော်ဒယ်ကို ပြင်ဆင်လိုက်တိုင်း ပြင်ပကိရိယာတစ်ခုတွင် ထပ်ခါတလဲလဲ ပြန်လည်ပြင်ဆင်ရခြင်းမှ ကာကွယ်ရန်။
 
-## Supported renderers 
+## ထောက်ပံ့ပေးထားသော ပုံရိပ်ဖော်စနစ်များ (Supported renderers)
 
-At the moment six rendering engines are supported:
+လက်ရှိတွင် ပုံရိပ်ဖော် အင်ဂျင် ခြောက်မျိုးကို ထောက်ပံ့ပေးထားပါသည် -
 
 -   LuxCoreRender
 -   Appleseed
--   Cycles (standalone version)
+-   Cycles (သီးသန့်ဗားရှင်း)
 -   Pov-Ray
 -   Intel Ospray Studio
--   Pbrt-v4 (experimental)
+-   Pbrt-v4 (စမ်းသပ်အဆင့်)
 
-## Usage
+## အသုံးပြုပုံ (Usage)
 
-In quick-start mode, after workbench installation has correctly been done, rendering a FreeCAD model is just a 4-step process:
+အမြန်စတင်ခြင်း (quick-start) စနစ်တွင်၊ လုပ်ငန်းခွင်ကို မှန်ကန်စွာ တပ်ဆင်ပြီးနောက် ဖရီးကက် မော်ဒယ်တစ်ခုကို ပုံရိပ်ဖော်ခြင်းသည် အဆင့် ၄ ဆင့်သာ ရှိပါသည် -
 
-1.  **Create a rendering project:** Press the button in the toolbar corresponding to your renderer and select a template suitable for your renderer (you may start with a \'studio\' flavour, like **appleseed_studio_light.appleseed**, **cycles_studio_light.xml**, **luxcore_studio_light.cfg**, **povray_studio_light.pov** etc.).
-2.  **Add views of your objects to your rendering project:** Select both the objects and the project, and press the **Add view** button.
-3.  **Set your point of view:** [Navigate in the 3D View](Manual_Navigating_in_the_3D_view.md) to the desired position and switch to [perspective](Std_PerspectiveCamera.md) mode.
-4.  **Render:** Select your project and press the **Render** button in toolbar (also available from project\'s context menu).
+1.  **ပုံရိပ်ဖော် ပရောဂျက်တစ်ခု ဖန်တီးပါ (Create a rendering project):** သင်အသုံးပြုမည့် ပုံရိပ်ဖော်စနစ်နှင့် ကိုက်ညီသော ကိရိယာဘားရှိ ခလုတ်ကို နှိပ်ပြီး သင့်လျော်သော နမူနာပုံစံ (template) ကို ရွေးချယ်ပါ (ဥပမာ - **appleseed_studio_light.appleseed**, **cycles_studio_light.xml**, **luxcore_studio_light.cfg**, **povray_studio_light.pov** စသည်ဖြင့် စတင်နိုင်ပါသည်)။
+2.  **သင့်အရာဝတ္ထုများ၏ မြင်ကွင်းများကို ပရောဂျက်ထဲသို့ ထည့်သွင်းပါ (Add views of your objects to your rendering project):** အရာဝတ္ထုများနှင့် ပရောဂျက် နှစ်ခုလုံးကို ရွေးချယ်ပြီး **Add view** ခလုတ်ကို နှိပ်ပါ။
+3.  **မြင်ကွင်းကို သတ်မှတ်ပါ (Set your point of view):** [၃ဘက်မြင် မြင်ကွင်းအတွင်း လှည့်လည်ကြည့်ရှုခြင်း (Navigate in the 3D View)](Manual_Navigating_in_the_3D_view.md) ကို အသုံးပြု၍ အလိုရှိသော နေရာသို့ ရွှေ့ပြီး [အမြင်ရှုထောင့် (perspective)](Std_PerspectiveCamera.md) စနစ်သို့ ပြောင်းပါ။
+4.  **ပုံရိပ်ဖော်ပါ (Render):** သင့်ပရောဂျက်ကို ရွေးချယ်ပြီး ကိရိယာဘားရှိ **Render** ခလုတ်ကို နှိပ်ပါ (ပရောဂျက်၏ ကွန်တက်မီနူးမှလည်း ရရှိနိုင်ပါသည်)။
 
-**And you should get a first rendering of your model.**
+**ထိုအခါ သင့်မော်ဒယ်၏ ပထမဆုံး ပုံရိပ်ဖော်ချက်ကို ရရှိမည်ဖြစ်ပါသည်။**
 
-More instructions can be found in the [GitHub repository](https://github.com/FreeCAD/FreeCAD-render) or the online help.
+အသေးစိတ် ညွှန်ကြားချက်များကို [GitHub repository](https://github.com/FreeCAD/FreeCAD-render) သို့မဟုတ် အွန်လိုင်း အကူအညီများတွင် ရှာဖွေနိုင်ပါသည်။
 
-## Features
+## အင်္ဂါရပ်များ (Features)
 
-Features include, but are not limited to:
+အင်္ဂါရပ်များတွင် အောက်ပါတို့ ပါဝင်သော်လည်း ၎င်းတို့သာမက အခြားများစွာ ရှိပါသည် -
 
--   Lighting: point lights, area lights, sun-sky and preset lighting templates.
--   Cameras.
--   Material management (using usual shaders: matte, glossy, glass, principled etc.) including textures.
--   Batch mode / UI mode.
--   Denoiser.
--   Halt condition (sample per pixel).
--   Meshing control: angular and linear deflections, auto-smoothing.
+-   အလင်းအမှောင် (Lighting): အစက်အလင်း (point lights)၊ ဧရိယာအလင်း (area lights)၊ နေနှင့်ကောင်းကင် (sun-sky) နှင့် ကြိုတင်သတ်မှတ်ထားသော အလင်းနမူနာပုံစံများ။
+-   ကင်မရာများ (Cameras)။
+-   ပစ္စည်းများ စီမံခန့်ခွဲခြင်း (Material management) - (ပုံမှန် shader များဖြစ်သော matte, glossy, glass, principled စသည်တို့ကို အသုံးပြုခြင်း) နှင့် မျက်နှာပြင်များ (textures)။
+-   အစုလိုက်လုပ်ဆောင်ခြင်း စနစ် (Batch mode) / UI စနစ်။
+-   ဆူညံသံလျှော့ချခြင်း (Denoiser)။
+-   ရပ်တန့်ရန် အခြေအနေ (Halt condition)။
+-   Meshing ထိန်းချုပ်မှု - ထောင့်ဖြတ်နှင့် မျဉ်းဖြတ် တိမ်းစောင်းမှုများ၊ အလိုအလျောက် ချောမွေ့စေခြင်း (auto-smoothing)။
 
-## Links
+## လင့်ခ်များ (Links)
 
-More info? Just follow the link: <https://github.com/FreeCAD/FreeCAD-render>
-
-
+ပိုမိုသိရှိလိုပါက: <https://github.com/FreeCAD/FreeCAD-render>
 
 ---
-⏵ [documentation index](../README.md) > [Addons](Category_Addons.md) > [External Command Reference](Category_External%20Command%20Reference.md) > [External Workbenches](Category_External%20Workbenches.md) > Render Workbench
+⏵ [မှတ်တမ်း အညွှန်း (documentation index)](../README.md) > [ဖြည့်စွက်ချက်များ (Addons)](Category_Addons.md) > [ပြင်ပ အမိန့်ပေးချက်များ ရည်ညွှန်းချက် (External Command Reference)](Category_External%20Command%20Reference.md) > [ပြင်ပ လုပ်ငန်းခွင်များ (External Workbenches)](Category_External%20Workbenches.md) > ပုံရိပ်ဖော်ထုတ်ခြင်း လုပ်ငန်းခွင် (Render Workbench)
