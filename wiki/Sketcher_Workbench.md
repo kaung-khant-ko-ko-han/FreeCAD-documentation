@@ -1,31 +1,31 @@
-# <img alt="Sketcher workbench icon" src=images/Workbench_Sketcher.svg  style="width:64px;"> Sketcher Workbench
+# <img alt="Sketcher workbench icon" src=images/Workbench_Sketcher.svg  style="width:64px;"> Sketcher Workbench (ပုံကြမ်းဖန်တီးမှု လုပ်ငန်းခွင်)
 
  
 
 ## Introduction
 
-With the <img alt="" src=images/Workbench_Sketcher.svg  style="width:24px;"> [Sketcher Workbench](Sketcher_Workbench.md) 2D sketches intended for use in other workbenches can be created. 2D sketches are the starting point for many CAD models. They typically define the profiles and paths for operations to create 3D shapes. A model may depend on several sketches for its final shape.
+With the <img alt="" src=images/Workbench_Sketcher.svg  style="width:24px;"> [Sketcher Workbench](Sketcher_Workbench.md) (ပုံကြမ်းဖန်တီးမှု လုပ်ငန်းခွင်) 2D sketches intended for use in other workbenches can be created. 2D sketches are the starting point for many CAD models. They typically define the profiles and paths for operations to create 3D shapes. A model may depend on several sketches for its final shape.
 
-Together with boolean operations defined in the <img alt="" src=images/Workbench_Part.svg  style="width:16px;"> [Part Workbench](Part_Workbench.md), the Sketcher Workbench, or \"The Sketcher\" for short, forms the basis of the [constructive solid geometry](Constructive_solid_geometry.md) (CSG) method of building solids. Together with <img alt="" src=images/Workbench_PartDesign.svg  style="width:16px;"> [PartDesign Workbench](PartDesign_Workbench.md) operations, it also forms the basis of the [feature editing](Feature_editing.md) methodology of creating solids. But many other workbenches use sketches as well.
+Together with boolean operations defined in the <img alt="" src=images/Workbench_Part.svg  style="width:16px;"> [Part Workbench](Part_Workbench.md) (အစိတ်အပိုင်း လုပ်ငန်းခွင်), the Sketcher Workbench, or "The Sketcher" for short, forms the basis of the [constructive solid geometry](Constructive_solid_geometry.md) (CSG) method of building solids. Together with <img alt="" src=images/Workbench_PartDesign.svg  style="width:16px;"> [PartDesign Workbench](PartDesign_Workbench.md) (အစိတ်အပိုင်း ဒီဇိုင်း (Part Design)) operations, it also forms the basis of the [feature editing](Feature_editing.md) methodology of creating solids. But many other workbenches use sketches as well.
 
-The Sketcher workbench features [constraints](#Constraints.md), allowing 2D shapes to follow precise geometrical definitions in terms of length, angles, and relationships (horizontality, verticality, perpendicularity, etc.). A constraint solver calculates the constrained-extent of 2D geometry and allows interactive exploration of the degrees-of-freedom of the sketch.
+The Sketcher workbench features [constraints](#Constraints.md) (ကန့်သတ်ချက်များ), allowing 2D shapes to follow precise geometrical definitions in terms of length, angles, and relationships (horizontality, verticality, perpendicularity, etc.). A constraint solver calculates the constrained-extent of 2D geometry and allows interactive exploration of the degrees-of-freedom of the sketch.
 
-The Sketcher is not intended for producing 2D blueprints. Once sketches are used to generate a solid feature, they are automatically hidden and Constraints are only visible in Sketch edit mode. If you only need to produce 2D views for print, and don\'t want to create 3D models, check out the [Draft workbench](Draft_Workbench.md).
+The Sketcher is not intended for producing 2D blueprints. Once sketches are used to generate a solid feature, they are automatically hidden and Constraints are only visible in Sketch edit mode. If you only need to produce 2D views for print, and don't want to create 3D models, check out the [Draft workbench](Draft_Workbench.md).
 
  <img alt="" src=images/FC_ConstrainedSketch.png  style="width:450px;">  
-*A fully constrained sketch*
+*A fully constrained sketch* (ပြည့်စုံကန့်သတ်ထားသော စကစ်တစ်ခု)
 
-## Constraints
+## Constraints (ကန့်သတ်ချက်များ)
 
-Constraints are used to limit the degrees of freedom of an object. For example, a line without constraints has 4 degrees of freedom (abbreviated as \"DoF\"): it can be moved horizontally or vertically, it can be stretched, and it can be rotated.
+Constraints (ကန့်သတ်ချက်များ) are used to limit the degrees of freedom of an object. For example, a line without constraints has 4 degrees of freedom (abbreviated as "DoF"): it can be moved horizontally or vertically, it can be stretched, and it can be rotated.
 
-Applying a horizontal or vertical constraint, or an angle constraint (relative to another line or to one of the axes), will limit its capacity to rotate, thus leaving it with 3 degrees of freedom. Locking one of its points in relation to the origin will remove another 2 degrees of freedom. And applying a dimension constraint will remove the last degree of freedom. The line is then considered **fully-constrained**.
+Applying a horizontal or vertical constraint, or an angle constraint (relative to another line or to one of the axes), will limit its capacity to rotate, thus leaving it with 3 degrees of freedom. Locking one of its points in relation to the origin will remove another 2 degrees of freedom. And applying a dimension constraint will remove the last degree of freedom. The line is then considered **fully-constrained** (ပြည့်စုံကန့်သတ်ထား).
 
 Objects can be constrained in relation to one another. Two lines can be joined through one of their points with the coincident point constraint. An angle can be set between them, or they can be set perpendicular. A line can be tangent to an arc or a circle, and so on. A complex Sketch with multiple objects may have a number of different solutions, and making it **fully-constrained** can mean that just one of these possible solutions has been reached based on the applied constraints.
 
 There are two kinds of constraints: geometric and dimensional. They are detailed in the [Tools](#Tools.md) section below.
 
-### Edit constraints 
+### Edit constraints (ကန့်သတ်ချက်များ ပြင်ဆင်ခြင်း)
 
 When a [driving dimensional constraint](Sketcher_ToggleDrivingConstraint.md) is created, and if the **Ask for value after creating a dimensional constraint** [preference](Sketcher_Preferences#Display.md) is selected (default), a dialog opens to edit its value.
 
@@ -39,11 +39,11 @@ To edit the value of an existing dimensional constraint do one of the following:
 -   Double-click the constraint in the [Sketcher Dialog](Sketcher_Dialog.md).
 -   Right-click the constraint in the Sketcher Dialog and select the **Change value** option from the context menu.
 
-### Reposition constraints 
+### Reposition constraints (ကန့်သတ်ချက်များ స్థ များကို ပြန်လှည့်တည်နေရာချခြင်း)
 
 Dimensional constraints can be repositioned in the 3D view by dragging. Hold down the left mouse button over the constraint value and move the mouse. The symbols of geometric constraints are positioned automatically and cannot be moved.
 
-## Profile sketches 
+## Profile sketches (ပရိုဖိုင် စကစ်များ)
 
 To create a sketch that can be used as a profile for generating solids certain rules must be followed:
 
@@ -54,15 +54,24 @@ To create a sketch that can be used as a profile for generating solids certain r
 
 These rules do not apply to construction geometry (default color blue), which is not shown outside edit mode, or if the sketch is used for a different purpose. Depending on the workbench and the tool that will use the profile sketch, additional restrictions may apply.
 
-## Drawing aids 
+(Translation / explanation)
+- စကစ်သည် ထိုးထွင်းသတ်မှတ်ထားသော ပရိုဖိုင်အဖြစ် အသုံးပြုနိုင်ရန်အတွက် အောက်ပါ စည်းမျဉ်းများကိုလိုက်နာရပါမည်။
+  - စကစ်ထဲတွင် ပိတ်ထားသော ကွန်တောင်များ(ဘောင်)သာပါဝင်ရမည်။ အဆုံးဘင်များအကြား ကိုယ့်လက်လှည့်လောက်ပျက်ကွက်မှုများကို ခွင့်မပြုပါ။
+  - ကွန်တောင်များကို အတွင်းပိုင်းအကာအတွင်းနေအောင် အထပ်ထည့်နိုင်သော်လည်း ကိုယ့်ကိုယ်ကို ထပ်မံထိခိုက်မစေပါနှင့် တခြား ကွန်တောင်များကို ဖျက်မစေပါ။
+  - ကွန်တောင်များသည် အင်္ကျီနဲ့မျှမျှဝေသော အကြောင်းအချာ မရှိသင့်။ အတူတူ အနားများ (duplicate edges) မဖြစ်အောင် သတိပြုပါ။
+  - T-ချိတ်ဆက်မှုများ (မျှဝေသော အချက်သည် အနည်းဆုံး နှစ်ထက်ပိုသော အားလက်များ ကြားဝေခြင်း) သို့မဟုတ် အချက်တစ်ခုက အကြောင်းအရာတစ်ခုကိုထိမှီခြင်းများကို ခွင့်မပြုပါ။
+
+Construction geometry (ကွန်စထရွက်ရှင်း geometry) ကို ဤ စည်းမျဉ်းများ မဆိုင်ပါ၊ အဲသည် အဝင် မီဒျူးမြင်ကွင်းတွင် မမြင်ရပါ (edit mode အပြင်) သို့မဟုတ် စကစ်ကို ကွဲပြားသည့် ရည်ရွယ်ချက်အတွက် အသုံးပြုပါက မျိုးစုံ ကန့်သတ်ချက်များ ထပ်ဆင့်လိမ့်မည်။
+
+## Drawing aids (ဆွဲဆောင်ကိရိယာများ)
 
 The Sketcher Workbench has several drawing aids and other features that can help when creating geometry and applying constraints.
 
-### Continue modes 
+### Continue modes (ဆက်လက်လုပ်ဆောင်သည့် မုဒ်များ)
 
-There are two continue modes: **Geometry creation \"Continue Mode\"** and **Constraint creation \"Continue Mode\"**. If these are checked (default) in the [preferences](Sketcher_Preferences#Display.md), related tools will restart after finishing. To exit a continuous tool press **Esc** or the right mouse button. This must be repeated if a continuous geometry tool has already received input. You can also exit a continuous tool by starting another geometry or constraint creation tool. Note that pressing **Esc** if no tool is active will exit sketch edit mode. Uncheck the **Esc can leave sketch edit mode** [preference](Sketcher_Preferences#General.md) if you often inadvertently press **Esc** too many times.
+There are two continue modes: **Geometry creation "Continue Mode"** and **Constraint creation "Continue Mode"**. If these are checked (default) in the [preferences](Sketcher_Preferences#Display.md), related tools will restart after finishing. To exit a continuous tool press **Esc** or the right mouse button. This must be repeated if a continuous geometry tool has already received input. You can also exit a continuous tool by starting another geometry or constraint creation tool. Note that pressing **Esc** if no tool is active will exit sketch edit mode. Uncheck the **Esc can leave sketch edit mode** [preference](Sketcher_Preferences#General.md) if you often inadvertently press **Esc** too many times.
 
-### Auto constraints 
+### Auto constraints (အလိုအလျောက် ကန့်သတ်ချက်များ)
 
 In sketches that have **Auto constraints** checked (default) several constraints are applied automatically. The icon of a proposed automatic constraint is shown next to the cursor when it is placed correctly. Left-Clicking will then apply that constraint. This is a per-sketch setting that can be changed in the [Sketcher Dialog](Sketcher_Dialog#Constraints.md) or by changing the **Autoconstraints** [property](Property_editor.md) of the sketch.
 
@@ -80,44 +89,46 @@ The following constraints are applied automatically:
 
 -    <small>(v1.0)</small> : <img alt="" src=images/Sketcher_ConstrainSymmetric.svg  style="width:16px;"> [Symmetric](Sketcher_ConstrainSymmetric.md) (line midpoint)
 
-### Snapping
+(ရှင်းလင်းချက်)
+- Auto constraints ကို ဖွင့်ထားပါက Sketch ထဲတွင် သင်ဆွဲနေစဉ် အလိုအလျောက် ကန့်သတ်ချက်အချို့ကို ထည့်ပေးလိမ့်မည်။
+- အလိုအလျောက် ထင်ရှားသော ကန့်သတ်ချက် icon သည် cursor ဘေးတွင် ပြပါမည်၊ ညာဘက်နှိပ်ခြင်းဖြင့် အဆိုပါ ကန့်သတ်ချက်ကို အသုံးချနိုင်သည်။
 
+### Snapping (သိမ်းဆည်းမှု / snap)
 
 <small>(v0.21)</small> 
 
 It is possible to [snap](Sketcher_Snap.md) to grid lines and grid intersection, to edges of geometry and midpoints of lines and arcs, and to certain angles. Please note that snapping does not produce constraints in and of itself. For example, only if [Auto constraints](#Auto_constraints.md) is switched on will snapping to an edge produce a [Point on object constraint](Sketcher_ConstrainPointOnObject.md). But just picking a point on the edge would then have the same result.
 
-### On-View-Parameters 
-
+### On-View-Parameters (အမြင်ပေါ် ပါရာမီတာများ)
 
 <small>(v1.0)</small> 
 
 Depending on the selected option in the [preferences](Sketcher_Preferences#General.md) only the dimensional On-View-Parameters or both the dimensional and the positional On-View-Parameters can be enabled. Positional parameters allow the input of exact coordinates, for example the center of a circle, or the start point of a line. Dimensional parameters allow the input of exact dimensions, for example the radius of a circle, or the length and angle of a line. On-View-Parameters are not available for all tools.
 
  ![](images/Sketcher_On_view_parameters_positional.png )  
-*Determining the center point of a circle with the positional parameters enabled*
+*Determining the center point of a circle with the positional parameters enabled* (တည်နေရာပါရာမီတာများ ဖွင့်ထားပြီး စက်ဝန်းအလယ်ဘောများကို သတ်မှတ်ခြင်း)
 
  ![](images/Sketcher_On_view_parameters_dimensional.png )  
-*Determining the radius of a circle with the dimensional parameters enabled*
+*Determining the radius of a circle with the dimensional parameters enabled* (အရွယ်အစားပါရာမီတာများ ဖွင့်ထားပြီး စက်ဝန်း၏ အချင်းအချင်း(radius) ကို သတ်မှတ်ခြင်း)
 
 If values are entered and confirmed by pressing **Enter** or **Tab**, related constraints are added automatically. If two parameters are displayed at the same time, for example the X and Y coordinate of a point, it is possible to enter one value and pick a point to define the other. Depending on the object additional constraints may be required to fully constrain it. Constraints resulting from On-View-Parameters take precedence over those that may result from [Auto constraints](Sketcher_Dialog#Constraints.md).
 
  <img alt="" src=images/Sketcher_ArcExample3.png  style="width:300px;">  
-*Arc created by entering all On-View-Parameters with resulting automatically created constraints*
+*Arc created by entering all On-View-Parameters with resulting automatically created constraints* (အမြင်ပေါ်ပါရာမီတာများအားလုံးထည့်၍ အလိုအလျောက် ကန့်သတ်ချက်များကို ဖန်တီးထားသော အက်(arc))
 
-### Coordinate display 
+### Coordinate display (အညွှန်း အချက်အလက် ပြသခြင်း)
 
 If the **Show coordinates beside cursor while editing** [preference](Sketcher_Preferences#Display.md) is checked (default), the parameters of the current geometry tool (coordinates, radius, or length and angle) are displayed next to the cursor. This is deactivated while On-View-Parameters are shown.
 
-## Selection methods 
+## Selection methods (ရွေးချယ်မည့် နည်းလမ်းများ)
 
 While a sketch is in edit mode the following selection methods can be used:
 
-### 3D view element selection 
+### 3D view element selection (3D ကြည့်ရှုခန်း အချက်အလက် ရွေးချယ်ခြင်း)
 
-As elsewhere in FreeCAD, an element can be selected in the [3D view](3D_view.md) with a single left mouse click. But there is no need to hold down the **Ctrl** key when selecting multiple elements. Holding down that key is possible though and has the advantage that you can miss-click without losing the selection. Edges, points and constraints can be selected in this manner.
+As elsewhere in FreeCAD (ဖရီးကက် (FreeCAD)), an element can be selected in the [3D view](3D_view.md) with a single left mouse click. But there is no need to hold down the **Ctrl** key when selecting multiple elements. Holding down that key is possible though and has the advantage that you can miss-click without losing the selection. Edges, points and constraints can be selected in this manner.
 
-### 3D view box selection 
+### 3D view box selection (3D ကြည့်ရှုခန်း ဘောက်စ်ရွေးချယ်မှု)
 
 Box selection in the 3D view works without using [Std BoxSelection](Std_BoxSelection.md) or [Std BoxElementSelection](Std_BoxElementSelection.md):
 
@@ -128,38 +139,35 @@ Box selection in the 3D view works without using [Std BoxSelection](Std_BoxSelec
 
 You can box-select edges and points, constraints cannot be box-selected.
 
-### 3D view connected geometry selection 
-
+### 3D view connected geometry selection (3D ကြည့်ရှုခန်း တွဲဆက်ထားသည့် ဂျီယိုမက်ထရီ ရွေးချယ်မှု)
 
 <small>(v1.0)</small> 
 
 Double-clicking an edge in the 3D view will select all edges directly and indirectly connected with that edge via endpoints. There is no need for the edges to be connected with [Coincident constraints](Sketcher_ConstrainCoincident.md), endpoints need only have the same coordinates.
 
-### Sketcher Dialog selection 
+### Sketcher Dialog selection (Sketcher Dialog မှ ရွေးချယ်ခြင်း)
 
 Edges and points can also be selected from the Elements section of the [Sketcher Dialog](Sketcher_Dialog.md), and constraints from the Constraints section of that dialog.
 
-## Copy, cut and paste 
-
+## Copy, cut and paste (ကော်ပီ၊ ဖြတ်ပြီး နေရာကူးခြင်း)
 
 <small>(v1.0)</small> 
 
-The standard keyboard shortcuts, **Ctrl**+**C**, **Ctrl**+**X** and **Ctrl**+**V**, can be used to copy, cut and paste selected Sketcher geometry including related constraints. But these tools are also available from the **Sketch → Sketcher tools** menu. They can be used within the same sketch but also between different sketches or separate instances of FreeCAD. Since the data is copied to the clipboard in the form of Python code, it can be used in other ways too (e.g. shared on the forum).
+The standard keyboard shortcuts, **Ctrl**+**C**, **Ctrl**+**X** and **Ctrl**+**V**, can be used to copy, cut and paste selected Sketcher geometry including related constraints. But these tools are also available from the **Sketch → Sketcher tools** menu. They can be used within the same sketch but also between different sketches or separate instances of FreeCAD (ဖရီးကက် (FreeCAD)). Since the data is copied to the clipboard in the form of Python code, it can be used in other ways too (e.g. shared on the forum).
 
-## Tools
+## Tools (ကိရိယာများ)
 
 The Sketcher Workbench tools are located in the Sketch menu and/or several toolbars. <small>(v0.21)</small> : Almost all Sketcher toolbars are only displayed while a sketch is in edit mode. The only exception is the [Sketcher toolbar](#Sketcher_toolbar.md) which is only displayed if no sketch is in edit mode.
 
 Some tools are also available from the [3D view](3D_view.md) context menu while a sketch is in edit mode, or from the context menus of the [Sketcher Dialog](Sketcher_Dialog.md).
 
-
 <small>(v0.21)</small> 
 
 : If a sketch is in edit mode the Structure toolbar is hidden as none of its tools can then be used.
 
-### General
+### General (အထွေထွေ)
 
-#### Sketcher toolbar 
+#### Sketcher toolbar (Sketcher တူးလ်ဘား)
 
 -   <img alt="" src=images/Sketcher_NewSketch.svg‎‎  style="width:32px;"> [Create sketch](Sketcher_NewSketch.md): Creates a new sketch and opens the [Sketcher Dialog](Sketcher_Dialog.md) to edit it.
 
@@ -175,7 +183,7 @@ Some tools are also available from the [3D view](3D_view.md) context menu while 
 
 -   <img alt="" src=images/Sketcher_MirrorSketch.svg  style="width:32px;"> [Mirror sketch](Sketcher_MirrorSketch.md): Mirrors sketches across their X axis, Y axis, or origin.
 
-#### Sketcher Edit Mode toolbar 
+#### Sketcher Edit Mode toolbar (Sketcher အယ်ဒီတ် မုဒ် တူးလ်ဘား)
 
 -   <img alt="" src=images/Sketcher_LeaveSketch.svg  style="width:32px;"> [Leave sketch](Sketcher_LeaveSketch.md): Finishes sketch edit mode and closes the [Sketcher Dialog](Sketcher_Dialog.md).
 
@@ -183,7 +191,7 @@ Some tools are also available from the [3D view](3D_view.md) context menu while 
 
 -   <img alt="" src=images/Sketcher_ViewSection.svg  style="width:32px;"> [View section](Sketcher_ViewSection.md): Toggles a temporary section plane that hides any objects and parts of objects in front of the sketch plane.
 
-#### Sketcher edit tools toolbar 
+#### Sketcher edit tools toolbar (Sketcher ပြန်လည်တည်းဖြတ် ကိရိယာတန်း)
 
 -   <img alt="" src=images/Sketcher_Grid.svg  style="width:32px;"> [Toggle grid](Sketcher_Grid.md): Toggles the grid in the sketch currently being edited. Settings can be changed in the related menu. <small>(v0.21)</small> 
 
@@ -191,11 +199,11 @@ Some tools are also available from the [3D view](3D_view.md) context menu while 
 
 -   <img alt="" src=images/Sketcher_RenderingOrder.svg  style="width:32px;"> [Configure rendering order](Sketcher_RenderingOrder.md): The rendering order of all sketches can be changed in the related menu. <small>(v0.21)</small> 
 
-#### Other
+#### Other (အခြား)
 
 -   <img alt="" src=images/Sketcher_StopOperation.svg  style="width:32px;"> [Stop operation](Sketcher_StopOperation.md): Stops any currently running geometry or constraint creation tool.
 
-### Sketcher geometries 
+### Sketcher geometries (Sketcher ဂျီယိုမက်ထရီ အရာများ)
 
 These are tools for creating objects.
 
@@ -269,7 +277,7 @@ These are tools for creating objects.
 
 -   <img alt="" src=images/Sketcher_ToggleConstruction.svg  style="width:32px;"> [Toggle construction geometry](Sketcher_ToggleConstruction.md): Either toggles the geometry creation tools to/from construction mode, or toggles selected geometry to/from construction geometry.
 
-### Sketcher constraints 
+### Sketcher constraints (Sketcher ကန့်သတ်ချက်များ)
 
 These are tools for creating [constraints](#Constraints.md). Some constraints require the use of [Helper constraints](Sketcher_helper_constraint.md).
 
@@ -319,7 +327,7 @@ These are tools for creating [constraints](#Constraints.md). Some constraints re
 
 -   <img alt="" src=images/Sketcher_ConstrainBlock.svg  style="width:32px;"> [Block](Sketcher_ConstrainBlock.md): Blocks edges in place with a single constraint. It is mainly intended for B-splines.
 
--   <img alt="" src=images/Sketcher_ConstrainSnellsLaw.svg  style="width:32px;"> [Refraction (Snell\'s law)](Sketcher_ConstrainSnellsLaw.md): Constrains two lines to follow the law of refraction of light as it penetrates through an interface.
+-   <img alt="" src=images/Sketcher_ConstrainSnellsLaw.svg  style="width:32px;"> [Refraction (Snell's law)](Sketcher_ConstrainSnellsLaw.md): Constrains two lines to follow the law of refraction of light as it penetrates through an interface.
 
 -   <img alt="" src=images/Sketcher_ToggleDrivingConstraint.svg  style="width:" height="32px;"><img alt="" src=images/Toolbar_flyout_arrow_blue_background.svg  style="width:" height="32px;"> Toggle constraints:
 
@@ -327,7 +335,7 @@ These are tools for creating [constraints](#Constraints.md). Some constraints re
 
   - <img alt="" src=images/Sketcher_ToggleActiveConstraint.svg  style="width:32px;"> [Activate/deactivate constraint](Sketcher_ToggleActiveConstraint.md): Activates or deactivates selected constraints.
 
-### Sketcher tools 
+### Sketcher tools (Sketcher ကိရိယာများ)
 
 -   <img alt="" src=images/Sketcher_CreateFillet.svg  style="width:" height="32px;"><img alt="" src=images/Toolbar_flyout_arrow_blue_background.svg  style="width:" height="32px;"> Create fillet/chamfer:
 
@@ -381,7 +389,7 @@ These are tools for creating [constraints](#Constraints.md). Some constraints re
 
 -   <img alt="" src=images/Edit-paste.svg  style="width:32px;"> Paste in Sketcher: See [Copy, cut and paste](#Copy,_cut_and_paste.md).
 
-### Sketcher B-spline tools 
+### Sketcher B-spline tools (Sketcher B-spline ကိရိယာများ)
 
 -   <img alt="" src=images/Sketcher_BSplineConvertToNURBS.svg  style="width:32px;"> [Convert geometry to B-spline](Sketcher_BSplineConvertToNURBS.md): Converts edges to B-splines.
 
@@ -397,7 +405,7 @@ These are tools for creating [constraints](#Constraints.md). Some constraints re
 
 -   <img alt="" src=images/Sketcher_JoinCurves.svg  style="width:32px;"> [Join curves](Sketcher_JoinCurves.md): Creates a B-spline by joining two existing B-splines or other edges. <small>(v0.21)</small> 
 
-### Sketcher visual 
+### Sketcher visual (ကြည့်ရှု အမြင်)
 
 -   <img alt="" src=images/Sketcher_SelectElementsWithDoFs.svg  style="width:32px;"> [Select unconstrained DoF](Sketcher_SelectElementsWithDoFs.md): Selects the not fully constrained elements in the sketch.
 
@@ -427,7 +435,7 @@ These are tools for creating [constraints](#Constraints.md). Some constraints re
 
 -   <img alt="" src=images/Sketcher_SwitchVirtualSpace.svg  style="width:32px;"> [Switch virtual space](Sketcher_SwitchVirtualSpace.md): (un)hides constraints or switches the visible virtual space.
 
-### Obsolete tools 
+### Obsolete tools (အသုံးပြုမှုရှင်သက်သာနေသော ကိရိယာများ)
 
 -   <img alt="" src=images/Sketcher_Clone.svg  style="width:32px;"> [Clone](Sketcher_Clone.md): Clones a Sketcher element. Not available in <small>(v1.0)</small> .
 
@@ -443,35 +451,50 @@ These are tools for creating [constraints](#Constraints.md). Some constraints re
 
 -   <img alt="" src=images/Sketcher_RectangularArray.svg  style="width:32px;"> [Rectangular array](Sketcher_RectangularArray.md): Creates an array of selected Sketcher elements. Not available in <small>(v1.0)</small> .
 
-## Preferences
+## Preferences (စိတ်ကြိုက် သတ်မှတ်ချက်များ)
 
 -   <img alt="" src=images/Workbench_Sketcher.svg  style="width:32px;"> [Preferences](Sketcher_Preferences.md): Preferences for the Sketcher Workbench.
 
-## Best practices 
+## Best practices (အကောင်းဆုံး လေ့လာမှု နည်းလမ်းများ)
 
 Every CAD user develops their own way of working over time, but there are some useful general principles to follow.
 
 -   A series of simple sketches is easier to manage than a single complex one. For example, a first sketch can be created for the base 3D feature (either a pad or a revolve), while a second one can contain holes or cutouts (pockets). Some details can be left out, to be realized later on as 3D features. You can choose to avoid fillets in your sketch if there are too many, and add them as a 3D feature.
--   Always create a closed profile, or your sketch won\'t produce a solid, but rather a set of open faces. If you don\'t want some of the objects to be included in the solid creation, turn them to construction elements with the Construction Mode tool.
--   Use the Auto constraints feature to limit the number of constraints you\'ll have to add manually.
--   As a general rule, apply geometric constraints first, then dimensional constraints, and lock your sketch last. But remember: rules are made to be broken. If you\'re having trouble manipulating your sketch, it may be useful to constrain a few objects first before completing your profile.
--   If possible, center your sketch at the origin (0,0) with the Lock constraint. If your sketch is not symmetric, locate one of its points at the origin, or choose nice round numbers for the lock distances.
--   If you have the possibility to choose between the Length constraint and the Horizontal or Vertical distance constraints, prefer the latter. Horizontal and Vertical distance constraints are computationally cheaper.
--   In general, the best constraints to use are: Horizontal and Vertical constraints; Horizontal and Vertical length constraints; point-to-point Tangency. If possible, limit the use of these: the general Length constraint; edge-to-edge Tangency; Point on object constraint; Symmetric constraint.
--   If in doubt about the validity of a sketch once it is complete (features turn green), close the Sketcher dialog and use <img alt="" src=images/Sketcher_ValidateSketch.svg  style="width:24px;"> [Validate sketch](Sketcher_ValidateSketch.md).
+    - အလွယ်တကူစီမံခန့်ခွဲနိုင်ရန် စကစ်ရပ်စဲခြင်းများကို မျိုးခွဲထားသုံးပါ။ ဥပမာ - ပထမ စကစ်ကို အခြေခံ 3D အင်္ကျီအတွက် (Pad (ပြားချပ်ပိုင်းဖန်တီးခြင်း) သို့မဟုတ် revolve) ဖန်တီးပြီး နောက်ထပ် စကစ်တစ်ခုတွင် ခေါက်၊ ဖြတ်ပိုင်းများ (Pocket (အပေါက်ဖောက်ခြင်း)) ထည့်နိုင်သည်။ အသေးစိတ်များကို 3D အင်္ကျီအဖြစ် နောက်မှ ထပ်ထည့်နိုင်စေရန် ဆက်လက်ထားလည်းရသည်။
 
-## Tutorials
+-   Always create a closed profile, or your sketch won't produce a solid, but rather a set of open faces. If you don't want some of the objects to be included in the solid creation, turn them to construction elements with the Construction Mode tool.
+    - မကြာခဏ ပိတ်ထားသော ပရိုဖိုင်ကို ဖန်တီးပါ၊ မဟုတ်လျှင် စကစ်သည် ဒုတိယ အနေနှင့် ပိတ်မထားသော မျက်နှာများ (open faces) ကိုသာထုတ်ပေးမည်။ အချို့သော အရာများကို solid ဖန်တီးမှုတွင် အပါမဝင်စေလိုလျှင် Construction Mode ကိရိယာဖြင့် အရာများကို construction geometry အဖြစ်ပြောင်းပါ။
+
+-   Use the Auto constraints feature to limit the number of constraints you'll have to add manually.
+    - လက်ဖြင့် ထည့်ရန်လိုအပ်သော ကန့်သတ်ချက် အရေအတွက်ကို လျော့ပါးစေရန် Auto constraints ကိုအသုံးပြုပါ။
+
+-   As a general rule, apply geometric constraints first, then dimensional constraints, and lock your sketch last. But remember: rules are made to be broken. If you're having trouble manipulating your sketch, it may be useful to constrain a few objects first before completing your profile.
+    - သတ်မှတ်ချက်အနေဖြင့် ပထမဦးဆုံး geometric ကန့်သတ်ချက်များ ထည့်ပြီး နောက် dimensional ကန့်သတ်ချက်များ ထည့်၍ နောက်ဆုံးတွင် sketch ကို Lock လုပ်ပါ။ သို့သော် လိုအပ်ချက်အပေါ် မူတည်၍ ဤသဘောတရားကို ချိုးဖောက်နိုင်သည်။ စကစ်ကို မီးခိုင်းနိုင်ခြင်း ရှိလျှင် profile ပြီးဆုံးမီ အချို့ အရာများကို အရင်ကန့်သတ်ထားခြင်းအား စတင်စမ်းသပ်ရန် အကျိုးရှိသည်။
+
+-   If possible, center your sketch at the origin (0,0) with the Lock constraint. If your sketch is not symmetric, locate one of its points at the origin, or choose nice round numbers for the lock distances.
+    - ဖြစ်နိုင်လျှင် Lock ကန့်သတ်ချက်ဖြင့် စကစ်ကို origin (0,0) မှာ ဗဟိုထားပါ။ စကစ်သည် သမာသမိန်မရှိလျှင် အချက်တစ်ချက်ကို origin တွင် တည်နေရာချင်းထားသော်လည်းကောင်း၊ Lock အကွာအဝေးများအတွက် ကောင်းမွန်သော ပတ်လည်နံပါတ်များကို သတ်မှတ်ပါ။
+
+-   If you have the possibility to choose between the Length constraint and the Horizontal or Vertical distance constraints, prefer the latter. Horizontal and Vertical distance constraints are computationally cheaper.
+    - Length ကန့်သတ်ချက်နှင့် Horizontal/Vertical distance ကန့်သတ်ချက်များ အချို့ရွေးချယ်နိုင်ပါက Horizontal/Vertical ရွေးချယ်သော်ကောင်းသည်။ ဤကန့်သတ်ချက်များသည် ကွန်ပျူတာတွက်ချက်ခြင်းအားနည်းသော (ဂဏန်းပိုမိုသက်သာ) ဖြစ်သည်။
+
+-   In general, the best constraints to use are: Horizontal and Vertical constraints; Horizontal and Vertical length constraints; point-to-point Tangency. If possible, limit the use of these: the general Length constraint; edge-to-edge Tangency; Point on object constraint; Symmetric constraint.
+    - အများအားဖြင့် အသုံးချရန် အကောင်းဆုံး ကန့်သတ်ချက်များမှာ Horizontal နှင့် Vertical ကန့်သတ်ချက်များ၊ Horizontal/Vertical length ကန့်သတ်ချက်များ၊ point-to-point Tangency ဖြစ်ကြသည်။ ဖြစ်နိုင်လျှင် အသုံးလျော့ရန် အကျဥ်းချုပ်၍ အသုံးချသင့်သော ကန့်သတ်ချက်များမှာ: ရိုးရှင်း Length ကန့်သတ်ချက်၊ edge-to-edge Tangency၊ Point on object ကန့်သတ်ချက်၊ Symmetric ကန့်သတ်ချက်ဖြစ်သည်။
+
+-   If in doubt about the validity of a sketch once it is complete (features turn green), close the Sketcher dialog and use <img alt="" src=images/Sketcher_ValidateSketch.svg  style="width:24px;"> [Validate sketch](Sketcher_ValidateSketch.md).
+    - စကစ်ပြည့်စုံပြီးနောက်၌ ၎င်း၏ တရားဝင်မှုကို မသေချာပါက (features များ အစိမ်းရောင်ဖြစ်လာသည်) Sketcher dialog ပြန်ပြင်ပိတ်ပြီး [Validate sketch](Sketcher_ValidateSketch.md) ကို အသုံးပြုပါ။
+
+## Tutorials (သင်တန်းများ)
 
 -   [Sketcher Lecture](https://forum.freecadweb.org/viewtopic.php?f=36&t=30104) by chrisb. This is a more than 80 page PDF document that serves as a detailed manual for the Sketcher. It explains the basics of Sketcher usage, and goes into a lot of detail about the creation of geometrical shapes, and each of the constraints.
 -   [Basic Sketcher Tutorial](Basic_Sketcher_Tutorial.md) for beginners
 -   [Sketcher Micro Tutorial - Constraint Practices](Sketcher_Micro_Tutorial_-_Constraint_Practices.md)
 -   [Sketcher requirement for a sketch](Sketcher_requirement_for_a_sketch.md) Minimum requirement for a sketch and Complete determination of a sketch
 
-## Scripting
+## Scripting (စက္ရုပ်ရေးသားခြင်း)
 
 The [Sketcher scripting](Sketcher_scripting.md) page contains examples on how to create constraints from Python scripts.
 
-## Examples
+## Examples (ဥပမာများ)
 
 For some ideas of what can be achieved with Sketcher tools, have a look at: [Sketcher examples](Sketcher_Examples.md).
 
@@ -480,4 +503,4 @@ For some ideas of what can be achieved with Sketcher tools, have a look at: [Ske
 
 
 ---
-⏵ [documentation index](../README.md) > [Workbenches](Category_Workbenches.md) > [Sketcher](Category_Sketcher.md) > Sketcher Workbench
+⏵ [documentation index](../README.md) > [Workbenches](Category_Workbenches.md) > [Sketcher](Category_Sketcher.md) > Sketcher Workbench (ပုံကြမ်းဖန်တီးမှု လုပ်ငန်းခွင်)
