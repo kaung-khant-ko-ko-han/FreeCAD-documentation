@@ -1,117 +1,89 @@
-# <img alt="OpenSCAD workbench icon" src=images/Workbench_OpenSCAD.svg  style="width:64px;"> OpenSCAD Workbench
+## နိဒါန်း (Introduction)
 
- 
+<img alt="" src=images/Workbench_OpenSCAD.svg  style="width:24px;"> [OpenSCAD လုပ်ငန်းခွင် (OpenSCAD Workbench)](OpenSCAD_Workbench.md) သည် အိုးပင်းဆော့စ် ဆော့ဖ်ဝဲလ်တစ်ခုဖြစ်သော [OpenSCAD](http://www.openscad.org/) နှင့် အပြန်အလှန် ချိတ်ဆက်အသုံးပြုနိုင်ရန် ရည်ရွယ်ပါသည်။ ဤပရိုဂရမ်သည် ဖရီးကက် (FreeCAD) ၏ အစိတ်အပိုင်းတစ်ခုအနေဖြင့် ပါဝင်လာခြင်း မရှိသော်လည်း၊ ဤလုပ်ငန်းခွင်ကို အပြည့်အဝ အသုံးပြုနိုင်ရန်အတွက် ၎င်းကို တပ်ဆင်ထားသင့်ပါသည်။ OpenSCAD ကို ဖရီးကက်မှ မျက်နှာပြင်ပေါ်တွင် ဂျီဩမေတြီ (geometry) များ တည်ဆောက်ရန် အသုံးပြုသော [OpenCASCADE](OpenCASCADE.md) ဂျီဩမေတြီ ကာနယ် (geometrical kernel) နှင့် မရောထွေးသင့်ပါ။ ဖရီးကက်ကို အသုံးပြုရန် OpenCASCADE လိုင်ဘရီများကို အမြဲတမ်း လိုအပ်သော်လည်း၊ OpenSCAD executable ဖိုင်မှာမူ ရွေးချယ်နိုင်သော အရာသာ ဖြစ်ပါသည်။
 
-## Introduction
+၎င်းတွင် OpenSCAD မှ CSG ဖိုင်များကို ဖွင့်ရန် [CSG](OpenSCAD_CSG.md) တင်သွင်းမှုစနစ် (importer) နှင့် CSG အခြေခံသော tree တစ်ခုအဖြစ် ထုတ်ယူရန် တင်ပို့မှုစနစ် (exporter) တို့ ပါဝင်သည်။ CSG လုပ်ဆောင်ချက်များအပေါ် အခြေခံမထားသော ဂျီဩမေတြီများကို mesh အဖြစ် တင်ပို့သွားမည် ဖြစ်သည်။
 
-The <img alt="" src=images/Workbench_OpenSCAD.svg  style="width:24px;"> [OpenSCAD Workbench](OpenSCAD_Workbench.md) is intended to offer interoperability with the open source software [OpenSCAD](http://www.openscad.org/). This program is not distributed as part of FreeCAD, but should be installed to make full use of this workbench. OpenSCAD should not be confused with [OpenCASCADE](OpenCASCADE.md), which is the geometrical kernel that FreeCAD uses to build geometry on screen. The OpenCASCADE libraries are always needed to use FreeCAD, while the OpenSCAD executable is entirely optional.
-
-It contains a [CSG](OpenSCAD_CSG.md) importer to open the CSG files from OpenSCAD, and an exporter to output a CSG based tree. Geometry which is not based on CSG operations will be exported as a mesh.
-
-This workbench contains functions to modify the CSG feature tree and repair models. It also contains general purpose tools that do not require installation of OpenSCAD; they can be used in conjunction with other workbenches. For example, the [Mesh Workbench](Mesh_Workbench.md) internally uses the OpenSCAD functions to perform operations with [meshes](mesh.md), as they are quite robust.
+ဤလုပ်ငန်းခွင်တွင် CSG feature tree ကို ပြုပြင်ရန်နှင့် မော်ဒယ်များကို ပြုပြင်ရန် လုပ်ဆောင်ချက်များ ပါဝင်သည်။ ၎င်းတွင် OpenSCAD တပ်ဆင်ရန် မလိုသော ယေဘုယျသုံး ကိရိယာများလည်း ပါဝင်ပြီး ၎င်းတို့ကို အခြားလုပ်ငန်းခွင်များနှင့် တွဲဖက်အသုံးပြုနိုင်ပါသည်။ ဥပမာအားဖြင့်၊ [Mesh လုပ်ငန်းခွင် (Mesh Workbench)](Mesh_Workbench.md) သည် [meshes](mesh.md) များဖြင့် လုပ်ဆောင်ချက်များ ဆောင်ရွက်ရာတွင် အလွန်ခိုင်မာသောကြောင့် OpenSCAD လုပ်ဆောင်ချက်များကို အတွင်းပိုင်းတွင် အသုံးပြုထားပါသည်။
 
  ![](images/OpenSCADexamaple1.png ) 
 
-## Dependencies
+## မှီခိုမှုများ (Dependencies)
 
-In FreeCAD 0.19, the Ply (Python-Lex-Yacc) module, which is used to import CSG files, was removed from the FreeCAD source code, as it is a third party library not developed by FreeCAD. As a result, you now need to install Ply before using the OpenSCAD Workbench. When using a pre-packaged, stable version of FreeCAD this dependency should be installed automatically in all platforms; in other cases, for example, when [compiling](Compiling.md) from source, you may have to install it from an online repository.
+ဖရီးကက် ၀.၁၉ တွင် CSG ဖိုင်များကို တင်သွင်းရန် အသုံးပြုသော Ply (Python-Lex-Yacc) မော်ဂျူးကို ဖရီးကက်မှ ဖန်တီးထားသော လိုင်ဘရီ မဟုတ်သည့်အတွက် ဖရီးကက်ရင်းမြစ်ကုဒ်မှ ဖယ်ရှားခဲ့ပါသည်။ ရလဒ်အနေဖြင့် OpenSCAD လုပ်ငန်းခွင်ကို အသုံးမပြုမီ Ply ကို တပ်ဆင်ရန် လိုအပ်ပါသည်။ ဖရီးကက်၏ တည်ငြိမ်သောဗားရှင်း (stable version) ကို အသုံးပြုပါက ဤမှီခိုမှုကို အလိုအလျောက် တပ်ဆင်ပေးမည် ဖြစ်သော်လည်း၊ အခြားကိစ္စရပ်များ (ဥပမာ - ရင်းမြစ်ကုဒ်မှ [compile လုပ်ခြင်း (Compiling)](Compiling.md)) တွင် ၎င်းကို အွန်လိုင်းမှ ကိုယ်တိုင်တပ်ဆင်ရနိုင်ပါသည်။
 
-In openSUSE this is done by:
+openSUSE တွင် အောက်ပါအတိုင်း လုပ်ဆောင်နိုင်သည် -
 
- 
 ```python
 sudo zypper install python3-ply
 ```
 
-In Debian/Ubuntu based systems this is done like the following:
+Debian/Ubuntu အခြေခံစနစ်များတွင် အောက်ပါအတိုင်း လုပ်ဆောင်နိုင်သည် -
 
- 
 ```python
 sudo apt install python3-ply
 ```
 
-The general installation in all platforms can be done from the Python package index.
+အခြား ပလက်ဖောင်းအားလုံးတွင် Python package index မှတစ်ဆင့် ယေဘုယျ တပ်ဆင်မှုကို ပြုလုပ်နိုင်သည် -
 
- 
 ```python
 pip3 install --user ply
 ```
 
-## OpenSCAD language and file format 
+## OpenSCAD ဘာသာစကားနှင့် ဖိုင်ပုံစံ (OpenSCAD language and file format)
 
-The OpenSCAD language allows the use of variables and loops. It allows you to specify sub-modules to reuse geometry and code. This high degree of flexibility makes parsing very complex. Currently the OpenSCAD Workbench cannot handle the OpenSCAD language natively. Instead, if OpenSCAD is installed, it can be used to convert the input to the CSG format, which is a subset of the OpenSCAD language, and can be used as the input to OpenSCAD for further processing. During conversion all parametric behavior is lost, meaning that all variable names are discarded, loops expanded, and mathematical expressions evaluated.
+OpenSCAD ဘာသာစကားသည် ကိန်းရှင်များ (variables) နှင့် ပတ်လမ်းများ (loops) ကို အသုံးပြုခွင့်ပေးသည်။ ၎င်းသည် ဂျီဩမေတြီနှင့် ကုဒ်များကို ပြန်လည်အသုံးပြုရန် sub-modules များ သတ်မှတ်ခြင်းကို ခွင့်ပြုသည်။ ဤသို့ လိုက်လျောညီထွေရှိမှု မြင့်မားခြင်းကြောင့် ကုဒ်များကို ဖတ်ယူရာတွင် (parsing) အလွန်ရှုပ်ထွေးစေပါသည်။ လက်ရှိတွင် OpenSCAD လုပ်ငန်းခွင်သည် OpenSCAD ဘာသာစကားကို တိုက်ရိုက် မကိုင်တွယ်နိုင်သေးပါ။ ယင်းအစား၊ OpenSCAD ကို တပ်ဆင်ထားပါက ၎င်းကို အသုံးပြု၍ OpenSCAD ဘာသာစကား၏ အစိတ်အပိုင်းတစ်ခုဖြစ်သော CSG ပုံစံသို့ ပြောင်းလဲနိုင်ပြီး နောက်ထပ် လုပ်ဆောင်မှုများအတွက် OpenSCAD သို့ ပေးပို့နိုင်ပါသည်။ ပြောင်းလဲနေစဉ်အတွင်း ပါရာမက်ထရစ် (parametric) လုပ်ဆောင်ချက်များ အားလုံး ပျောက်ဆုံးသွားမည်ဖြစ်ပြီး၊ ဆိုလိုသည်မှာ ကိန်းရှင်အမည်များ အားလုံးကို ဖယ်ရှားခြင်း၊ ပတ်လမ်းများကို ဖြန့်ထုတ်ခြင်းနှင့် သင်္ချာဆိုင်ရာ ဖော်ပြချက်များကို တွက်ချက်ခြင်းတို့ ပြုလုပ်သွားမည် ဖြစ်သည်။
 
-## Tools
+## ကိရိယာများ (Tools)
 
--   <img alt="" src=images/OpenSCAD_ColorCodeShape.svg  style="width:32px;"> [Color Code Shape](OpenSCAD_ColorCodeShape.md): Change the color of selected or all shapes based on their validity.
--   <img alt="" src=images/OpenSCAD_ReplaceObject.svg  style="width:32px;"> [Replace Object](OpenSCAD_ReplaceObject.md): Replace an object in the feature tree.
--   <img alt="" src=images/OpenSCAD_RemoveSubtree.svg  style="width:32px;"> [Remove Subtree](OpenSCAD_RemoveSubtree.md): Removes the selected objects and all children that are not referenced from other objects.
--   <img alt="" src=images/OpenSCAD_RefineShapeFeature.svg  style="width:32px;"> [Refine Shape Feature](OpenSCAD_RefineShapeFeature.md): Cleans unnecessary lines.
--   <img alt="" src=images/OpenSCAD_MirrorMeshFeature.svg  style="width:32px;"> [Mirror Mesh Feature](OpenSCAD_MirrorMeshFeature.md): Create Mirror Mesh Feature.
--   <img alt="" src=images/OpenSCAD_ScaleMeshFeature.svg  style="width:32px;"> [Scale Mesh Feature](OpenSCAD_ScaleMeshFeature.md): Scale a Mesh Feature.
--   <img alt="" src=images/OpenSCAD_ResizeMeshFeature.svg  style="width:32px;"> [Resize Mesh Feature](OpenSCAD_ResizeMeshFeature.md): Resize a Mesh Feature.
--   <img alt="" src=images/OpenSCAD_IncreaseToleranceFeature.svg  style="width:32px;"> [Increase Tolerance Feature](OpenSCAD_IncreaseToleranceFeature.md): Increases tolerance of edges/faces/vertex of selected object(s).
--   <img alt="" src=images/OpenSCAD_Edgestofaces.svg  style="width:32px;"> [Convert Edges To Faces](OpenSCAD_Edgestofaces.md): Convert edges to faces. Useful to prepare imported DXF geometry for extrusion.
--   <img alt="" src=images/OpenSCAD_ExpandPlacements.svg  style="width:32px;"> [Expand Placements](OpenSCAD_ExpandPlacements.md): Expand all placements downwards the FeatureTree.
--   <img alt="" src=images/OpenSCAD_ExplodeGroup.svg  style="width:32px;"> [Explode Group](OpenSCAD_ExplodeGroup.md): Explodes fused part primitives.
--   <img alt="" src=images/OpenSCAD_AddOpenSCADElement.svg  style="width:32px;"> [Add OpenSCAD Element](OpenSCAD_AddOpenSCADElement.md): Add an OpenSCAD element by entering OpenSCAD code into the task panel.
--   <img alt="" src=images/OpenSCAD_MeshBoolean.svg  style="width:32px;"> [Mesh Boolean](OpenSCAD_MeshBoolean.md): Creates new mesh object by boolean operation from shapes.
--   <img alt="" src=images/OpenSCAD_Hull.svg  style="width:32px;"> [Hull](OpenSCAD_Hull.md): Applies a hull to selected shapes.
--   <img alt="" src=images/OpenSCAD_Minkowski.svg  style="width:32px;"> [Minkowski](OpenSCAD_Minkowski.md): Applies a minkowski sum to selected shapes.
+-   <img alt="" src=images/OpenSCAD_ColorCodeShape.svg  style="width:32px;"> [အရောင်ဖြင့် ပုံသဏ္ဌာန် ခွဲခြားခြင်း (Color Code Shape)](OpenSCAD_ColorCodeShape.md): ရွေးချယ်ထားသော သို့မဟုတ် ပုံသဏ္ဌာန် အားလုံး၏ ခိုင်မာမှုအပေါ် မူတည်၍ အရောင်ပြောင်းလဲခြင်း။
+-   <img alt="" src=images/OpenSCAD_ReplaceObject.svg  style="width:32px;"> [အရာဝတ္ထု အစားထိုးခြင်း (Replace Object)](OpenSCAD_ReplaceObject.md): feature tree အတွင်းရှိ အရာဝတ္ထုတစ်ခုကို အစားထိုးခြင်း။
+-   <img alt="" src=images/OpenSCAD_RemoveSubtree.svg  style="width:32px;"> [Subtree ကို ဖယ်ရှားခြင်း (Remove Subtree)](OpenSCAD_RemoveSubtree.md): ရွေးချယ်ထားသော အရာဝတ္ထုများနှင့် အခြားအရာဝတ္ထုများမှ ရည်ညွှန်းမထားသော child အားလုံးကို ဖယ်ရှားခြင်း။
+-   <img alt="" src=images/OpenSCAD_RefineShapeFeature.svg  style="width:32px;"> [ပုံသဏ္ဌာန် အင်္ဂါရပ်ကို သန့်စင်ခြင်း (Refine Shape Feature)](OpenSCAD_RefineShapeFeature.md): မလိုအပ်သော မျဉ်းများကို ရှင်းလင်းခြင်း။
+-   <img alt="" src=images/OpenSCAD_MirrorMeshFeature.svg  style="width:32px;"> [Mesh အင်္ဂါရပ်ကို မှန်ပုံရိပ်ဖော်ခြင်း (Mirror Mesh Feature)](OpenSCAD_MirrorMeshFeature.md): Mirror Mesh Feature တစ်ခု ဖန်တီးခြင်း။
+-   <img alt="" src=images/OpenSCAD_ScaleMeshFeature.svg  style="width:32px;"> [Mesh အင်္ဂါရပ်ကို စကေးချဲ့ခြင်း (Scale Mesh Feature)](OpenSCAD_ScaleMeshFeature.md): Mesh Feature တစ်ခုကို စကေးချဲ့ခြင်း။
+-   <img alt="" src=images/OpenSCAD_ResizeMeshFeature.svg  style="width:32px;"> [Mesh အင်္ဂါရပ်ကို အရွယ်အစား ပြောင်းလဲခြင်း (Resize Mesh Feature)](OpenSCAD_ResizeMeshFeature.md): Mesh Feature တစ်ခုကို အရွယ်အစား ပြောင်းလဲခြင်း။
+-   <img alt="" src=images/OpenSCAD_IncreaseToleranceFeature.svg  style="width:32px;"> [Tolerance တိုးမြှင့်ခြင်း အင်္ဂါရပ် (Increase Tolerance Feature)](OpenSCAD_IncreaseToleranceFeature.md): ရွေးချယ်ထားသော အရာဝတ္ထုများ၏ အနားသတ်/မျက်နှာပြင်/ဗားတက်စ် တို့၏ tolerance ကို တိုးမြှင့်ခြင်း။
+-   <img alt="" src=images/OpenSCAD_Edgestofaces.svg  style="width:32px;"> [အနားသတ်များကို မျက်နှာပြင်များသို့ ပြောင်းလဲခြင်း (Convert Edges To Faces)](OpenSCAD_Edgestofaces.md): အနားသတ်များကို မျက်နှာပြင်များသို့ ပြောင်းလဲခြင်း။ တင်သွင်းလာသော DXF ဂျီဩမေတြီများကို ထုထည်ထုတ်ရန် (extrusion) ပြင်ဆင်ရာတွင် အသုံးဝင်သည်။
+-   <img alt="" src=images/OpenSCAD_ExpandPlacements.svg  style="width:32px;"> [နေရာချထားမှုများကို ဖြန့်ထုတ်ခြင်း (Expand Placements)](OpenSCAD_ExpandPlacements.md): FeatureTree အောက်ခြေအထိ နေရာချထားမှု အားလုံးကို ဖြန့်ထုတ်ခြင်း။
+-   <img alt="" src=images/OpenSCAD_ExplodeGroup.svg  style="width:32px;"> [အုပ်စုကို ခွဲထုတ်ခြင်း (Explode Group)](OpenSCAD_ExplodeGroup.md): ပေါင်းစပ်ထားသော part primitives များကို ခွဲထုတ်ခြင်း။
+-   <img alt="" src=images/OpenSCAD_AddOpenSCADElement.svg  style="width:32px;"> [OpenSCAD အစိတ်အပိုင်း ထည့်သွင်းခြင်း (Add OpenSCAD Element)](OpenSCAD_AddOpenSCADElement.md): task panel တွင် OpenSCAD ကုဒ်များ ရိုက်ထည့်ခြင်းဖြင့် OpenSCAD အစိတ်အပိုင်းတစ်ခု ထည့်သွင်းခြင်း။
+-   <img alt="" src=images/OpenSCAD_MeshBoolean.svg  style="width:32px;"> [Mesh Boolean (Mesh Boolean)](OpenSCAD_MeshBoolean.md): ပုံသဏ္ဌာန်များမှ boolean လုပ်ဆောင်ချက်ဖြင့် mesh အရာဝတ္ထုအသစ် ဖန်တီးခြင်း။
+-   <img alt="" src=images/OpenSCAD_Hull.svg  style="width:32px;"> [Hull (Hull)](OpenSCAD_Hull.md): ရွေးချယ်ထားသော ပုံသဏ္ဌာန်များပေါ်တွင် hull တစ်ခု အသုံးပြုခြင်း။
+-   <img alt="" src=images/OpenSCAD_Minkowski.svg  style="width:32px;"> [Minkowski (Minkowski)](OpenSCAD_Minkowski.md): ရွေးချယ်ထားသော ပုံသဏ္ဌာန်များပေါ်တွင် minkowski sum တစ်ခု အသုံးပြုခြင်း။
 
-## Preferences
+## ဦးစားပေး သတ်မှတ်ချက်များ (Preferences)
 
--   <img alt="" src=images/Std_DlgPreferences.svg  style="width:32px;"> [Preferences](OpenSCAD_Preferences.md): preferences available for the OpenSCAD tools.
+-   <img alt="" src=images/Std_DlgPreferences.svg  style="width:32px;"> [ဦးစားပေး သတ်မှတ်ချက်များ (Preferences)](OpenSCAD_Preferences.md): OpenSCAD ကိရိယာများအတွက် ရရှိနိုင်သော ဦးစားပေး သတ်မှတ်ချက်များ။
 
-## Limitations
+## ကန့်သတ်ချက်များ (Limitations)
 
-OpenSCAD creates constructive solid geometry, as well as imports mesh files and extrudes 2D geometry from [DXF](DXF.md) files. FreeCAD allows you to create CSG with primitives as well. The FreeCAD geometry kernel (OCCT) works using a boundary representation. Therefore conversion from CSG to BREP should, in theory, be possible whereas conversion from BREP to CSG is, in general, not.
+OpenSCAD သည် constructive solid geometry (CSG) ကို ဖန်တီးနိုင်သလို၊ mesh ဖိုင်များကို တင်သွင်းခြင်းနှင့် [DXF](DXF.md) ဖိုင်များမှ ၂ဘက်မြင် ဂျီဩမေတြီများကို ထုထည်ထုတ်ခြင်းတို့ကို ပြုလုပ်နိုင်သည်။ ဖရီးကက်သည်လည်း primitives များဖြင့် CSG ကို ဖန်တီးခွင့်ပေးသည်။ ဖရီးကက်၏ ဂျီဩမေတြီ ကာနယ် (OCCT) သည် boundary representation (BREP) ကို အသုံးပြု၍ အလုပ်လုပ်သည်။ ထို့ကြောင့် CSG မှ BREP သို့ ပြောင်းလဲခြင်းသည် သီအိုရီအရ ဖြစ်နိုင်သော်လည်း၊ BREP မှ CSG သို့ ပြောင်းလဲခြင်းမှာ ယေဘုယျအားဖြင့် မဖြစ်နိုင်ပါ။
 
-OpenSCAD works internally on meshes. Some operations which are useful on meshes are not meaningful on a BREP model and can not be fully supported. Among these are convex hull, minkowski sum, glide and subdiv. Currently we run the OpenSCAD binary in order to perform hull and minkwoski operations and import the result. This means that the involved geometry will be triangulated. In OpenSCAD non-uniform scaling is often used, which does not impose any problems when using meshes. In our geometry kernel geometric primitives (lines, circular sections, etc) are converted to BSpline prior to performing such deformations. Those BSplines are known to cause trouble in later boolean operations. An automatic solution is not available at the moment. Please feel free to post to the forum if you encounter such problems. Often such problems can be solved be remodeling small parts. A deformation of a cylinder can substituted by an extrusion of an ellipses.
+OpenSCAD သည် အတွင်းပိုင်းတွင် meshes များပေါ်တွင် အလုပ်လုပ်သည်။ meshes များပေါ်တွင် အသုံးဝင်သော အချို့သော လုပ်ဆောင်ချက်များသည် BREP မော်ဒယ်ပေါ်တွင် အဓိပ္ပာယ်မရှိဘဲ အပြည့်အဝ ထောက်ပံ့မပေးနိုင်ပါ။ ၎င်းတို့ထဲတွင် convex hull, minkowski sum, glide နှင့် subdiv တို့ ပါဝင်သည်။ လက်ရှိတွင် ကျွန်ုပ်တို့သည် hull နှင့် minkwoski လုပ်ဆောင်ချက်များကို ဆောင်ရွက်ရန်နှင့် ရလဒ်ကို တင်သွင်းရန် OpenSCAD binary ကို run ပါသည်။ ဆိုလိုသည်မှာ သက်ဆိုင်ရာ ဂျီဩမေတြီကို triangulated mesh အဖြစ် ပြောင်းလဲသွားမည် ဖြစ်သည်။ OpenSCAD တွင် meshes များကို အသုံးပြုရာတွင် ပြဿနာမရှိသော non-uniform scaling ကို မကြာခဏ အသုံးပြုလေ့ရှိသည်။ ကျွန်ုပ်တို့၏ ဂျီဩမေတြီ ကာနယ်တွင်မူ ထိုသို့သော ပုံပျက်မှုများကို မလုပ်ဆောင်မီ ဂျီဩမေတြီ primitives များ (မျဉ်းများ၊ စက်ဝိုင်းပုံစံများ စသည်) ကို BSpline သို့ ပြောင်းလဲလိုက်သည်။ ထို BSplines များသည် နောက်ပိုင်းတွင် boolean လုပ်ဆောင်ချက်များ ဆောင်ရွက်ရာတွင် ပြဿနာဖြစ်စေနိုင်ကြောင်း သိရှိရပါသည်။ အလိုအလျောက် ဖြေရှင်းပေးမည့် နည်းလမ်းမှာ လက်ရှိတွင် မရှိသေးပါ။ ထိုသို့သော ပြဿနာများ ကြုံတွေ့ရပါက ဖိုရမ်တွင် ပို့စ်တင်နိုင်ပါသည်။ များသောအားဖြင့် ထိုပြဿနာများကို အစိတ်အပိုင်းငယ်များကို ပြန်လည်ပုံဖော်ခြင်းဖြင့် ဖြေရှင်းနိုင်ပါသည်။ ဆလင်ဒါတစ်ခု၏ ပုံပျက်ခြင်းကို ဘဲဥပုံစံ (ellipse) တစ်ခု၏ ထုထည်ထုတ်ခြင်း (extrusion) ဖြင့် အစားထိုးနိုင်ပါသည်။
 
-## Importing text 
+## စာသားများ တင်သွင်းခြင်း (Importing text)
 
-Importing OpenSCAD code with texts requires that the fonts that are used are properly installed on your system. You can verify this by opening OpenSCAD as a standalone tool and checking the list in **Help → Font List**. The list will also give you the correct font names. If a font does not appear in the list after installing, you may have to manually copy the font file to the appropriate system directory.
+စာသားများပါဝင်သော OpenSCAD ကုဒ်များကို တင်သွင်းရာတွင် အသုံးပြုထားသော ဖောင့် (fonts) များသည် သင့်စနစ်တွင် မှန်ကန်စွာ တပ်ဆင်ထားရန် လိုအပ်ပါသည်။ ၎င်းကို စစ်ဆေးရန် OpenSCAD ကို သီးသန့်ဖွင့်ပြီး **Help → Font List** တွင် ကြည့်ရှုနိုင်ပါသည်။ ထိုစာရင်းတွင် မှန်ကန်သော ဖောင့်အမည်များကိုလည်း ဖော်ပြပေးမည် ဖြစ်သည်။ ဖောင့်တစ်ခုကို တပ်ဆင်ပြီးနောက် စာရင်းတွင် ပေါ်မလာပါက၊ ဖောင့်ဖိုင်ကို သက်ဆိုင်ရာ စနစ်လမ်းကြောင်း (system directory) သို့ ကိုယ်တိုင် ကူးယူရနိုင်ပါသည်။
 
-Importing texts is relatively slow. Behind the scenes FreeCAD uses a DXF file created by OpenSCAD. The more contours there are the slower the import.
+စာသားများ တင်သွင်းခြင်းသည် အတော်အတန် နှေးကွေးပါသည်။ ဖရီးကက်သည် နောက်ကွယ်တွင် OpenSCAD မှ ဖန်တီးထားသော DXF ဖိုင်ကို အသုံးပြုပါသည်။ contours များလေလေ တင်သွင်းမှု ပိုနှေးလေလေ ဖြစ်သည်။
 
-It can be a good idea to first import a simple test case (replace {{Incode|NameOfFont}} with the correct font name):
-
-
+ပထမဦးစွာ ရိုးရှင်းသော စမ်းသပ်ချက်တစ်ခုကို တင်သွင်းခြင်းသည် ကောင်းမွန်သော အကြံဉာဏ် ဖြစ်ပါသည် ({{Incode|NameOfFont}} ကို မှန်ကန်သော ဖောင့်အမည်ဖြင့် အစားထိုးပါ) -
 
     TESTFONT="NameOfFont";
     linear_extrude(0.001) {
       text("A", size=5, font=TESTFONT, script="Latn");
     };
 
+{{Incode|<nowiki>script="Latn"</nowiki>}} ပါရာမီတာကို ဤနေရာတွင် ချန်လှပ်ထားနိုင်သော်လည်း၊ စာသားအတွင်း၌ စာလုံးများ မပါဝင်ဘဲ ပုဒ်ဖြတ်ပုဒ်ရပ် သို့မဟုတ် ကိန်းဂဏန်းများသာ ပါဝင်ပါက လိုအပ်ပါသည်။
 
+ဖရီးကက်သို့ တင်သွင်းရာတွင် သင်၏ ရင်းမြစ်ဖိုင်များရှိ {{Incode|<nowiki>use <FONT>;</nowiki>}} ဖော်ပြချက်များကို လျစ်လျူရှုထားမည်ဖြစ်ကြောင်း သတိပြုပါ။ OpenSCAD အောက်တွင် {{Incode|use}} ဖော်ပြချက်၏ အကျိုးသက်ရောက်မှုမှာ ပေးထားသော ဖောင့်ဖိုင်ကို သိရှိပြီးသား ဖောင့်စာရင်းထဲသို့ ယာယီထည့်သွင်းပေးခြင်း ဖြစ်ပါသည်။
 
-The {{Incode|<nowiki>script="Latn"</nowiki>}} parameter can be left out here, but is required if the text string does not contain any letters, but only punctuation and/or numbers.
+## အရိပ်အမြွက်များ (Hints)
 
-Please note that {{Incode|<nowiki>use <FONT>;</nowiki>}} statements in your source files are ignored when importing in FreeCAD. Under OpenSCAD the effect of a {{Incode|use}} statement is that the provided font file is temporarily added to the list of known fonts (although even there the statement does not work when a script is modified interactively).
+[DXF](DXF.md) ကို တင်သွင်းရာတွင် Draft precision ကို သင့်တော်သော ပမာဏတစ်ခု သတ်မှတ်ပါ၊ အကြောင်းမှာ ၎င်းသည် ဆက်သွယ်ထားသော အနားသတ်များကို ရှာဖွေရာတွင် သက်ရောက်မှု ရှိနိုင်သောကြောင့် ဖြစ်သည်။
 
-## Hints
-
-When importing [DXF](DXF.md) set the Draft precision to a sensible amount as this will affect the detection of connected edges.
-
-If FreeCAD crashes when importing CSG, it is strongly recommended that you enable \"automatically check model after boolean operation\" in **Menu → Edit → Preferences → Part Design → Model setting**.
-
-## Tutorials
-
--   [Import OpenSCAD code](Import_OpenSCAD_code.md)
-
-## Links
-
--   The official OpenSCAD project source code repository hosted on [GitHub](https://github.com/openscad/openscad)
--   Open tickets tagged \"OpenSCAD\" on the [FreeCAD Github issue tracker](https://github.com/FreeCAD/FreeCAD/labels/WB%20OpenSCAD). There are also tickets on the now archived [mantis bugtracker](https://freecadweb.org/tracker/search.php?tag_string=OpenSCAD).
--   Models tagged with \"OpenSCAD\" on [Thingiverse](http://www.thingiverse.com/tag:openscad)
-
-
-
-
- {{OpenSCAD Tools navi}}
-
-
+CSG ကို တင်သွင်းစဉ် ဖရီးကက် ပျက်ကျပါက (crash)၊ **Menu → Edit → Preferences → Part Design → Model setting** ရှိ \"automatically check model after boolean operation\" ကို ဖွင့်ထားရန် အလေးအနက် အကြံပြုလိုပါသည်။
 
 ---
-⏵ [documentation index](../README.md) > [Workbenches](Category_Workbenches.md) > [OpenSCAD](Category_OpenSCAD.md) > OpenSCAD Workbench
+⏵ [မှတ်တမ်း အညွှန်း (documentation index)](../README.md) > [လုပ်ငန်းခွင်များ (Workbenches)](Category_Workbenches.md) > [OpenSCAD](Category_OpenSCAD.md) > OpenSCAD လုပ်ငန်းခွင် (OpenSCAD Workbench)

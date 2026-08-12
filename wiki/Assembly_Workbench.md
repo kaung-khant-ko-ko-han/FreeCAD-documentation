@@ -1,4 +1,4 @@
-# <img alt="Assembly workbench icon" src=images/Workbench_Assembly.svg  style="width:64px;"> Assembly Workbench
+# <img alt="Assembly workbench icon" src=images/Workbench_Assembly.svg  style="width:64px;"> Assembly Workbench (အစိတ်အပိုင်းများ တပ်ဆင်စုစည်းမှု)
 
  
 
@@ -7,7 +7,7 @@
 
 <small>(v1.0)</small> 
 
-The <img alt="" src=images/Workbench_Assembly.svg  style="width:24px;"> [Assembly Workbench](Assembly_Workbench.md) is FreeCAD\'s new built-in assembly workbench. It uses the open-source [Ondsel solver](https://github.com/Ondsel-Development/OndselSolver).
+The <img alt="" src=images/Workbench_Assembly.svg  style="width:24px;"> [Assembly Workbench](Assembly_Workbench.md) is FreeCAD's new built-in assembly workbench. It uses the open-source [Ondsel solver](https://github.com/Ondsel-Development/OndselSolver).
 
  <img alt="" src=images/Assembly_Workbench_Example.png  style="width:400px;"> 
 
@@ -183,7 +183,7 @@ With the <img alt="" src=images/Assembly_CreateAssembly.svg  style="width:24px;"
 
 ### Move the parts into the assembly 
 
-In the [Tree view](Tree_view.md) drag and drop the parts on the Assembly object. They can now be handled by the Assembly\'s solver.
+In the [Tree view](Tree_view.md) drag and drop the parts on the Assembly object. They can now be handled by the Assembly's solver.
 
  <img alt="" src=images/Assembly_KinematicExample-02.png  style="width:200px;"> 
 
@@ -264,7 +264,7 @@ The pin of the Slider Rod is redundantly orientated. Its centerline is parallel 
 
 To control the layout of the assembly by the angle between the Base and the Crank we have to change the Revolute joint between them to a Fixed joint. To do so double-click the Revolute object in the Tree view. In the dialog change Revolute to Fixed and change the Rotation value as desired (the movement should follow the mouse wheel action).
 
-Note that a joint type change will change the joint\'s Label, but not its Name. In this case the Label is changed to \"Fixed\".
+Note that a joint type change will change the joint's Label, but not its Name. In this case the Label is changed to "Fixed".
 
 To animate the assembly we can change the Rotation (Offset1.Angle) of the Fixed joint with Python code. Just copy-paste the following lines in the Python console:
 
@@ -581,7 +581,7 @@ With the <img alt="" src=images/Assembly_CreateAssembly.svg  style="width:24px;"
 
 ### Move the parts into the assembly container 
 
-In the [Tree view](Tree_view.md) drag and drop the parts on the Assembly object. They can now be handled by the Assembly\'s solver.
+In the [Tree view](Tree_view.md) drag and drop the parts on the Assembly object. They can now be handled by the Assembly's solver.
 
 ### Ground a part 
 
@@ -753,7 +753,7 @@ cyl3 = Part.makeCylinder(15, 10, App.Vector(0, -5, -35), App.Vector(0, 1, 0))
 cyl4 = Part.makeCylinder(40, 5)
 cyl5 = Part.makeCylinder(5, 10,App.Vector(0, -5, -35), App.Vector(0, 1, 0))
 cyl6 = Part.makeCylinder(5, 130)
-cyl7 = Part.makeCylinder(20, 5,App.Vector(0, 0, 130))
+cyl7 = Part.makeCylinder(20, 5,AppVector(0, 0, 130))
 shape = cyl1.fuse([tor1,cyl2, box1, cyl3]).cut(cyl4.fuse([cyl5])).fuse([cyl6, cyl7])
 piston = doc.addObject("Part::Feature", "Piston")
 piston.Shape = shape.removeSplitter()
@@ -792,13 +792,15 @@ view.viewIsometric()
 view.fitAll()
 ```
 
+(Note: Above code includes custom Part::Feature definitions; run as macro as instructed.)
+
 ### Add an assembly 
 
 With the <img alt="" src=images/Assembly_CreateAssembly.svg  style="width:24px;"> [Create Assembly](Assembly_CreateAssembly.md) tool add an assembly to the document.
 
 ### Move the parts into the assembly container 
 
-In the [Tree view](Tree_view.md) drag and drop the parts on the Assembly object. They can now be handled by the Assembly\'s solver.
+In the [Tree view](Tree_view.md) drag and drop the parts on the Assembly object. They can now be handled by the Assembly's solver.
 
 ### Ground the two axles 
 
@@ -885,9 +887,9 @@ Select the center of the support face on the Piston and the center of the bottom
 
 *<img src="images/Assembly_CreateJointFixed.svg" width=24px> [Create Fixed Joint](Assembly_CreateJointFixed.md) + Selected elements → rearranged Spring*
 
-Select the bottom vertex of the cylinder\'s seam in the Piston and the corner vertex in the Spring.
+Select the bottom vertex of the cylinder's seam in the Piston and the corner vertex in the Spring.
 
--   Connect the distance property of the **Distance** joint to the Spring\'s **Height** property using an [expression](Expressions.md):
+-   Connect the distance property of the **Distance** joint to the Spring's **Height** property using an [expression](Expressions.md):
 
 1.  Select the Spring in the [Tree view](Tree_view.md).
 2.  Select the blue icon <img alt="" src=images/Bound-expression.svg  style="width:16px;"> in the Height property field.

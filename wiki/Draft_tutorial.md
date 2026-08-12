@@ -1,4 +1,3 @@
----
  TutorialInfo:
    Topic:  Drafting
    Level:  Beginner
@@ -14,215 +13,215 @@
 
 
 
-## Introduction
+## အIntroductions
 
-This tutorial was originally written by Drei, and it was rewritten and illustrated by vocx.
+ဤသင်ခန်းစာကို မူရင်းရေးသားခဲ့သူမှာ Drei ဖြစ်ပြီး၊ vocx က ဤကို ပြန်လည်ရေးသား၍ ပုံမှန်သရုပ်ပြထားပါသည်။
 
-This tutorial is meant to introduce the reader to the basic workflow of the <img alt="" src=images/Workbench_Draft.svg  style="width:24px;"> [Draft Workbench](Draft_Workbench.md).
+ဤသင်ခန်းစာသည် ဖတ်ရှုသူအား <img alt="" src=images/Workbench_Draft.svg  style="width:24px;"> [Draft Workbench](Draft_Workbench.md) (Draft လုပ်ငန်းခွင်) ၏ မူလလုပ်ဆောင်မှုစဉ်ကို မိတ်ဆက်ပေးရန် ရည်ရွယ်ပါသည်။
 
-The reader will practice:
+ဖတ်ရှုသူမှာ အောက်ပါများကို လက်တွေ့ပြုသန်းလေ့ကျင့်မည်ဖြစ်သည်။
 
--   creation of lines, arcs, and polygons
--   the use of working planes
--   the creation of dimensions, text, and shapestrings
--   the creation of a technical drawing
+-   ကမ်းလှမ်းရန် လိုအပ်သော သတ်မှတ်ချက်များဖြင့် ကြောင်းများ၊ အကြောင်းဝက်များနှင့် ပုံစံများ ဖန်တီးခြင်း
+-   working plane များ၏ အသုံးပြုမှု
+-   အတိုင်းအတာများ၊ စာသားများနှင့် ShapeString များ ဖန်တီးခြင်း
+-   နည်းပညာရေးဆွဲပုံ (technical drawing) တစ်ခု ဖန်တီးခြင်း
 
-This tutorial uses the notation {{Value|(x, y, z)}} to denote the coordinates required to define points in an object. The default unit is millimeters {{Value|mm}}.
+ဤသင်ခန်းစာတွင် {{Value|(x, y, z)}} ဆိုသော သတ်မှတ်ချက်ကို အရာဝတ္ထုအတွင်း အချက်အလက်များကို သတ်မှတ်ရန်ကုဒ်အဖြစ် အသုံးပြုထားသည်။ ပုံမှန်ယူနစ်မှာ မီလီမီတာ {{Value|mm}} ဖြစ်သည်။
 
  <img alt="" src=images/00_Dr01_Draft_Tutorial_final.png  style="width:" height="400px;">  
-*Final drawing including various Draft objects.*
+*နောက်ဆုံးရေးဆွဲပြီး Draft အရာဝတ္ထုမျိုးစုံပါဝင်သည့် အထွေထွေ ပုံကြမ်း။*
 
-## Setup
+## ဖြန့်ချိရန် စီစဉ်မိန့်
 
-1\. Open FreeCAD, create a new empty document with **File → [<img src=images/Std_New.svg style="width:16px"> [New](Std_New.md)**.
+1\. ဖရီးကက် (FreeCAD) ကို ဖွင့်၍ **File → [<img src=images/Std_New.svg style="width:16px"> [New](Std_New.md)** ဖြင့် အလွတ်စာရွက်အသစ်တစ်ခု ဖန်တီးပါ။
 
-:   1.1. Switch to the [Draft Workbench](Draft_Workbench.md) from the [workbench selector](Std_Workbench.md), or the menu **View → Workbench → [<img src=images/Workbench_Draft.svg style="width:16px"> Draft**.
-:   1.2. Make sure you understand how to use the [property editor](property_editor.md), particularly the **Data** and **View** tabs to change the properties. When changing properties, you may have to do a **<img src="images/Std_Refresh.svg" width=16px> [Std Refresh](Std_Refresh.md)** action to see the result in the [3D view](3D_view.md).
-:   1.3. Since the Draft objects are planar shapes, they are better viewed from the top. Use **[<img src=images/Std_ViewTop.svg style="width:16px"> [View top](Std_ViewTop.md)** to set the [3D view](3D_view.md).
-:   1.4. Although it is not used in this tutorial, the Draft grid is helpful to position geometrical elements. Use **[<img src=images/Draft_SelectPlane.svg style="width:16px"> [SelectPlane](Draft_SelectPlane.md)** to set both the working plane and the grid, and then show and hide the grid with **[<img src=images/Draft_ToggleGrid.svg style="width:16px"> [Toggle grid](Draft_ToggleGrid.md)**.
+:   1.1. [workbench selector](Std_Workbench.md) နှင့်တစ်ပြိုင်နက် သို့မဟုတ် မီနူး **View → Workbench → [<img src=images/Workbench_Draft.svg style="width:16px"> Draft** မှတဆင့် [Draft Workbench](Draft_Workbench.md) (Draft လုပ်ငန်းခွင်) သို့ ပြောင်းပါ။
+:   1.2. [property editor](property_editor.md) (property editor — ပိုင်ဆိုင်မှု တည်းဖြတ်ကိရိယာ) ကို မူကြမ်းနားလည်ပေါက်ပါစေ၊ အထူးသဖြင့် ပိုင်ဆိုင်မှုများပြင်ဆင်ရာတွင် အသုံးပြုသော **Data** နှင့် **View** တက်များကို လေ့လာပါ။ ကုန်ကျစရိတ်များကို ပြောင်းလဲလျှင် [3D view](3D_view.md) (3D မြင်ကွင်း) တွင် ရလဒ်ကို မြင်ရန် **<img src="images/Std_Refresh.svg" width=16px> [Std Refresh](Std_Refresh.md)** အခါတစ်ခါ ပြုလုပ်ရနိုင်ပါသည်။
+:   1.3. Draft အရာဝတ္ထုများသည် ပလိန်နာ ပုံစံများ ဖြစ်သဖြင့် ထိပ်မြင်ကွင်းမှ ကြည့်ရသင့်သည်။ [3D view](3D_view.md) ကို ဆက်တင်ရန် **[<img src=images/Std_ViewTop.svg style="width:16px"> [View top](Std_ViewTop.md)** ကို အသုံးပြုပါ။
+:   1.4. ဤသင်ခန်းစာတွင် မသုံးခဲ့ပေမယ့် Draft grid သည် ဂျော်မီတရီကွန်ယက်များကို တိကျစွာ တည်နေရာချရန် အထောက်အကူပြုသည်။ [SelectPlane](Draft_SelectPlane.md) ကိုအသုံးပြု၍ working plane နှင့် grid ကို သတ်မှတ်နိုင်ပြီး **[<img src=images/Draft_ToggleGrid.svg style="width:16px"> [Toggle grid](Draft_ToggleGrid.md)** ဖြင့် grid ကို ဖျောက်/ပြသ လုပ်နိုင်ပါသည်။
 
 ## Snap toolbar 
 
-2\. The [Draft Snap toolbar](Draft_Snap.md) is normally activated when you switch to the [Draft Workbench](Draft_Workbench.md).
+2\. [Draft Snap toolbar](Draft_Snap.md) သည် ပုံမှန်အားဖြင့် [Draft Workbench](Draft_Workbench.md) (Draft လုပ်ငန်းခွင်) သို့ ပြောင်းလဲသည့်အခါ အချိန်နှင့်တပြေးညီ ဖွင့်လှစ်ထားသည်။
 
-:   2.1. To make sure it is always there, go to the [Draft Preferences](Draft_Preferences.md), **Edit → Preferences → Draft → Grid and snapping tab**.
-:   2.2. Verify that the **Show Draft Snap toolbar** is active.
+:   2.1. အမြဲရှိနေစေရန် [Draft Preferences](Draft_Preferences.md) (Edit → Preferences → Draft → Grid and snapping tab) သို့ သွားပါ။
+:   2.2. **Show Draft Snap toolbar** ကို ဖွင့်ထားပြီးဖြစ်ကြောင်း အတည်ပြုပါ။
 
-You can also change the visibility and properties of the Draft grid in this same window.
+ဤတည်းက မည်သို့မဆို Draft grid ၏ မြင်နိုင်မှုနှင့် ပိုင်ဆိုင်မှုများကိုပါ တည်းဖြတ်နိုင်သည်။
 
 ## Working planes 
 
-Most Draft objects are planar shapes so they are naturally based on a **working plane**. A working plane can be one of the main XY, XZ, and YZ global coordinate planes, or it can be a plane that is parallel to them with a positive or negative offset, or it can be a plane defined by the face of a solid object.
+Draft အများစုအရာဝတ္ထုများသည် ပလိန်နာ ပုံစံများဖြစ်၍ သဘာဝကျစွာ **working plane** တစ်ခုအပေါ် တည်ဆောက်ထားသည်။ working plane သည် ကမ္ဘာလုံးဆိုင်ရာ ဗဟိုတည်နေရာ XY, XZ, YZ အချင်းအနှောင့် plane များထဲမှ တစ်ခု ဖြစ်နိုင်သလို၊ ၎င်းတို့နှင့် ပါရာလယ်လီယ်ဖြစ်၍ အက်ဖ်စက် (offset) ရှိသော plane ဖြစ်နိုင်သည်၊ သို့မဟုတ် သံလိုက်တစ်ခု၏ မျက်နှာပြင်ဖြင့် သတ်မှတ်ထားသည့် plane ဖြစ်နိုင်ပါသည်။
 
-3\. Press **[<img src=images/Draft_SelectPlane.svg style="width:16px"> [SelectPlane](Draft_SelectPlane.md)**, or go to the menu **Utilities → [<img src=images/Draft_SelectPlane.svg style="width:16px"> [Select plane](Draft_SelectPlane.md)**, to open the working plane [task panel](task_panel.md).
+3\. **[<img src=images/Draft_SelectPlane.svg style="width:16px"> [SelectPlane](Draft_SelectPlane.md)** ကိုနှိပ်ပါ၊ ဒါမှမဟုတ် မီနူး **Utilities → [<img src=images/Draft_SelectPlane.svg style="width:16px"> [Select plane](Draft_SelectPlane.md)** ကိုသွား၍ working plane အတွက် [task panel](task_panel.md) (လုပ်ငန်းတာဝန်ပြား) ကို ဖွင့်ပါ။
 
-:   3.1. Press **[<img src=images/Std_ViewTop.svg style="width:16px"> Top (XY)**.
+:   3.1. **[<img src=images/Std_ViewTop.svg style="width:16px"> Top (XY)** ကို နှိပ်ပါ။
 
-Before pressing the button, you can also change the value of the offset in millimeters, as well as the grid spacing, the main lines and snapping radius.
+ခလုတ်ကို နှိပ်မည့်အခါ အက်ဖ်စက် (offset) ကို မီလီမီတာအဖြစ်၊ grid spacing၊ main lines နှင့် snapping radius တို့ကို ပြောင်းလဲနိုင်ပါသည်။
 
 ## Lines and arcs 
 
-4\. We will create arcs and lines.
+4\. အခု ကျွန်တော်တို့သည် အကြောင်းဝက်များနှင့် ကြောင်းများ ဖန်တီးမည်။
 
-:   4.1. Press **[<img src=images/Draft_Arc.svg style="width:16px"> [Arc](Draft_Arc.md)**.
-:   4.2. Set the **Center** to {{Value|(0, 0, 0)}}, and press **Enter**.
-:   4.3. Set the **Radius** to {{Value|30 mm}}, and press **Enter**.
-:   4.4. Set the **Start angle** to {{Value|60.0°}}, and press **Enter**.
-:   4.5. Set the **Aperture angle** to {{Value|60.0°}}, and press **Enter**.
-:   4.6. Repeat the same procedure for a second arc with a radius of {{Value|25 mm}}, the other properties are the same.
+:   4.1. **[<img src=images/Draft_Arc.svg style="width:16px"> [Arc](Draft_Arc.md)** ကို နှိပ်ပါ။
+:   4.2. **Center** ကို {{Value|(0, 0, 0)}} အဖြစ် သတ်မှတ်ပြီး **Enter** ကို နှိပ်ပါ။
+:   4.3. **Radius** ကို {{Value|30 mm}} အဖြစ် သတ်မှတ်ပြီး **Enter** ကို နှိပ်ပါ။
+:   4.4. **Start angle** ကို {{Value|60.0°}} အဖြစ် သတ်မှတ်ပြီး **Enter** ကို နှိပ်ပါ။
+:   4.5. **Aperture angle** ကို {{Value|60.0°}} အဖြစ် သတ်မှတ်ပြီး **Enter** ကို နှိပ်ပါ။
+:   4.6. အခြား arc တစ် ခုကို radius ကို {{Value|25 mm}} ဖြင့် အထက်ပါ နည်းလမ်းအတိုင်း ထပ်လုပ်ပါ၊ အခြားပုံစံများမှာ ထပ်တူတူဖြစ်သည်။
 
-5\. We will now create a closed profile by tying the arcs with lines.
+5\. ယခု ကျွန်တော်တို့သည် arc များကို ကြောင်းများဖြင့် ဆက်သွယ်ကာ ပိတ်ပုံစံ တစ်ခု ဖန်တီးသွားမည်။
 
-:   5.1. Press **[<img src=images/Draft_Line.svg style="width:16px"> [Line](Draft_Line.md)**.
-:   5.2. In the [Snap toolbar](Draft_Snap.md) make sure **[<img src=images/Draft_Snap_Lock.svg style="width:16px"> [Toggle snap](Draft_Snap_Lock.md)** is active, and only **[<img src=images/Draft_Snap_Endpoint.svg style="width:16px"> [Endpoint](Draft_Snap_Endpoint.md)** as well. As you move the pointer onto the arc and close to one of its endpoints, the <img alt="" src=images/Draft_Snap_Endpoint.svg  style="width:24px;"> [Endpoint](Draft_Snap_Endpoint.md) icon should appear. Also, the target point is emphasized with a large white dot. Click to select this point.
-:   5.3. Move the pointer to the closest endpoint of the other arc to tie the two arcs together.
-:   5.4. Repeat the process for the other side of the arc to close the profile.
+:   5.1. **[<img src=images/Draft_Line.svg style="width:16px"> [Line](Draft_Line.md)** ကို နှိပ်ပါ။
+:   5.2. [Snap toolbar](Draft_Snap.md) ထဲ၌ **[<img src=images/Draft_Snap_Lock.svg style="width:16px"> [Toggle snap](Draft_Snap_Lock.md)** ကို ဖွင့်ထားပြီး **[<img src=images/Draft_Snap_Endpoint.svg style="width:16px"> [Endpoint](Draft_Snap_Endpoint.md)** ကိုသာ ဖွင့်ထားပါ။ အရွှေ့ပြားကို arc ပေါ်သို့ တပ်မက်သောအခါ arc ၏ endpoint အနီးသို့ ရောက်သည်နှင့် <img alt="" src=images/Draft_Snap_Endpoint.svg  style="width:24px;"> [Endpoint](Draft_Snap_Endpoint.md) icon ပေါ်လာမည်။ အလယ်ဖြင့် ပြည့်စုံသော အဖြစ်ဖြင့် အဖြစ်ရှေ့မှာ ထားရှိထားသော လက်ချက်ဖြင့် အစမ်းနှိပ်၍ စာရင်းကို စတင်ရန် အချက်ကို ရွေးချယ်ပါ။
+:   5.3. မျိုးစုံ arc ၏ နီးที่สุด endpoint သို့ မာ့ခ်ကာ နှိပ်၍ arc နှစ်ခုကို ဆက်သွယ်ပါ။
+:   5.4. ပရိုဖိုင်ကို ပိတ်ရန် arc ၏ အခြားဘက်အတွက်လည်း အတူတူလုပ်ဆောင်ပါ။
 
  <img alt="" src=images/01_Dr01_Draft_Arc_profile.png  style="width:" height="400px;">  
-*Closed profile created by two arcs and two lines.*
+*Arc နှစ်ခုနှင့် ကြောင်းနှစ်ခုဖြင့် ပိတ်ထားသည့် ပရိုဖိုင်။*
 
 ## Fusing or compounding 
 
-We now have several objects in the [tree view](tree_view.md) that form a closed profile. However, this profile is still composed of disconnected objects; each of them can be edited and moved independently of the others. It is possible to continue working with the elements in this way, but it is also possible to fuse them into a single object.
+ယခု ကျွန်တော်တို့တွင် [tree view](tree_view.md) (tree မြင်ကွင်း) ထဲတွင် ပိတ်ပုံစံ တစ်ခုကို ဖွဲ့စည်းထားသည့် အရာဝတ္ထု အမျိုးမျိုး ရှိသေးသည်။ သို့သော် ဤပရိုဖိုင်သည် ဆက်စပ်မရှိသေးသော အရာဝတ္ထုများမှ ဖွဲ့စည်းထားသဖြင့် တစ်ခုချင်းစီကို လွတ်လပ်စွာ ပြင်ဆင်ခြင်းနှင့် ရွှေ့ပြောင်းခြင်းများ ပြုလုပ်နိုင်ပါသည်။ ဤအရာများကို ထပ်မံဆက်လက် လုပ်ဆောင်လို့ရသည်၊ သို့သော် အရာများကို တစ်ခုတည်းသော အရာတစ်ခုအဖြစ် အတူပေါင်း၍ fuse လုပ်နိုင်ပါသည်။
 
-6a. Note that fusing the objects into a single object will create an object that is no longer parametric, so their properties cannot be modified further.
+6a. အရာများကို တစ်ခုတည်းသို့ fuse လုပ်ခြင်းဖြင့် အဆိုပါ အရာသည် နောက်ထပ် parametric မဟုတ်သော အရာတစ်ခု ဖြစ်လာမည်ဖြစ်၍ ၎င်းတို့၏ properties များကို နောက်ထပ် ပြင်ဆင်လို၍မရတော့ပါ။
 
-:   6a.1. Select all four objects in the [tree view](tree_view.md), or by holding **Ctrl** and picking them in the [3D view](3D_view.md).
-:   6a.2. With these objects selected, click on **[<img src=images/Draft_Upgrade.svg style="width:16px"> [Upgrade](Draft_Upgrade.md)**.
-:   6a.3. This will upgrade the four objects into a single {{Value|Wire}}.
+:   6a.1. [tree view](tree_view.md) တွင် အရာများလေးခုအားလုံးကို ရွေးချယ်ပါ၊ ဒါမှမဟုတ် **Ctrl** ကို ဖိထား၍ [3D view](3D_view.md) တွင် တစ်ခုချင်းစီကို နှိပ်ရွေးပါ။
+:   6a.2. အရာများရွေးထားသောအနေဖြင့် **[<img src=images/Draft_Upgrade.svg style="width:16px"> [Upgrade](Draft_Upgrade.md)** ကို နှိပ်ပါ။
+:   6a.3. ၎င်းက အရာလေးခုကို တစ်ခုတည်းသော {{Value|Wire}} အဖြစ် upgrade ပြုလုပ်မည် ဖြစ်ပါသည်။
 
-6b. If you wish to maintain the parametric nature of the objects you can create a compound instead.
+6b. အရာများ၏ parametric လက္ခဏာကို ထိန်းသိမ်းလိုပါက compound တစ်ခု ဖန်တီးနိုင်ပါသည်။
 
-:   6b.1. Switch to the <img alt="" src=images/Workbench_Part.svg  style="width:24px;"> [Part Workbench](Part_Workbench.md).
-:   6b.2. With these objects selected, click on **[<img src=images/Part_Compound.svg style="width:16px"> [Part Compound](Part_Compound.md)**.
+:   6b.1. <img alt="" src=images/Workbench_Part.svg  style="width:24px;"> [Part Workbench](Part_Workbench.md) (Part Workbench — အပိုင်း လုပ်ငန်းခွင်) သို့ ပြောင်းပါ။
+:   6b.2. အရာများရွေးထားသောအနေဖြင့် **[<img src=images/Part_Compound.svg style="width:16px"> [Part Compound](Part_Compound.md)** ကို နှိပ်ပါ။
 
 ## Rectangles, circles, and polygons 
 
-7\. We will draw a rectangular frame. (Switch back to the <img alt="" src=images/Workbench_Draft.svg  style="width:24px;"> [ Draft Workbench](Draft_Workbench.md).)
+7\. အခု ကျွန်တော်တို့ rectangular frame တစ်ခု ဆွဲမည်။ (ပြန်လည် <img alt="" src=images/Workbench_Draft.svg  style="width:24px;"> [ Draft Workbench](Draft_Workbench.md) (Draft လုပ်ငန်းခွင်) သို့ ပြောင်းပါ။)
 
-:   7.1. Press **[<img src=images/Draft_Rectangle.svg style="width:16px"> [Rectangle](Draft_Rectangle.md)**.
-:   7.2. Enter the values of the first point {{Value|(-100, -60, 0)}}, and press **Enter**.
-:   7.3. Make sure the **Relative** option is unchecked, as we will use absolute units. You may press **R** in the keyboard to quickly toggle this option on and off.
-:   7.4. Enter the values for the second point {{Value|(140, 90, 0)}}, and press **Enter**.
+:   7.1. **[<img src=images/Draft_Rectangle.svg style="width:16px"> [Rectangle](Draft_Rectangle.md)** ကို နှိပ်ပါ။
+:   7.2. ပထမအမှတ်နေရာကို {{Value|(-100, -60, 0)}} ထည့်ပြီး **Enter** ကို နှိပ်ပါ။
+:   7.3. အချက်အလက်အတွက် **Relative** ရွေးချယ်မှုကို uncheck ထားပါ၊ ကျွန်တော်တို့သည် absolute ဥစ္စာတန်ဖိုးများကို သုံးမည်ဖြစ်သည်။ အမြန် toggle ပြန်လွှေအောင် ကီးဘုတ်ပေါ်မှ **R** ကို နိုပ်နိုင်သည်။
+:   7.4. ဒုတိယအမှတ်နေရာ၏ ကိန်းဂဏန်းကို {{Value|(140, 90, 0)}} ထည့်ပြီး **Enter** ကို နှိပ်ပါ။
 
-A rectangle is created. Go in the [property editor](Property_editor.md) to change its properties. If you don\'t want the rectangle to create a face, set **Make Face** to `False`. If you want to make a face, but see only the wires of that object, keep **Make Face** to `True` but set the **Display Mode** to {{Value|Wireframe}}.
+Rectangle တစ်ခု ဖန်တီးပြီးပါပြီ။ ၎င်း၏ properties များကို ပြောင်းရန် [property editor](Property_editor.md) (property editor — ပိုင်ဆိုင်မှု တည်းဖြတ်ကိရိယာ) သို့ သွားကြည့်ပါ။ rectangle သည် face ဖန်တီး မဖြစ်စေလိုပါက **Make Face** ကို `False` သို့ သတ်မှတ်ပါ။ face ဖန်တီးချင်ပြီးလည်း အဲဒီ object ၏ wires များသာ မြင်ချင်ပါက **Make Face** ကို `True` ထားပြီး **Display Mode** ကို {{Value|Wireframe}} သို့ သတ်မှတ်ပါ။
 
-8\. We will draw a circle.
+8\. ငါတို့က circle တစ်ခု ဆွဲမည်။
 
-:   8.1. Press **[<img src=images/Draft_Circle.svg style="width:16px"> [Circle](Draft_Circle.md)**.
-:   8.2. Enter the values of the center {{Value|(0, 0, 0)}}, and press **Enter**.
-:   8.3. Set the radius to {{value|15 mm}}, and press **Enter**.
+:   8.1. **[<img src=images/Draft_Circle.svg style="width:16px"> [Circle](Draft_Circle.md)** ကို နှိပ်ပါ။
+:   8.2. center အတွက် {{Value|(0, 0, 0)}} ထည့်၍ **Enter** ကို နှိပ်ပါ။
+:   8.3. radius ကို {{value|15 mm}} သတ်မှတ်ပြီး **Enter** ကို နှိပ်ပါ။
 
-9\. We will draw a regular polygon.
+9\. မကြာခဏနှင့်ရှိသည့် polygon တစ်ခု ဆွဲမည်။
 
-:   9.1. Press **[<img src=images/Draft_Polygon.svg style="width:16px"> [Polygon](Draft_Polygon.md)**.
-:   9.2. Enter the values of the center {{Value|(0, 0, 0)}}, and press **Enter**.
-:   9.3. Set the number of sides to {{Value|6}}, and press **Enter**.
-:   9.4. Set the radius to {{Value|50 mm}}, and press **Enter**.
+:   9.1. **[<img src=images/Draft_Polygon.svg style="width:16px"> [Polygon](Draft_Polygon.md)** ကို နှိပ်ပါ။
+:   9.2. center အတွက် {{Value|(0, 0, 0)}} ထည့်၍ **Enter** ကို နှိပ်ပါ။
+:   9.3. number of sides ကို {{Value|6}} သတ်မှတ်၍ **Enter** ကို နှိပ်ပါ။
+:   9.4. radius ကို {{Value|50 mm}} သတ်မှတ်၍ **Enter** ကို နှိပ်ပါ။
 
-Again, you may change the **Make Face** and **Display Mode** properties in the [property editor](property_editor.md) if you want.
+ပြန်လည် [property editor](property_editor.md) (property editor — ပိုင်ဆိုင်မှု တည်းဖြတ်ကိရိယာ) တွင် **Make Face** နှင့် **Display Mode** အချက်များကို လိုအပ်သလို ပြင်ဆင်နိုင်သည်။
 
-The rectangle, the circle, the polygon, and most other objects created with the [Draft Workbench](Draft_Workbench.md) share many data and view properties because they are derived from the same base class, [Part Part2DObject](Part_Part2DObject.md).
+Rectangle, circle, polygon နှင့် [Draft Workbench](Draft_Workbench.md) (Draft လုပ်ငန်းခွင်) မှ ဖန်တီးသည့် အခြားအရာဝတ္ထုအများစုသည် base class ဖြစ်သည့် [Part Part2DObject](Part_Part2DObject.md) မှ ဆင်းသက်လာသောကြောင့် data နှင့် view properties များကိုမျှဝေကြသည်။
 
  <img alt="" src=images/02_Dr01_Draft_Rectangle_circle_polygon.png  style="width:" height="400px;">  
-*Rectangle, circle and polygon added.*
+*Rectangle, circle နှင့် polygon ထည့်သွင်းပြီး။*
 
 ## Arrays
 
-Arrays are used to replicate an object several times in an orthogonal direction (X, Y, Z), around a revolution axis, or along a path.
+Arrays များကို အရာဝတ္ထုတစ်ခုကို အနောက်/ဘယ်/ညာ (X, Y, Z) လမ်းကြောင်းများဖြင့် မျှတစွာ many replicate လုပ်ရန်၊ revolution axis အပေါ် ပတ်၍တက်ရန်၊ သို့မဟုတ် path တစ်ခုလိုက်၍ replicate လုပ်ရန် အသုံးပြုသည်။
 
-10\. We will create a polar array.
+10\. Polar array တစ်ခု ဖန်တီးမည်။
 
-:   10.1. Select the {{Value|Wire}} object that was previously created with the **[<img src=images/Draft_Upgrade.svg style="width:16px"> [Upgrade](Draft_Upgrade.md)** tool, or the {{Value|Compound}} created with the **[<img src=images/Part_Compound.svg style="width:16px"> [Part Compound](Part_Compound.md)** tool.
-:   10.2. Press **[<img src=images/Draft_PolarArray.svg style="width:16px"> [PolarArray](Draft_PolarArray.md)**.
-:   10.3. Adjust the polar angle to {{Value|360°}}.
-:   10.4. Set the number of elements to {{Value|4}}.
-:   10.5. Enter the values for the center of rotation {{Value|(0, 0, 0)}}, and press **Enter**.
+:   10.1. အရင်ဆုံး **[<img src=images/Draft_Upgrade.svg style="width:16px"> [Upgrade](Draft_Upgrade.md)** ကိရိယာဖြင့် ဖန်တီးခဲ့သော {{Value|Wire}} object ကို ရွေးချယ်ပါ၊ ဒါမှမဟုတ် **[<img src=images/Part_Compound.svg style="width:16px"> [Part Compound](Part_Compound.md)** ဖြင့် ဖန်တီးထားသော {{Value|Compound}} ကို ရွေးချယ်ပါ။
+:   10.2. **[<img src=images/Draft_PolarArray.svg style="width:16px"> [PolarArray](Draft_PolarArray.md)** ကို နှိပ်ပါ။
+:   10.3. polar angle ကို {{Value|360°}} သတ်မှတ်ပါ။
+:   10.4. elements အရေအတွက်ကို {{Value|4}} သတ်မှတ်ပါ။
+:   10.5. အနုတ်လှည့်စက်၏ center အနေဖြင့် {{Value|(0, 0, 0)}} ထည့်၍ **Enter** ကို နှိပ်ပါ။
 
-The array object shows copies of the object around the origin.
+Array object သည် origin အနီးတွင် အရာ၏ ကူးပြောင်းများကို ပြသပါလိမ့်မည်။
 
  <img alt="" src=images/03_Dr01_Draft_PolarArray.png  style="width:" height="400px;">  
-*Polar array of the small profile centered around the origin.*
+*origin အနီး၌ ဗဟိုထားသော ကျွန်တော်တို့၏ သေးငယ်သော ပရိုဖိုင်၏ polar array။*
 
 ## Dimensions
 
-Linear dimensions work best when using the appropriate [Draft Snap](Draft_Snap.md) methods to select points and edges to measure. However, they can also be created by specifying absolute coordinates.
+Linear dimensions များသည် အတိုင်းအတာများကို တိုင်းတာရန် [Draft Snap](Draft_Snap.md) ၏ သင့်လျော်သော ချိတ်ဆက်မှုများကို အသုံးပြုသည့်အခါ ကောင်းမွန်စွာ လုပ်ဆောင်နိုင်သည်။ သို့သော် absolute coordinates ကို သတ်မှတ်ကာလည်း ဖန်တီးနိုင်သည်။
 
-11\. Create dimensions for the different objects.
+11\. အမျိုးမျိုးသော အရာဝတ္ထုများအတွက် dimension များ ဖန်တီးပါ။
 
-:   11.1. Press **[<img src=images/Draft_Dimension.svg style="width:16px"> [Dimension](Draft_Dimension.md)**.
-:   11.2. Pick the first point. In this tutorial the first point will always be the origin {{Value|(0, 0, 0)}}.
-:   11.3. In the [Snap toolbar](Draft_Snap.md) make sure **[<img src=images/Draft_Snap_Lock.svg style="width:16px"> [Toggle snap](Draft_Snap_Lock.md)** is active, and only **[<img src=images/Draft_Snap_Midpoint.svg style="width:16px"> [Midpoint](Draft_Snap_Midpoint.md)** as well. As you move the pointer to the top edge of the polygon, the <img alt="" src=images/Draft_Snap_Midpoint.svg  style="width:24px;"> [Midpoint](Draft_Snap_Midpoint.md) icon should appear; click to select this point.
-:   11.4. Move the cursor to the right to specify the location of the dimension, then click to set the final position, around {{Value|(100, 20, 0)}}. The dimension will automatically show the length value measured between the two points.
-:   11.5. Select the dimension object in the [tree view](tree_view.md), and in the [property editor](Property_editor.md), change **Font Size** to {{Value|6 mm}}, set **Ext Lines** to {{Value|45 mm}}, and **Show Unit** to `False`.
+:   11.1. **[<img src=images/Draft_Dimension.svg style="width:16px"> [Dimension](Draft_Dimension.md)** ကို နှိပ်ပါ။
+:   11.2. ပထမအမှတ်ကို ရွေးချယ်ပါ။ ဤသင်ခန်းစာတွင် ပထမအမှတ်မှာ အမြဲ မြစ်၏ origin {{Value|(0, 0, 0)}} ဖြစ်ပါမည်။
+:   11.3. [Snap toolbar](Draft_Snap.md) ထဲ၌ **[<img src=images/Draft_Snap_Lock.svg style="width:16px"> [Toggle snap](Draft_Snap_Lock.md)** ကို ဖွင့်ထားပြီး **[<img src=images/Draft_Snap_Midpoint.svg style="width:16px"> [Midpoint](Draft_Snap_Midpoint.md)** ကိုသာ ဖွင့်ထားပါ။ pointer ကို polygon ၏ အပေါ် အရိုးသို့ ရွှေ့သွားသောအခါ <img alt="" src=images/Draft_Snap_Midpoint.svg  style="width:24px;"> [Midpoint](Draft_Snap_Midpoint.md) icon ပေါ်လာမည်။ ဤနေရာကို နှိပ်၍ ရွေးပါ။
+:   11.4. dimension တည်နေရာကို သတ်မှတ်ရန် cursor ကိုညာဘက်သို့ ရွှေ့ပြီး သုံးချက်နှိပ်ပါ၊ အနီးကပ် {{Value|(100, 20, 0)}} အနီးတွင် ထားပါ။ dimension သည် အလိုအလျောက် နှစ်ကြားရှိအကွာအဝေးကို ပြချက်ပြမည်။
+:   11.5. [tree view](tree_view.md) တွင် dimension object ကို ရွေးပြီး [property editor](Property_editor.md) (property editor — ပိုင်ဆိုင်မှု တည်းဖြတ်ကိရိယာ) ထဲတွင် **Font Size** ကို {{Value|6 mm}} သို့ ပြောင်းပါ၊ **Ext Lines** ကို {{Value|45 mm}} သတ်မှတ်ပါ၊ နှင့် **Show Unit** ကို `False` သတ်မှတ်ပါ။
 
-12\. Repeat the process for the two arcs of the closed profile. The first point of the measurement will still be the origin, and the second point will use the <img alt="" src=images/Draft_Snap_Midpoint.svg  style="width:24px;"> [Midpoint](Draft_Snap_Midpoint.md) of the arc.
+12\. ပိတ်ထားသော ပရိုဖိုင်၏ နှစ်ခုသော arc များအတွက်လည်း ထပ်လုပ်ပါ။ တိုင်းတာမှု၏ ပထမအမှတ်မှာ မျှော်လင့်သလို origin ဖြစ်မည်၊ ဒုတိယအမှတ်မှာ arc ၏ <img alt="" src=images/Draft_Snap_Midpoint.svg  style="width:24px;"> [Midpoint](Draft_Snap_Midpoint.md) သည် ဖြစ်မည်။
 
-13\. Repeat the process for the circle located in the center. The first point of the measurement will still be the origin. To select the second point make sure **[<img src=images/Draft_Snap_Lock.svg style="width:16px"> [Toggle snap](Draft_Snap_Lock.md)** is active, and only **[<img src=images/Draft_Snap_Angle.svg style="width:16px"> [Angle](Draft_Snap_Angle.md)** as well. As you move the pointer to the top of the circle, the <img alt="" src=images/Draft_Snap_Angle.svg  style="width:24px;"> [Angle](Draft_Snap_Angle.md) icon should appear; click to select this point. Then move the cursor to the right, and click to fix the dimension.
+13\. အလယ်တွင် တည်ရှိသည့် circle အတွက်လည်း ထပ်လုပ်ပါ။ တိုင်းတာမှု၏ ပထမအမှတ်မှာ ဆက်လက် origin ဖြစ်မည်။ ဒုတိယအမှတ်ကို ရွေးရန် **[<img src=images/Draft_Snap_Lock.svg style="width:16px"> [Toggle snap](Draft_Snap_Lock.md)** ကို ဖွင့်ထားပြီး **[<img src=images/Draft_Snap_Angle.svg style="width:16px"> [Angle](Draft_Snap_Angle.md)** ကိုသာ ဖွင့်ပါ။ pointer ကို circle ၏ ထိပ်သို့ ရွှေ့သို့ချိန် <img alt="" src=images/Draft_Snap_Angle.svg  style="width:24px;"> [Angle](Draft_Snap_Angle.md) icon ပေါ်လာမည်၊ ထိုနေရာကို နှိပ်၍ ရွေးချယ်ပါ။ ထို့နောက် cursor ကိုညာဘက်သို့ ရွှေ့ပြီး dimension ကို အတည်ပြုရန် နှိပ်ပါ။
 
-Remember to adjust the **Font Size**, and other properties to see the dimension correctly.
+dimension ကို မှန်ကန်စွာ မြင်ရန် **Font Size** နှင့် အခြား properties များကို ပြင်ပါ။
 
  <img alt="" src=images/04_Dr01_Draft_Dimension.png  style="width:" height="400px;">  
-*Dimensions that measure the vertical distance from the origin to the top of the circle, arcs, and polygon.*
+*Dimension များသည် origin မှ circle, arc နှင့် polygon ၏ ထိပ်ထိမှတ်အထိ ညီထပ်မျှ အလျားအဝေးကို တိုင်းတာပြသည်။*
 
 ## Texts and ShapeStrings 
 
-14\. Text objects are simple planar figures that are created in the [3D view](3D_view.md) but don\'t have an actual \"[shape](Shape.md)\" underneath. This means that they cannot be used in complex operations with shapes like extrusions or boolean operations.
+14\. Text objects များသည် ပလိန်နာ ပုံစံရိယာများ ဖြစ်ကြပြီး [3D view](3D_view.md) (3D မြင်ကွင်း) တွင် ဖန်တီးရသော်လည်း အောက်ခံတွင် အမှန်တကယ် “[shape](Shape.md)” မရှိပါ။ ၎င်းသည် သူတို့အား extrusions သို့မဟုတ် boolean လုပ်ဆောင်ချက်များကဲ့သို့သော ရှယ်ပိတ်လှုပ်ရှားမှုများတွင်အသုံးမပြုနိုင်စေရန် ဖြစ်သည်။
 
-:   14.1. Press **[<img src=images/Draft_Text.svg style="width:16px"> [Text](Draft_Text.md)**.
-:   14.2. Select the reference point in the [3D view](3D_view.md). In the [Snap toolbar](Draft_Snap.md) make sure **[<img src=images/Draft_Snap_Lock.svg style="width:16px"> [Toggle snap](Draft_Snap_Lock.md)** is active, and only **[<img src=images/Draft_Snap_Midpoint.svg style="width:16px"> [Midpoint](Draft_Snap_Midpoint.md)** as well. Move the pointer to the top edge of the highest arc, so that the <img alt="" src=images/Draft_Snap_Midpoint.svg  style="width:24px;"> [Midpoint](Draft_Snap_Midpoint.md) icon appears; click to select this point.
-:   14.3. Enter the desired **Text**, and press **Enter** once to start a new line; add more lines of text as needed.
-:   14.4. When you are ready to finish with edition, press **Enter** twice.
-:   14.5. Select the text object in the [tree view](tree_view.md), and in the [property editor](Property_editor.md), change **Font Size** to {{Value|6 mm}}, and **Justification** to {{Value|Center}}.
+:   14.1. **[<img src=images/Draft_Text.svg style="width:16px"> [Text](Draft_Text.md)** ကို နှိပ်ပါ။
+:   14.2. [3D view](3D_view.md) တွင် reference point ကို ရွေးချယ်ပါ။ [Snap toolbar](Draft_Snap.md) ထဲ၌ **[<img src=images/Draft_Snap_Lock.svg style="width:16px"> [Toggle snap](Draft_Snap_Lock.md)** ကို ဖွင့်ထားပြီး **[<img src=images/Draft_Snap_Midpoint.svg style="width:16px"> [Midpoint](Draft_Snap_Midpoint.md)** ကိုသာ ဖွင့်ထားပါ။ pointer ကို အကြီးဆုံး arc ၏ အပေါ်ဘက် အရိုးသို့ ရွှေ့ပါ၊ အချိန်နှင့်တကွ <img alt="" src=images/Draft_Snap_Midpoint.svg  style="width:24px;"> [Midpoint](Draft_Snap_Midpoint.md) icon ပေါ်လာမည်၊ ထိုနေရာကို နှိပ်၍ ရွေးပါ။
+:   14.3. လိုချင်သည့် **Text** ကို ထည့်၍ မျက်နှာသစ်စတင်ရန် မျက်နှာသစ်တစ်ကြောင်းစတင်ရန် **Enter** တစ်ခါနှိပ်ပါ၊ လိုအပ်သလို အခြားကြောင်းများ ထပ်ထည့်နိုင်သည်။
+:   14.4. ပြီးဆုံး၍ ပြင်ဆင်မှုကို ရပ်တန့်လိုပါက **Enter** ကို နှစ်ချက် နှိပ်ပါ။
+:   14.5. [tree view](tree_view.md) တွင် text object ကို ရွေးပြီး [property editor](Property_editor.md) (property editor — ပိုင်ဆိုင်မှု တည်းဖြတ်ကိရိယာ) တွင် **Font Size** ကို {{Value|6 mm}} သတ်မှတ်ပြီး **Justification** ကို {{Value|Center}} သို့ ပြောင်းပါ။
 
-15\. ShapeString objects are shapes made of primitive wires that follow the lines indicated by a certain font. This means that these objects have a real \"[shape](Shape.md)\" underneath, and thus can be used in complex operations like extrusions and boolean operations.
+15\. ShapeString objects များမှာ ကုဒ်ထိုးထားသည့် ဖောင့်တစ်ခုအရ လိုင်းများကို လိုက်နာထားသော primitive wire များဖြင့် ဖွဲ့ထားသည့် shapes ဖြစ်ကြသည်။ ၎င်းတို့တွင် အောက်ခံ “[shape](Shape.md)” တကယ် ရှိသည် ဆိုတော့ extrusion သို့မဟုတ် boolean လုပ်ဆောင်ချက်များကဲ့သို့သော UIs တွင် အသုံးပြုနိုင်ပါသည်။
 
-:   15.1. Press **[<img src=images/Draft_ShapeString.svg style="width:16px"> [ShapeString](Draft_ShapeString.md)**.
-:   15.2. Move the pointer to the desired location in the [3D view](3D_view.md) above the regular polygon, and click once. This will fix the base point for the ShapeString. The coordinates may be entered manually as well, for example, {{Value|(-20, 65, 0)}}.
-:   15.3. Enter the desired **String**, and choose the desired **Height**.
-:   15.4. If there is no default font file, you must click on the ellipsis **...** to open a dialog window to choose the font location in the system.
-:   15.5. When a valid font file has been specified, you may proceed to click **OK** or press **Enter**.
+:   15.1. **[<img src=images/Draft_ShapeString.svg style="width:16px"> [ShapeString](Draft_ShapeString.md)** ကို နှိပ်ပါ။
+:   15.2. [3D view](3D_view.md) တွင် regular polygon အထက်မွန်းကပ်သော တည်နေရာတွင် pointer ကို ရွှေ့ပြီး တစ်ချက် နှိပ်ပါ။ ၎င်းသည် ShapeString အတွက် base point ကို သတ်မှတ်မည်။ ကိန်းဂဏန်းများကိုလည်း လက်ဖြင့် ထည့်နိုင်ပြီး ဥပမာအနေဖြင့် {{Value|(-20, 65, 0)}} ဟုတ်သည်။
+:   15.3. လိုချင်သည့် **String** ကို ထည့်ပြီး လိုအပ်သည့် **Height** ကို ရွေးပါ။
+:   15.4. default font file မရှိပါက ellipsis **...** ကို နှိပ်၍ စနစ်အတွင်းမှ font ဖိုင်လိပ်စာကို ရွေးချယ်ရန် dialog box ကို ဖွင့်ရမည်။
+:   15.5. မှန်ကန်သည့် font file ကို သတ်မှတ်ပြီးပါက **OK** ကို နှိပ်ပါ သို့မဟုတ် **Enter** ကို နှိပ်၍ ဆက်သွားနိုင်သည်။
 
  <img alt="" src=images/05_Dr01_Draft_Text_ShapeString.png  style="width:" height="400px;">  
-*Text and ShapeString objects added.*
+*Text နှင့် ShapeString objects များ ထည့်သွင်းပြီး။*
 
-To extrude letters and engrave them on to solids, see the [Draft ShapeString tutorial](Draft_ShapeString_tutorial.md).
+စာလုံးများကို extrude လုပ်၍ သတ္တုပစ္စည်းပေါ်တွင် သွေးရိုက်လိုပါက [Draft ShapeString tutorial](Draft_ShapeString_tutorial.md) ကို ကြည့်ပါ။
 
-## Creating technical drawings 
+## နည်းပညာရေးဆွဲပုံများ ဖန်တီးခြင်း 
 
-As it is now, the objects that we have created can be saved, exported to other formats like [SVG](SVG.md) or [DXF](DXF.md), or printed.
+ယခုအခါ ဖန်တီးထားသည့် အရာဝတ္ထုများကို သိမ်းဆည်းနိုင်ပြီး၊ [SVG](SVG.md) သို့မဟုတ် [DXF](DXF.md) ကဲ့သို့ အခြားဖိုင်ဖော်မက်များသို့ export ပြုလုပ်နိုင်၊ သို့မဟုတ် ပရင့်ထုတ်နိုင်ပါသည်။
 
-If you wish, you may create a technical drawing to display these objects together with additional information like a frame.
+လိုပါက ဤအရာများကို frame ကဲ့သို့သော ထည့်သွင်းချက်များနှင့် အတူ ပြသရန် နည်းပညာရေးဆွဲပုံ (technical drawing) တစ်ခု ဖန်တီးနိုင်သည်။
 
-Before doing anything, hide the Draft grid by pressing **[<img src=images/Draft_ToggleGrid.svg style="width:16px"> [Toggle  grid](Draft_ToggleGrid.md)**.
+မည်သည့် အရာမျှမ ပြုလုပ်မီ Draft grid ကို ဖျောက်ရန် **[<img src=images/Draft_ToggleGrid.svg style="width:16px"> [Toggle  grid](Draft_ToggleGrid.md)** ကို နှိပ်ပါ။
 
-16\. Switch to the <img alt="" src=images/Workbench_TechDraw.svg  style="width:24px;"> [TechDraw Workbench](TechDraw_Workbench.md).
+16\. <img alt="" src=images/Workbench_TechDraw.svg  style="width:24px;"> [TechDraw Workbench](TechDraw_Workbench.md) (TechDraw Workbench — TechDraw လုပ်ငန်းခွင်) သို့ ပြောင်းပါ။
 
-:   16.1. Create a standard page by pressing **[<img src=images/TechDraw_PageDefault.svg style="width:16px"> [TechDraw PageDefault](TechDraw_PageDefault.md)**.
-:   16.2. In the [tree view](tree_view.md) select all objects created, except for the Page, and then press **[<img src=images/TechDraw_ActiveView.svg style="width:16px"> [TechDraw ActiveView](TechDraw_ActiveView.md)**. Press **OK** with the default options; it may take a few seconds to create the view in the page.
-:   16.3. Selecting the Page object in the [tree view](tree_view.md) will automatically display the Page in the main window. With the Page selected, go to the [property editor](Property_editor.md), and change **Scale** to {{Value|0.75}}.
-:   16.4. Expand the Page object in the [tree view](tree_view.md) to select the ActiveView object. With this view selected, go to the [property editor](Property_editor.md), and change **Scale Type** to {{Value|Page}}.
-:   16.5. Recompute the model by using **[<img src=images/Std_Refresh.svg style="width:16px"> [Refresh](Std_Refresh.md)** or pressing **F5**.
-:   16.6. Hide the frames of the objects by pressing **[<img src=images/TechDraw_ToggleFrame.svg style="width:16px"> [TechDraw ToggleFrame](TechDraw_ToggleFrame.md)**.
+:   16.1. **[<img src=images/TechDraw_PageDefault.svg style="width:16px"> [TechDraw PageDefault](TechDraw_PageDefault.md)** ကို နှိပ်ပြီး စံပြစာမျက်နှာတစ်ခု ဖန်တီးပါ။
+:   16.2. [tree view](tree_view.md) ထဲမှ Page ကို 제외၍ ဖန်တီးထားသည့် အရာများအားလုံးကို ရွေးချယ်ပြီး **[<img src=images/TechDraw_ActiveView.svg style="width:16px"> [TechDraw ActiveView](TechDraw_ActiveView.md)** ကို နှိပ်ပါ။ default options ဖြင့် **OK** ကို နှိပ်ပါ၊ စာမျက်နှာအတွင်း view တစ်ခု ဖန်တီးရန် နာရီတစ်စက္ကန့် စောင့်ရနိုင်သည်။
+:   16.3. [tree view](tree_view.md) တွင် Page object ကို ရွေးချယ်ခြင်းဖြင့် Page သည် မူလပြင်တွင် မျက်နှာပေါ် ပြသမည်။ Page ကို ရွေးထားစဉ် [property editor](Property_editor.md) (property editor — ပိုင်ဆိုင်မှု တည်းဖြတ်ကိရိယာ) တွင် **Scale** ကို {{Value|0.75}} သို့ ပြောင်းပါ။
+:   16.4. [tree view](tree_view.md) တွင် Page object ကို တိုးချဲ့၍ ActiveView object ကို ရွေးပါ။ ဤ view ကို ရွေးထားစဉ် [property editor](Property_editor.md) တွင် **Scale Type** ကို {{Value|Page}} သို့ ပြောင်းပါ။
+:   16.5. **[<img src=images/Std_Refresh.svg style="width:16px"> [Refresh](Std_Refresh.md)** သို့မဟုတ် F5 ကို နှိပ်၍ မော်ဒယ်ကို ပြန်တွက်ပါ။
+:   16.6. အရာဝတ္ထုများ၏ ဖရိမ်ကို ဖျောက်ရန် **[<img src=images/TechDraw_ToggleFrame.svg style="width:16px"> [TechDraw ToggleFrame](TechDraw_ToggleFrame.md)** ကို နှိပ်ပါ။
 
-Learn more about the [TechDraw Workbench](TechDraw_Workbench.md) by reading the [Basic TechDraw Tutorial](Basic_TechDraw_Tutorial.md).
+[TechDraw Workbench](TechDraw_Workbench.md) ကို ပိုမိုလေ့လာလိုပါက [Basic TechDraw Tutorial](Basic_TechDraw_Tutorial.md) ကို ဖတ်ရှုပါ။
 
  <img alt="" src=images/06_Dr01_Draft_TechDraw_page.png  style="width:" height="400px;">  
-*TechDraw page with a projection of the shapes created with the Draft Workbench.*
+*Draft Workbench ဖြင့် ဖန်တီးထားသည့် shapes များကို projection အဖြစ် ထည့်သည့် TechDraw စာမျက်နှာ။*
 
-TechDraw works best with objects that have a [Part TopoShape](Part_TopoShape.md). Since some objects from Draft, like [Draft Texts](Draft_Text.md) and [Draft Dimensions](Draft_Dimension.md), don\'t have such \"[shapes](Shape.md)\", some operations of TechDraw don\'t work with these elements.
+TechDraw သည် [Part TopoShape](Part_TopoShape.md) ရှိသော အရာများနှင့် ပို၍ ကောင်းစွာ လုပ်ဆောင်သည်။ Draft မှာ အချို့ object များ၊ ဥပမာ [Draft Texts](Draft_Text.md) နှင့် [Draft Dimensions](Draft_Dimension.md) ကဲ့သို့သောအရာများတွင် အများအားဖြင့် အဲဒီ “[shapes](Shape.md)” မရှိသောကြောင့် TechDraw ၏ အချို့ လုပ်ဆောင်ချက်များသည် ဤ အရာများနှင့် မအလုပ်လုပ်နိုင်ပါ။
 
-Tools like **[<img src=images/TechDraw_ActiveView.svg style="width:16px"> [TechDraw ActiveView](TechDraw_ActiveView.md)**, **[<img src=images/TechDraw_DraftView.svg style="width:16px"> [TechDraw DraftView](TechDraw_DraftView.md)**, and **[<img src=images/TechDraw_ArchView.svg style="width:16px"> [TechDraw ArchView](TechDraw_ArchView.md)** work by receiving an internal SVG image that is generated by internal Draft functions; therefore, TechDraw doesn\'t have much control about how these views are displayed. More integration of Draft and TechDraw is a work in progress.
+**[<img src=images/TechDraw_ActiveView.svg style="width:16px"> [TechDraw ActiveView](TechDraw_ActiveView.md)**, **[<img src=images/TechDraw_DraftView.svg style="width:16px"> [TechDraw DraftView](TechDraw_DraftView.md)**, နှင့် **[<img src=images/TechDraw_ArchView.svg style="width:16px"> [TechDraw ArchView](TechDraw_ArchView.md)** ကဲ့သို့သော ကိရိယာများသည် Draft ၏ အတွင်းရေး SVG ပုံတစ်ခုကို လက်ခံကာ အဲဒါဖြင့် view များကို ဖန်တီးသည်။ ထို့ကြောင့် TechDraw သည် ဤ view များပြသပုံအပေါ် စနစ်တကျ ထိန်းချုပ်မှုနည်းပါးလျှင် Draft နှင့် TechDraw အနှံ့ပို၍ ပေါင်းစည်းမှုဆောင်ရွက်ရန် အလုပ်များ ဆက်လက်လုပ်ဆောင်နေဆဲ ဖြစ်ပါသည်။
 
-## Final remarks 
+## နောက်ဆုံး မှတ်ချက်များ 
 
-The [Draft Workbench](Draft_Workbench.md) in many ways is similar to the [Sketcher Workbench](Sketcher_Workbench.md), as both are intended to produce 2D shapes. The main difference is in the way each workbench handles coordinate systems, and how the objects are positioned. In Draft, objects are freely positioned in the global coordinates system, usually snapping their points to a grid, or to other objects. In Sketcher, a \"[sketch object](Sketch.md)\" defines a local coordinate system which serves as the reference for all geometrical elements within that sketch. Moreover, the sketch relies on \"constraints\" to define the final position of its points.
+[Draft Workbench](Draft_Workbench.md) (Draft လုပ်ငန်းခွင်) သည် အများအားဖြင့် [Sketcher Workbench](Sketcher_Workbench.md) (Sketcher — ပုံကြမ်းဖန်တီးမှု) နှစ်ခုစလုံးသည် 2D shapes ဖန်တီးရန် ရည်ရွယ်ထားသည့်အမျိုးအစားဖြစ်သလို ဆင်တူချက်များ ရှိပါသည်။ အဓိက ကွာခြားချက်မှာ workbench တစ်ခုစီ သည် coordinate system များကို မည်သို့ ကိုင်တွယ်ပေးသည့်နည်းနှင့် object များကို မည်သို့ တည်နေရာချထားသည့်နည်း ဖြစ်သည်။ Draft တွင် အရာများကို global coordinate system အတွင်း လွတ်လပ်စွာ တည်နေရာချနိုင်ပြီး ပုံမှန်အားဖြင့် ၎င်း၏ မှတ်ချက်များကို grid သို့မဟုတ် အခြား object များထံ snap လုပ်ကာ အချက်များကို တည်နေရာချသည်။ Sketcher တွင်则 "[sketch object](Sketch.md)" သည် local coordinate system ကို သတ်မှတ်ပေးပြီး အဲဒါသည် sketch အတွင်းရှိ ဂျော်မီတရီအရာများ၏ ရည်ညွှန်းစနစ်အဖြစ် အသုံးပြုသည်။ ထို့ပြင် sketch သည် ၎င်း၏ အချက်များ၏ နောက်ဆုံးတည်နေရာကို သတ်မှတ်ရန် "ကန့်သတ်ချက်များ (constraints)" တွေပေါ် အခြေခံပါသည်။
 
--   The [Draft Workbench](Draft_Workbench.md) is intended for 2D drawings which are suitable to be drawn on a grid. The [BIM Workbench](BIM_Workbench.md) mostly builds on top of the tools defined in the [Draft Workbench](Draft_Workbench.md).
+-   [Draft Workbench](Draft_Workbench.md) (Draft လုပ်ငန်းခွင်) သည် grid မြေပုံပေါ်တွင် ဆွဲရန် သင့်တော်သည့် 2D ရေးဆွဲချက်များအတွက် ရည်ရွယ်ထားသည်။ [BIM Workbench](BIM_Workbench.md) သည် အဓိကအားဖြင့် [Draft Workbench](Draft_Workbench.md) ၌ သတ်မှတ်ထားသည့် ကိရိယာများကို အခြေခံကာ တည်ဆောက်ထားသည်။
 
--   The [Sketcher Workbench](Sketcher_Workbench.md) is intended for 2D drawings that require precise relationships between its points. It does not rely on a grid, but on rules of positioning (constraints) to determine where the points and edges will be placed. The [Sketcher Workbench](Sketcher_Workbench.md) is mostly used together with the [PartDesign Workbench](PartDesign_Workbench.md) for the creation of solid [bodies](Body.md).
+-   [Sketcher Workbench](Sketcher_Workbench.md) (Sketcher — ပုံကြမ်းဖန်တီးမှု) သည် အချက်များကြား တိကျသည့် ဆက်စပ်မှုများ လိုအပ်သည့် 2D ရေးဆွဲချက်များအတွက် ရည်ရွယ်ထားသည်။ ၎င်းသည် grid သို့ မီပါသော်လည်း အချက်များနှင့် အနားများထားရာကို သတ်မှတ်ရန် တွက်ချက်မှုများ (constraints) ပေါ်တွင် အထူးလျှောက်ထားသည်။ [Sketcher Workbench](Sketcher_Workbench.md) ကို ပုံမှန်အားဖြင့် [PartDesign Workbench](PartDesign_Workbench.md) (Part Design — အစိတ်အပိုင်း ဒီဇိုင်း) နှင့် တွဲပြီး solid [bodies](Body.md) ဖန်တီးရာတွင် အသုံးပြုကြသည်။
 
--   It is possible to transform a Draft object into a [Sketch](Sketch.md), and the other way around, using the **[<img src=images/Draft_Draft2Sketch.svg style="width:16px"> [Draft Draft2Sketch](Draft_Draft2Sketch.md)** tool.
+-   Draft object တစ်ခုကို [Sketch](Sketch.md) သို့ပြောင်းနိုင်ပြီး၊ မှီခို၍ **[<img src=images/Draft_Draft2Sketch.svg style="width:16px"> [Draft Draft2Sketch](Draft_Draft2Sketch.md)** ကိရိယာကိုအသုံးပြုကာ အခြားဘက်သို့လည်း ပြန်လည်ပြောင်းနိုင်သည်။
 
 
 
