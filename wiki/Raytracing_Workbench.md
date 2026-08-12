@@ -1,139 +1,52 @@
-# Raytracing Workbench
-**The '''Raytracing Workbench''' is no longer included after version 0.20.<br>
- The external [https://github.com/FreeCAD/FreeCAD-render Render Workbench] should be used instead.**
+**ဗားရှင်း ၀.၂၀ နောက်ပိုင်းတွင် 'Raytracing Workbench' ကို ထည့်သွင်းထားခြင်း မရှိတော့ပါ။<br>
+ ပြင်ပ [https://github.com/FreeCAD/FreeCAD-render Render Workbench] ကို အစားထိုး အသုံးပြုသင့်ပါသည်။**
 
 <img alt="Raytracing workbench icon" src=images/Workbench_Raytracing.svg  style="width:128px;">
 
-## Introduction
+## နိဒါန်း (Introduction)
 
- 
+<img alt="" src=images/Workbench_Raytracing.svg  style="width:24px;"> [Raytracing Workbench (အလင်းတန်း ခြေရာခံခြင်း လုပ်ငန်းခွင်)](Raytracing_Workbench.md) ကို သင်၏ မော်ဒယ်များကို ပြင်ပ ပုံဖော်စက် (renderer) ဖြင့် လုပ်ဆောင်ခြင်းအားဖြင့် ဓာတ်ပုံကဲ့သို့ အစစ်အမှန်ဆန်သော ပုံရိပ်များ ထုတ်လုပ်ရန် အသုံးပြုသည်။
 
-The <img alt="" src=images/Workbench_Raytracing.svg  style="width:24px;"> [Raytracing Workbench](Raytracing_Workbench.md) is used to generate photorealistic images of your models by processing them with an external renderer.
+Raytracing Workbench သည် သင်၏ ၃ဘက်မြင် မော်ဒယ်အတွက် မြင်ကွင်းတစ်ခုကို သတ်မှတ်ပေးသည့် စီမံကိန်းဖိုင်များ ဖြစ်သော [နမူနာပုံစံများ (templates)](Raytracing_templates.md) နှင့် လုပ်ဆောင်သည်။ သင်သည် မီးချောင်းများနှင့် မြေပြင်မျက်နှာပြင်များကဲ့သို့သော ဂျီဩမေတြီများကို ထည့်သွင်းနိုင်ပြီး၊ ၎င်းတွင် ကင်မရာ၏ တည်နေရာနှင့် မြင်ကွင်းအတွင်းရှိ အရာဝတ္ထုများ၏ ပစ္စည်း (material) အချက်အလက်များအတွက် နေရာလွတ်များလည်း ပါဝင်သည်။ ထို့နောက် စီမံကိန်းကို ပုံဖော်ရန် အသင့်ဖြစ်သော ဖိုင်အဖြစ် ထုတ်ယူနိုင်သည် သို့မဟုတ် ဖရီးကက် (FreeCAD) အတွင်း၌ တိုက်ရိုက် ပုံဖော် (render) နိုင်သည်။
 
-The Raytracing Workbench works with [templates](Raytracing_templates.md), which are project files that define a scene for your 3D model. You can place lights and geometry such as ground planes, and it also contains placeholders for the position of the camera, and for the material information of the objects in the scene. The project can then be exported to a ready-to-render file, or be rendered directly within FreeCAD.
+လောလောဆယ်တွင် ပုံဖော်စက် (renderers) နှစ်ခုကို ပံ့ပိုးပေးထားသည်: [POV-Ray](POV-Ray.md) နှင့် [LuxRender](LuxRender.md) တို့ ဖြစ်သည်။ ဖရီးကက်အတွင်းမှ ပုံဖော်နိုင်ရန်အတွက် ဤပရိုဂရမ်များအနက် အနည်းဆုံး တစ်ခုကို သင့်စနစ်တွင် တပ်ဆင်ပြီး ပြင်ဆင်ထားရမည်။ သို့သော် ပုံဖော်စက် တစ်ခုမှ တပ်ဆင်မထားပါကလည်း အခြားအချိန်တွင် ပုံဖော်ရန်အတွက် စီမံကိန်းဖိုင်ကို ထုတ်ယူနိုင်ပါသေးသည်။
 
-Currently, two renderers are supported: [POV-Ray](POV-Ray.md) and [LuxRender](LuxRender.md). To be able to render from within FreeCAD, at least one of these programs must be installed and configured in your system. However, if no renderer is installed, you will still be able to export a project file to be rendered at another time.
-
-The Raytracing workbench is obsolete, the external [Render Workbench](https://github.com/FreeCAD/FreeCAD-render) is its replacement. Nevertheless, the information on this page is generally useful for the new workbench, as both basically work in the same way.
+Raytracing workbench သည် ခေတ်မမီတော့ဘဲ၊ ပြင်ပ [Render Workbench](https://github.com/FreeCAD/FreeCAD-render) သည် ၎င်း၏ အစားထိုးမှု ဖြစ်သည်။ သို့သော်လည်း ဤစာမျက်နှာရှိ အချက်အလက်များသည် လုပ်ငန်းခွင်အသစ်အတွက် ယေဘုယျအားဖြင့် အသုံးဝင်ပါသည်၊ အကြောင်းမှာ နှစ်ခုစလုံးသည် အခြေခံအားဖြင့် တူညီသောနည်းလမ်းဖြင့် လုပ်ဆောင်သောကြောင့် ဖြစ်သည်။
 
  <img alt="" src=images/Raytracing_example.jpg  style="width:1024px;"> 
 
-## Typical workflow 
+## ပုံမှန် လုပ်ငန်းစဉ် (Typical workflow)
 
-1.  Create or open a FreeCAD project, add some solid objects ([Part-based](Part_Workbench.md) or [PartDesign-based](PartDesign_Workbench.md)); meshes are currently not supported.
-2.  Create a Raytracing project (povray or luxrender).
-3.  Select the objects that you wish to add to the Raytracing project and add them.
-4.  Export the project file or render it directly.
+၁။ ဖရီးကက် စီမံကိန်းတစ်ခုကို ဖန်တီးပါ သို့မဟုတ် ဖွင့်ပါ၊ အချို့သော  ठोस အရာဝတ္ထုများ ([Part-based](Part_Workbench.md) သို့မဟုတ် [PartDesign-based](PartDesign_Workbench.md)) ကို ထည့်သွင်းပါ; ဇယားကွက်များ (meshes) ကို လောလောဆယ်တွင် ပံ့ပိုးမထားပါ။
+၂။ Raytracing စီမံကိန်းတစ်ခု (povray သို့မဟုတ် luxrender) ကို ဖန်တီးပါ။
+၃။ Raytracing စီမံကိန်းသို့ သင်ထည့်သွင်းလိုသော အရာဝတ္ထုများကို ရွေးချယ်ပြီး ထည့်သွင်းပါ။
+၄။ စီမံကိန်းဖိုင်ကို ထုတ်ယူပါ သို့မဟုတ် ၎င်းကို တိုက်ရိုက် ပုံဖော်ပါ။
 
 <img alt="" src=images/Raytracing_Workbench_workflow.svg  style="width:600px;">
 
+*Raytracing Workbench ၏ လုပ်ငန်းစဉ်; လုပ်ငန်းခွင်သည် ပေးထားသော နမူနာပုံစံမှ စီမံကိန်းဖိုင်တစ်ခုကို ပြင်ဆင်ပြီး၊ မြင်ကွင်း၏ အမှန်တကယ် ပုံဖော်မှုကို ထုတ်လုပ်ရန် ပြင်ပပရိုဂရမ်တစ်ခုကို ခေါ်ယူသည်။ ပြင်ပ ပုံဖော်စက်ကို ဖရီးကက်နှင့် သီးသန့်လွတ်လပ်စွာ အသုံးပြုနိုင်သည်။*
 
+## ကိရိယာများ (Tools)
 
-*Workflow of the Raytracing Workbench; the workbench prepares a project file from a given template, and then calls an external program to produce the actual rendering of the scene. The external renderer can be used independently of FreeCAD.*
+### စီမံကိန်း ကိရိယာများ (Project tools)
 
-## Tools
+ဤအရာများသည် သင်၏ ၃ဘက်မြင် အလုပ်များကို ပြင်ပ ပုံဖော်စက်များသို့ တင်ပို့ရန်အတွက် အဓိက ကိရိယာများ ဖြစ်သည်။
 
-### Project tools 
+-   <img alt="" src=images/Raytracing_New.svg  style="width:32px;"> [New PovRay project (PovRay စီမံကိန်းအသစ်)](Raytracing_New.md): စာတမ်းအတွင်း PovRay စီမံကိန်းအသစ် ထည့်သွင်းရန်
+-   <img alt="" src=images/Raytracing_Lux.svg  style="width:32px;"> [New LuxRender project (LuxRender စီမံကိန်းအသစ်)](Raytracing_Lux.md): စာတမ်းအတွင်း LuxRender စီမံကိန်းအသစ် ထည့်သွင်းရန်
+-   <img alt="" src=images/Raytracing_InsertPart.svg  style="width:32px;"> [Insert part (အစိတ်အပိုင်း ထည့်သွင်းရန်)](Raytracing_InsertPart.md): Raytracing စီမံကိန်းတစ်ခုတွင် အစိတ်အပိုင်းတစ်ခု၏ မြင်ကွင်းကို ထည့်သွင်းရန်
+-   <img alt="" src=images/Raytracing_ResetCamera.svg  style="width:32px;"> [Reset camera (ကင်မရာ ပြန်လည်သတ်မှတ်ရန်)](Raytracing_ResetCamera.md): Raytracing စီမံကိန်းတစ်ခု၏ ကင်မရာတည်နေရာကို လက်ရှိမြင်ကွင်းနှင့် ကိုက်ညီအောင် ပြုလုပ်ရန်
+-   <img alt="" src=images/Raytracing_ExportProject.svg  style="width:32px;"> [Export project (စီမံကိန်း တင်ပို့ရန်)](Raytracing_ExportProject.md): ပြင်ပ ပုံဖော်စက်တွင် ပုံဖော်ရန်အတွက် Raytracing စီမံကိန်းကို မြင်ကွင်းဖိုင်အဖြစ် တင်ပို့ရန်
+-   <img alt="" src=images/Raytracing_Render.svg  style="width:32px;"> [Render (ပုံဖော်ရန်)](Raytracing_Render.md): Raytracing စီမံကိန်းကို ပြင်ပ ပုံဖော်စက်ဖြင့် ပုံဖော်ရန်
 
-These are the main tools for exporting your 3D work to external renderers.
+### အထောက်အကူပြု ကိရိယာများ (Utilities)
 
--   <img alt="" src=images/Raytracing_New.svg  style="width:32px;"> [New PovRay project](Raytracing_New.md): Insert new PovRay project in the document
--   <img alt="" src=images/Raytracing_Lux.svg  style="width:32px;"> [New LuxRender project](Raytracing_Lux.md): Insert new LuxRender project in the document
--   <img alt="" src=images/Raytracing_InsertPart.svg  style="width:32px;"> [Insert part](Raytracing_InsertPart.md): Insert a view of a Part in a raytracing project
--   <img alt="" src=images/Raytracing_ResetCamera.svg  style="width:32px;"> [Reset camera](Raytracing_ResetCamera.md): Matches the camera position of a raytracing project to the current view
--   <img alt="" src=images/Raytracing_ExportProject.svg  style="width:32px;"> [Export project](Raytracing_ExportProject.md): Exports a raytracing project to a scene file for rendering in an external renderer
--   <img alt="" src=images/Raytracing_Render.svg  style="width:32px;"> [Render](Raytracing_Render.md): Renders a raytracing project with an external renderer
+ဤအရာများသည် သီးခြားလုပ်ငန်းဆောင်တာများကို ကိုယ်တိုင်လုပ်ဆောင်ရန် ကူညီပေးသည့် ကိရိယာများ ဖြစ်သည်။
 
-### Utilities
+-   <img alt="" src=images/Raytracing_WriteView.svg  style="width:32px;"> [Export view to povray (မြင်ကွင်းကို povray သို့ တင်ပို့ရန်)](Raytracing_WriteView.md): တက်ကြွနေသော ၃ဘက်မြင် မြင်ကွင်းကို ကင်မရာနှင့် ၎င်း၏ ပါဝင်မှုအားလုံးနှင့်အတူ povray ဖိုင်အဖြစ် ရေးသားရန်
+-   <img alt="" src=images/Raytracing_WriteCamera.svg  style="width:32px;"> [Export camera to povray (ကင်မရာကို povray သို့ တင်ပို့ရန်)](Raytracing_WriteCamera.md): တက်ကြွနေသော ၃ဘက်မြင် မြင်ကွင်း၏ ကင်မရာတည်နေရာကို POV-Ray ပုံစံဖြင့် ဖိုင်အဖြစ် တင်ပို့ရန်
+-   <img alt="" src=images/Raytracing_WritePart.svg  style="width:32px;"> [Export part to povray (အစိတ်အပိုင်းကို povray သို့ တင်ပို့ရန်)](Raytracing_WritePart.md): ရွေးချယ်ထားသော အစိတ်အပိုင်း (အရာဝတ္ထု) ကို povray ဖိုင်အဖြစ် ရေးသားရန်
 
-These are helper tools to perform specific tasks manually.
+## ဦးစားပေး သတ်မှတ်ချက်များ (Preferences)
 
--   <img alt="" src=images/Raytracing_WriteView.svg  style="width:32px;"> [Export view to povray](Raytracing_WriteView.md): Write the active 3D view with camera and all its content to a povray file
--   <img alt="" src=images/Raytracing_WriteCamera.svg  style="width:32px;"> [Export camera to povray](Raytracing_WriteCamera.md): Export the camera position of the active 3D view in POV-Ray format to a file
--   <img alt="" src=images/Raytracing_WritePart.svg  style="width:32px;"> [Export part to povray](Raytracing_WritePart.md): Write the selected Part (object) as a povray file
-
-## Preferences
-
--   <img alt="" src=images/Preferences-raytracing.svg  style="width:32px;"> [Preferences](Raytracing_Preferences.md): Preferences available in for the Raytracing tools.
-
-## Tutorials
-
--   [Basic Raytracing tutorial](Raytracing_tutorial.md)
--   [Intermediate Raytracing tutorial](Tutorial_FreeCAD_POV_ray.md)
-
-## Creating a povray file manually 
-
-The utility tools described above allow you to export the current 3D view and all of its content to a [Povray](http://www.povray.org/) file. First, you must load or create your CAD data and position the 3D View orientation as you wish. Then choose \"Utilities → Export View\...\" from the raytracing menu.
-
- ![](images/FreeCAD_Raytracing.jpg ) 
-
-You will be asked for a location to save the resulting \*.pov file. After that you can open it in [Povray](http://www.povray.org/) and render:  ![](images/Povray.jpg ) 
-
-As usual in a renderer you can make big and nice pictures:  <img alt="" src=images/Scharniergreifer_render.jpg  style="width:800px;"> 
-
-## Scripting
-
-See the [Raytracing API example](Raytracing_API_example.md) for information on writing scenes programmatically.
-
-## Links
-
-### POV-Ray 
-
--   [POV-Ray page on this wiki](POV-Ray.md)
--   <http://www.spiritone.com/~english/cyclopedia/>
--   <http://www.povray.org/>
--   <http://en.wikipedia.org/wiki/POV-Ray>
-
-### LuxRender
-
--   [LuxRender page on this wiki](LuxRender.md)
--   <http://www.luxrender.net/>
-
-### Future possible renderers to implement 
-
--   <http://www.yafaray.org/>
--   <http://www.mitsuba-renderer.org/>
--   <http://www.kerkythea.net/>
--   <http://www.artofillusion.org/>
-
-## Exporting to Kerkythea 
-
-Although direct export to the Kerkythea XML-File-Format is not supported yet, you can export your Objects as Mesh-Files (.obj) and then import them in Kerkythea.
-
--   if using Kerkythea for Linux, remember to install the WINE-Package (needed by Kerkythea for Linux to run)
--   you can convert your models with the help of the mesh workbench to meshes and then export these meshes as .obj-files
--   If your mesh-export resulted in errors (flip of normals, holes \...) you may try your luck with [netfabb studio basic](http://www.netfabb.com/downloadcenter.php?basic=1)
-
-:   Free for personal use, available for Windows, Linux and Mac OSX.
-:   It has standard repair tools which will repair you model in most cases.
-
--   another good program for mesh analysing/repairing is [Meshlab](http://sourceforge.net/projects/meshlab/)
-
-:   Open Source, available for Windows, Linux and Mac OSX.
-:   It has standard repair tools which will repair you model in most cases (fill holes, re-orient normals, etc.)
-
--   you can use \"make compound\" and then \"make single copy\" or you can fuse solids to group them before converting to meshes
--   remember to set in Kerkythea an import-factor of 0.001 for obj-modeler, since Kerkythea expects the obj-file to be in m (but standard units-scheme in FreeCAD is mm)
-
-:   Within WIndows 7 64-bit Kerkythea does not seem to be able to save these settings.
-:   So remember to do that each time you start Kerkythea
-
--   if importing multiple objects in Kerkythea you can use the \"File → Merge\" command in Kerkythea
-
-## Development
-
-These pages refer to the new workbench, programmed in Python, meant to replace the current Raytracing Workbench.
-
--   [Render Workbench](https://github.com/FreeCAD/FreeCAD-render)
--   [Render Workbench](https://forum.freecadweb.org/viewtopic.php?f=9&t=25933) (announcement only, no discussion)
--   [FreeCAD Renderer Workbench improvements](https://forum.freecadweb.org/viewtopic.php?t=39168)
-
-
-
-
- {{Raytracing Tools navi}}
-
-
-
----
-⏵ [documentation index](../README.md) > [Obsolete Workbenches](Category_Obsolete%20Workbenches.md) > [Raytracing](Category_Raytracing.md) > Raytracing Workbench
+-   <img alt="" src=images/Preferences-raytracing.svg  style="width:32px;"> [Preferences (ဦးစားပေး သတ်မှတ်ချက်များ)](Raytracing_Preferences.md): Raytracing ကိရိယာများအတွက် ရရှိနိုင်သော ဦးစားပေး သတ်မှတ်ချက်များ။

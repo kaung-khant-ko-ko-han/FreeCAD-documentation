@@ -1,234 +1,56 @@
-# <img alt="CAM workbench icon" src=images/Workbench_CAM.svg  style="width:64px;"> CAM Workbench
+## နိဒါန်း (Introduction)
 
- 
-
-## Introduction
-
-The <img alt="" src=images/Workbench_CAM.svg  style="width:24px;"> [CAM Workbench](CAM_Workbench.md) is used to produce machine instructions for [CNC machines](https://en.wikipedia.org/wiki/CNC_router) from a FreeCAD 3D model. These produce real-world 3D objects on CNC machines such as mills, lathes, lasercutters, or similar. Typically, instructions are a [G-code](https://en.wikipedia.org/wiki/G-code) dialect. A [general CNC lathe tool path sequence simulation example](https://www.ange-softs.com/SIMULCNCHTML/index.html) is presented here.
+<img alt="" src=images/Workbench_CAM.svg  style="width:24px;"> [CAM Workbench (ကွန်ပျူတာ အကူအညီဖြင့် ထုတ်လုပ်ခြင်း လုပ်ငန်းခွင်)](CAM_Workbench.md) ကို ဖရီးကက် (FreeCAD) ၃ဘက်မြင် မော်ဒယ်တစ်ခုမှ [CNC စက်များ (CNC machines)](https://en.wikipedia.org/wiki/CNC_router) အတွက် စက်ညွှန်ကြားချက်များ ထုတ်လုပ်ရန် အသုံးပြုသည်။ ၎င်းတို့သည် မေးလ် (mills)၊ ပွတ်စင် (lathes)၊ လေဆာဖြတ်စက် (lasercutters) သို့မဟုတ် အလားတူ CNC စက်များပေါ်တွင် လက်တွေ့ကမ္ဘာမှ ၃ဘက်မြင် အရာဝတ္ထုများကို ထုတ်လုပ်ပေးသည်။ ပုံမှန်အားဖြင့် ညွှန်ကြားချက်များသည် [G-code (ဂျီ-ကုဒ်)](https://en.wikipedia.org/wiki/G-code) ပုံစံမျိုး ဖြစ်သည်။ [ယေဘုယျ CNC ပွတ်စင် တူးလ်လမ်းကြောင်း အစဉ်လိုက် သရုပ်ပြမှု ဥပမာ](https://www.ange-softs.com/SIMULCNCHTML/index.html) ကို ဤနေရာတွင် ကြည့်ရှုနိုင်သည်။
 
  <img alt="" src=images/pathwb.png  style="width:600px;"> 
 
-The FreeCAD CAM Workbench workflow creates these machine instructions as follows:
+ဖရီးကက် CAM Workbench ၏ လုပ်ငန်းစဉ်သည် စက်ညွှန်ကြားချက်များကို အောက်ပါအတိုင်း ဖန်တီးပေးသည် -
 
--   A 3D model is the base object, typically created using one or more of the <img alt="" src=images/Workbench_PartDesign.svg  style="width:24px;"> [Part Design](PartDesign_Workbench.md), <img alt="" src=images/Workbench_Part.svg  style="width:24px;"> [Part](Part_Workbench.md) or <img alt="" src=images/Workbench_Draft.svg  style="width:24px;"> [Draft](Draft_Workbench.md) Workbenches.
--   A [CAM Job](CAM_Job.md) is created in the CAM Workbench. This contains all the information required to generate the necessary G-code to process the Job on a CNC mill: there is Stock material, the mill has a certain [set of tools](CAM_ToolBitLibraryOpen.md) and it follows certain commands controlling speed and movements (usually G-code).
--   [CAM Tools](CAM_Tools.md) are selected as required by the Job Operations.
--   Milling paths are created using e.g. [Contour](CAM_Profile.md) and [Pocket](CAM_Pocket_3D.md) Operations. These CAM objects use internal FreeCAD G-code dialect, independent of the CNC machine.
--   Export the job with a G-code, matching to your machine. This step is called *post processing*; there are different post processors available.
+-   ၃ဘက်မြင် မော်ဒယ် (3D model) သည် အခြေခံ အရာဝတ္ထုဖြစ်ပြီး၊ ပုံမှန်အားဖြင့် <img alt="" src=images/Workbench_PartDesign.svg  style="width:24px;"> [Part Design](PartDesign_Workbench.md)၊ <img alt="" src=images/Workbench_Part.svg  style="width:24px;"> [Part](Part_Workbench.md) သို့မဟုတ် <img alt="" src=images/Workbench_Draft.svg  style="width:24px;"> [Draft](Draft_Workbench.md) လုပ်ငန်းခွင် တစ်ခု သို့မဟုတ် တစ်ခုထက်ပို၍ အသုံးပြုကာ ဖန်တီးထားခြင်း ဖြစ်သည်။
+-   CAM Workbench တွင် [CAM Job (CAM အလုပ်)](CAM_Job.md) တစ်ခုကို ဖန်တီးသည်။ ၎င်းတွင် CNC မေးလ်ပေါ်၌ အလုပ်ကို လုပ်ဆောင်ရန် လိုအပ်သော G-code ထုတ်လုပ်ရန် လိုအပ်သည့် အချက်အလက်အားလုံး ပါဝင်သည်: ကုန်ကြမ်းပစ္စည်း (Stock material) ရှိသည်၊ မေးလ်တွင် သတ်မှတ်ထားသော [တူးလ်အစုံ (set of tools)](CAM_ToolBitLibraryOpen.md) ရှိပြီး ၎င်းသည် အမြန်နှုန်းနှင့် လှုပ်ရှားမှုများကို ထိန်းချုပ်သည့် အချို့သော ညွှန်ကြားချက်များ (ပုံမှန်အားဖြင့် G-code) ကို လိုက်နာသည်။
+-   အလုပ်၏ လုပ်ဆောင်ချက်များ (Job Operations) အရ လိုအပ်သော [CAM Tools (CAM တူးလ်များ)](CAM_Tools.md) ကို ရွေးချယ်သည်။
+-   ကြိတ်ဖြတ်ခြင်း လမ်းကြောင်းများ (Milling paths) ကို [Contour (ကွန်တို)](CAM_Profile.md) နှင့် [Pocket (ပေါ့ကက်)](CAM_Pocket_3D.md) လုပ်ဆောင်ချက်များကို အသုံးပြု၍ ဖန်တီးသည်။ ဤ CAM အရာဝတ္ထုများသည် CNC စက်နှင့် မသက်ဆိုင်ဘဲ ဖရီးကက်၏ ကိုယ်ပိုင် G-code ပုံစံကို အသုံးပြုသည်။
+-   အလုပ်ကို သင့်စက်နှင့် ကိုက်ညီသော G-code ဖြင့် ထုတ်ယူ (Export) ပါ။ ဤအဆင့်ကို *post processing (တွက်ချက်မှုအပြီး လုပ်ဆောင်ခြင်း)* ဟုခေါ်ပြီး အမျိုးမျိုးသော post processors များ ရရှိနိုင်ပါသည်။
 
-## General concepts 
+## ယေဘုယျ သဘောတရားများ (General concepts)
 
-The CAM Workbench generates G-code defining the paths required to mill the Project represented by the 3D model on the target mill in [the CAM Job Operations FreeCAD G-code dialect](CAM_scripting#The_FreeCAD_Internal_GCode_Format.md), which is later translated to the appropriate dialect for the target CNC controller by selecting the appropriate postprocessor.
+CAM Workbench သည် ၃ဘက်မြင် မော်ဒယ်ဖြင့် ကိုယ်စားပြုထားသော စီမံကိန်းကို ပစ်မှတ်ထားသည့် စက်ပေါ်တွင် ကြိတ်ဖြတ်ရန် လိုအပ်သော လမ်းကြောင်းများကို သတ်မှတ်ပေးသည့် G-code ကို [ဖရီးကက်၏ ကိုယ်ပိုင် G-code ပုံစံ](CAM_scripting#The_FreeCAD_Internal_GCode_Format.md) ဖြင့် ထုတ်ပေးသည်။ ၎င်းကို နောက်ပိုင်းတွင် သင့်လျော်သော postprocessor ကို ရွေးချယ်ခြင်းဖြင့် ပစ်မှတ်ထားသော CNC controller အတွက် သင့်လျော်သော ပုံစံသို့ ဘာသာပြန်ပေးသည်။
 
-The G-code is generated from directives and Operations contained in a CAM Job. The Job Workflow lists these in the order they will be executed. The list is populated by adding CAM Operations, Path Dressups, Supplemental Commands, and Path Modifications from the CAM Menu, or GUI buttons.
+G-code ကို CAM Job တွင် ပါဝင်သော ညွှန်ကြားချက်များနှင့် လုပ်ဆောင်ချက်များမှ ထုတ်ပေးသည်။ Job Workflow သည် ၎င်းတို့ကို လုပ်ဆောင်မည့် အစဉ်လိုက်အတိုင်း စာရင်းပြုစုထားသည်။ ဤစာရင်းကို CAM Menu သို့မဟုတ် GUI ခလုတ်များမှတစ်ဆင့် CAM Operations၊ Path Dressups၊ Supplemental Commands နှင့် Path Modifications များ ထည့်သွင်းခြင်းဖြင့် ဖြည့်သွင်းသည်။
 
-The CAM Workbench provides a Tool Manager (Library, Tool-Table), and G-code Inspection, and Simulation tools. It links the Postprocessor, and allows importing and exporting Job Templates.
+CAM Workbench သည် Tool Manager (Library, Tool-Table)၊ G-code စစ်ဆေးခြင်းနှင့် Simulation ကိရိယာများကို ပံ့ပိုးပေးသည်။ ၎င်းသည် Postprocessor နှင့် ချိတ်ဆက်ပေးပြီး Job Templates များကို တင်သွင်းခြင်းနှင့် တင်ပို့ခြင်း ပြုလုပ်နိုင်သည်။
 
-The CAM Workbench has external dependencies including:
+CAM Workbench တွင် အောက်ပါ ပြင်ပဆက်စပ်မှုများ ရှိသည် -
 
-1.  The FreeCAD 3D model units are defined in the **Edit → Preference → General → Default unit system**. The Postprocessor configuration defines the final G-code units.
-2.  The Macro file path, and Geometric tolerances, are defined in the **Edit → Preferences → CAM → Job Preferences** tab.
-3.  Colors are defined in the **Edit → Preferences → CAM → GUI** tab.
-4.  Holding tag parameters are defined in the **Edit → Preferences → CAM → Dressups** tab.
-5.  That the Base 3D model quality supports the CAM workbench requirements, passes Check Geometry.
+၁။ ဖရီးကက် ၃ဘက်မြင် မော်ဒယ်၏ ယူနစ်များကို **Edit → Preference → General → Default unit system** တွင် သတ်မှတ်သည်။ Postprocessor configuration က နောက်ဆုံး G-code ယူနစ်များကို သတ်မှတ်သည်။
+၂။ Macro ဖိုင်လမ်းကြောင်းနှင့် ဂျီဩမေတြီ သည်းခံနိုင်စွမ်း (Geometric tolerances) များကို **Edit → Preferences → CAM → Job Preferences** တက်ဘ်တွင် သတ်မှတ်သည်။
+၃။ အရောင်များကို **Edit → Preferences → CAM → GUI** တက်ဘ်တွင် သတ်မှတ်သည်။
+၄။ Holding tag ကန့်သတ်ချက်များကို **Edit → Preferences → CAM → Dressups** တက်ဘ်တွင် သတ်မှတ်သည်။
+၅။ အခြေခံ ၃ဘက်မြင် မော်ဒယ်၏ အရည်အသွေးသည် CAM workbench လိုအပ်ချက်များကို ပံ့ပိုးပေးနိုင်ရန် Check Geometry စစ်ဆေးမှု အောင်မြင်ရမည်။
 
-## Limitations
+## ကန့်သတ်ချက်များ (Limitations)
 
-Some current limitations of which you should be aware are:
+သင်သတိပြုသင့်သော လက်ရှိကန့်သတ်ချက်အချို့မှာ -
 
--   Most of the CAM Tools are not true 3D tools but only 2.5D capable. This means that they take a fixed 2D shape and can cut it down to a given depth. However, there are two tools which produce true 3D paths: **<img src="images/CAM_3DPocket.svg" width=24px> [3D Pocket](CAM_Pocket_3D.md)** and **<img src="images/CAM_Surface.svg" width=24px> [3D Surface](CAM_Surface.md)** (which is still an [experimental feature](CAM_experimental.md) as of November 2020).
--   Most of CAM workbench is designed for a simple, standard 3-axis (xyz) CNC mill/router, but lathe tools are under development in 0.19_pre.
--   Most operations in CAM workbench will return paths based on a standard endmill tool/bit only, regardless of the tool/bit type assigned in a given tool controller with the exception of the **<img src="images/CAM_Engrave.svg" width=24px> [Engrave](CAM_Engrave.md)** and **<img src="images/CAM_Surface.svg" width=24px> [3D Surface](CAM_Surface.md)** operations.
--   The operations within the CAM workbench are not aware of clamping mechanisms in use to secure the model to your machine. Consequently, please review and simulate the paths you generate prior to sending the code to your machine. If necessary, model your clamping mechanisms in FreeCAD in order to better inspect the paths generated. Look for possible collisions with clamps or other obstacles along the paths.
+-   CAM တူးလ်အများစုသည် စစ်မှန်သော ၃ဘက်မြင် (3D) တူးလ်များ မဟုတ်ဘဲ ၂.၅ ဘက်မြင် (2.5D) သာ လုပ်ဆောင်နိုင်သည်။ ဆိုလိုသည်မှာ ၎င်းတို့သည် ပုံသေ ၂ဘက်မြင် ပုံသဏ္ဌာန်ကို ယူပြီး ပေးထားသော အနက်အထိ ဖြတ်တောက်နိုင်သည်။ သို့သော် စစ်မှန်သော ၃ဘက်မြင် လမ်းကြောင်းများကို ထုတ်ပေးသည့် ကိရိယာနှစ်ခု ရှိပါသည်: **<img src="images/CAM_3DPocket.svg" width=24px> [3D Pocket](CAM_Pocket_3D.md)** နှင့် **<img src="images/CAM_Surface.svg" width=24px> [3D Surface](CAM_Surface.md)** (၎င်းသည် ၂၀၂၀ နိုဝင်ဘာလအထိ [စမ်းသပ်ဆဲ အင်္ဂါရပ်](CAM_experimental.md) ဖြစ်နေဆဲဖြစ်သည်)။
+-   CAM workbench အများစုကို ရိုးရှင်းပြီး စံနှုန်းမီ ၃-ဝင်ရိုး (xyz) CNC မေးလ်/ရောက်တာများအတွက် ဒီဇိုင်းထုတ်ထားသော်လည်း၊ ပွတ်စင် (lathe) တူးလ်များကို ၀.၁၉ ဗားရှင်းတွင် တိုးတက်အောင် လုပ်ဆောင်နေပါသည်။
+-   CAM workbench ရှိ လုပ်ဆောင်ချက်အများစုသည် **<img src="images/CAM_Engrave.svg" width=24px> [Engrave (ထွင်းထုခြင်း)](CAM_Engrave.md)** နှင့် **<img src="images/CAM_Surface.svg" width=24px> [3D Surface](CAM_Surface.md)** လုပ်ဆောင်ချက်များမှလွဲ၍ ပေးထားသော တူးလ်ကွန်ထရိုလာတွင် သတ်မှတ်ထားသော တူးလ်/ဘစ် အမျိုးအစား မည်သို့ပင်ဖြစ်စေ စံနှုန်းမီ endmill tool/bit ပေါ်တွင်သာ အခြေခံသည့် လမ်းကြောင်းများကို ပြန်ပေးမည်ဖြစ်သည်။
+-   CAM workbench အတွင်းရှိ လုပ်ဆောင်ချက်များသည် မော်ဒယ်ကို သင့်စက်တွင် မြဲမြံအောင် ထိန်းထားသည့် ညှပ်ကိရိယာများ (clamping mechanisms) ကို သတိမပြုမိပါ။ ထို့ကြောင့် ကုဒ်ကို သင့်စက်သို့ မပို့မီ သင်ထုတ်လုပ်ထားသော လမ်းကြောင်းများကို ပြန်လည်စစ်ဆေးပြီး သရုပ်ပြ (simulate) ကြည့်ပါ။ လိုအပ်ပါက ထုတ်လုပ်ထားသော လမ်းကြောင်းများကို ပိုမိုကောင်းမွန်စွာ စစ်ဆေးနိုင်ရန် သင်၏ ညှပ်ကိရိယာများကို ဖရီးကက်တွင် မော်ဒယ်လ်ပြုလုပ်ပါ။ လမ်းကြောင်းတစ်လျှောက် ညှပ်ကိရိယာများ သို့မဟုတ် အခြားအတားအဆီးများနှင့် တိုက်မိနိုင်ခြေ ရှိမရှိ ရှာဖွေပါ။
 
-## Units
+## ယူနစ်များ (Units)
 
-Unit handling in CAM can be confusing. There are several points to understand:
+CAM တွင် ယူနစ်ကိုင်တွယ်မှုသည် ရှုပ်ထွေးနိုင်ပါသည်။ နားလည်ထားသင့်သော အချက်အချို့ ရှိပါသည် -
 
-1.  FreeCAD base units for length and time are \'mm\' and \'s\' respectively. Velocity is thus \'mm/s\'. This is what FreeCAD stores internally regardless of anything else
-2.  The default unit schema uses the default units. If you\'re using the default schema and you enter a feed rate without a unit string, it will get entered as \'mm/s\'
-3.  Most CNC machines expect feed rate in the form of either \'mm/min\' or \'in/min\'. Most post-processors will automatically convert the unit when generating gcode.
+၁။ ဖရီးကက်၏ အခြေခံ အလျားနှင့် အချိန် ယူနစ်များသည် 'mm' နှင့် 's' အသီးသီး ဖြစ်သည်။ ထို့ကြောင့် အလျင်သည် 'mm/s' ဖြစ်သည်။ ၎င်းသည် အခြားအရာများ မည်သို့ပင်ဖြစ်စေ ဖရီးကက်က အတွင်းပိုင်းတွင် သိမ်းဆည်းထားသော အရာဖြစ်သည်။
+၂။ စံနှုန်းမီ ယူနစ်ပုံစံသည် စံယူနစ်များကို အသုံးပြုသည်။ အကယ်၍ သင်သည် စံပုံစံကို အသုံးပြုနေပြီး ယူနစ်စာသားမပါဘဲ feed rate တစ်ခုကို ရိုက်ထည့်ပါက ၎င်းကို 'mm/s' အဖြစ် ထည့်သွင်းသွားမည်ဖြစ်သည်။
+၃။ CNC စက်အများစုသည် feed rate ကို 'mm/min' သို့မဟုတ် 'in/min' ပုံစံဖြင့် မျှော်လင့်ကြသည်။ Post-processor အများစုသည် gcode ထုတ်လုပ်သည့်အခါ ယူနစ်ကို အလိုအလျောက် ပြောင်းလဲပေးမည်ဖြစ်သည်။
 
-Schemas:
+ပုံစံများ (Schemas):
 
-1.  Changing schema in preferences changes default unit string for the input fields. If you\'re a CAM user and prefer to design in metric, it\'s highly recommended that you use the \"Metric Small Parts & CNC\" schema. If you design in US units, either the Imperial Decimal and Building US will work.
-2.  Changing your preferred unit schema will have no effect on output but will help avoid input errors.
+၁။ Preferences တွင် ပုံစံကို ပြောင်းလဲခြင်းသည် input fields များအတွက် စံယူနစ်စာသားကို ပြောင်းလဲစေသည်။ အကယ်၍ သင်သည် CAM အသုံးပြုသူဖြစ်ပြီး မက်ထရစ် (metric) ဖြင့် ဒီဇိုင်းဆွဲလိုပါက "Metric Small Parts & CNC" ပုံစံကို အသုံးပြုရန် အထူးအကြံပြုလိုပါသည်။ အကယ်၍ သင်သည် US ယူနစ်များဖြင့် ဒီဇိုင်းဆွဲပါက Imperial Decimal သို့မဟုတ် Building US နှစ်ခုလုံး အဆင်ပြေပါလိမ့်မည်။
+၂။ သင်နှစ်သက်သော ယူနစ်ပုံစံကို ပြောင်းလဲခြင်းသည် ရလဒ်အပေါ် သက်ရောက်မှုမရှိသော်လည်း ထည့်သွင်းမှု အမှားများကို ရှောင်ရှားရန် ကူညီပေးပါလိမ့်မည်။
 
-Output:
+ရလဒ် (Output):
 
-1.  Generating the correct unit in output is the responsibility of the post-processor and is done only at that time.
-2.  Machine output unit is completely unrelated to your selected unit schema.
-3.  Post-processors produce either metric (G21) output, Imperial (G20) output or are configurable.
-4.  Configurable post-processors default to metric (G21).
-5.  If you want your configurable post-processor to output imperial G-code (G20), set the correct argument in your job output configuration (ie \--inches for linuxcnc). This can be stored in a job template and set as your default template to make it automatic for all future jobs.
-
-CAM Inspection:
-
-1.  If you use the CAM Inspect tool to look at G-code, you will see it in \'mm/s\' because it is not being post-processed.
-
-## Heights and depths 
-
-Many of the commands have various heights and depths:
-
-<img alt="" src=images/Path-DepthsAndHeights.gif  style="width:500px;"> 
-*Visual reference for Depth properties (settings)*
-
-## Commands
-
-Some commands are experimental and not available by default. To enable them see [CAM experimental](CAM_experimental.md).
-
-### Project Commands 
-
--   <img alt="" src=images/CAM_Job.svg  style="width:32px;"> [Job](CAM_Job.md): Creates a new CNC job.
-
--   <img alt="" src=images/CAM_Post.svg  style="width:32px;"> [Post Process](CAM_Post.md): Exports a project to G-code.
-
--   <img alt="" src=images/CAM_Sanity.svg  style="width:32px;"> [Check the CAM job for common errors](CAM_Sanity.md): Checks the selected job for missing values.
-
--   <img alt="" src=images/CAM_ExportTemplate.svg  style="width:32px;"> [Export Template](CAM_ExportTemplate.md): Export the current job as a template.
-
-### Tool Commands 
-
--   <img alt="" src=images/CAM_Inspect.svg  style="width:32px;"> [Inspect CAM Commands](CAM_Inspect.md): Shows the G-code for checking.
-
--   <img alt="" src=images/CAM_Simulator.svg  style="width:32px;"> [CAM Simulator](CAM_Simulator.md): Shows the milling operation like it\'s done on the machine.
-
--   <img alt="" src=images/CAM_SimulatorGL.svg  style="width:32px;"> [CAM SimulatorGL](CAM_SimulatorGL.md): Enables the new, improved CAM simulator. <small>(v1.0)</small> 
-
--   <img alt="" src=images/CAM_SelectLoop.svg  style="width:32px;"> [Finish Selecting Loop](CAM_SelectLoop.md): Completes a loop from two selected edges.
-
--   <img alt="" src=images/CAM_OpActiveToggle.svg  style="width:32px;"> [Toggle the Active State of the Operation](CAM_OpActiveToggle.md): Activates or de-activates a path operation.
-
--   <img alt="" src=images/CAM_ToolBitLibraryOpen.svg  style="width:32px;"> [ToolBit Library editor](CAM_ToolBitLibraryOpen.md): Opens an editor to manage ToolBit libraries.
-
--   <img alt="" src=images/CAM_ToolBitDock.svg  style="width:32px;"> [ToolBit Dock](CAM_ToolBitDock.md): Toggles the ToolBit Dock.
-
-### Basic Operations 
-
--   <img alt="" src=images/CAM_Profile.svg  style="width:32px;"> [Profile](CAM_Profile.md): Creates a profile operation of the entire model, or from one or more selected faces or edges.
-
--   <img alt="" src=images/CAM_Pocket_Shape.svg  style="width:32px;"> [Pocket Shape](CAM_Pocket_Shape.md): Creates a pocketing operation from one or more selected pocket(s).
-
--   <img alt="" src=images/CAM_Drilling.svg  style="width:32px;"> [Drilling](CAM_Drilling.md): Performs a drilling cycle.
-
--   <img alt="" src=images/CAM_MillFace.svg  style="width:32px;"> [Face](CAM_MillFace.md): Creates a surfacing path.
-
--   <img alt="" src=images/CAM_Helix.svg  style="width:32px;"> [Helix](CAM_Helix.md): Creates a helical path.
-
--   <img alt="" src=images/CAM_Adaptive.svg  style="width:32px;"> [Adaptive](CAM_Adaptive.md): Creates an adaptive clearing and profiling operation.
-
--   <img alt="" src=images/CAM_Slot.svg  style="width:32px;"> [Slot](CAM_Slot.md): Creates a slotting operation from selected features or custom points. [**Experimental**](CAM_experimental.md).
-
--   <img alt="" src=images/CAM_Engrave.svg  style="width:32px;"> [Engrave](CAM_Engrave.md): Creates an engraving path.
-
--   <img alt="" src=images/CAM_Deburr.svg  style="width:32px;"> [Deburr](CAM_Deburr.md): Creates a deburr path.
-
--   <img alt="" src=images/CAM_Vcarve.svg  style="width:32px;"> [Vcarve](CAM_Vcarve.md): Creates an engraving path using a V tool shape.
-
-### 3D Operations 
-
--   <img alt="" src=images/CAM_Pocket_3D.svg  style="width:32px;"> [3D Pocket](CAM_Pocket_3D.md): Creates a path for a 3D pocket.
-
--   <img alt="" src=images/CAM_Surface.svg  style="width:32px;"> [3D Surface](CAM_Surface.md): Creates a path for a 3D surface. [**Experimental**](CAM_experimental.md).
-
--   <img alt="" src=images/CAM_Waterline.svg  style="width:32px;"> [Waterline](CAM_Waterline.md): Creates a waterline path for a 3D surface. [**Experimental**](CAM_experimental.md).
-
-### Path Dressup 
-
--   <img alt="" src=images/CAM_DressupAxisMap.svg  style="width:32px;"> [Axis Map](CAM_DressupAxisMap.md): Remaps one axis to another.
-
--   <img alt="" src=images/CAM_DressupPathBoundary.svg  style="width:32px;"> [Boundary](CAM_DressupPathBoundary.md): Adds a boundary dressup modification to a selected path.
-
--   <img alt="" src=images/CAM_DressupDogbone.svg  style="width:32px;"> [Dogbone](CAM_DressupDogbone.md): Adds a dogbone dressup modification to a selected path.
-
--   <img alt="" src=images/CAM_DressupDragKnife.svg  style="width:32px;"> [DragKnife](CAM_DressupDragKnife.md): Adds a dragknife dressup modification to a selected path.
-
--   <img alt="" src=images/CAM_DressupLeadInOut.svg  style="width:32px;"> [LeadInOut](CAM_DressupLeadInOut.md): Adds a lead-in and/or lead-out point to a selected path.
-
--   <img alt="" src=images/CAM_DressupRampEntry.svg  style="width:32px;"> [RampEntry](CAM_DressupRampEntry.md): Adds ramp entry dressup modification to a selected path.
-
--   <img alt="" src=images/CAM_DressupTag.svg  style="width:32px;"> [Tag](CAM_DressupTag.md): Adds a holding tag dressup modification to a selected path.
-
--   <img alt="" src=images/CAM_DressupZCorrect.svg  style="width:32px;"> [Z Depth Correction](CAM_DressupZCorrect.md): Corrects the Z depth using Probe Map.
-
-### Supplemental Commands 
-
--   <img alt="" src=images/CAM_Fixture.svg  style="width:32px;"> [Fixture](CAM_Fixture.md): Changes the fixture position.
-
--   <img alt="" src=images/CAM_Comment.svg  style="width:32px;"> [Comment](CAM_Comment.md): Inserts a comment in the G-code of a path.
-
--   <img alt="" src=images/CAM_Stop.svg  style="width:32px;"> [Stop](CAM_Stop.md): Inserts a full stop of the machine.
-
--   <img alt="" src=images/CAM_Custom.svg  style="width:32px;"> [Custom](CAM_Custom.md): Inserts custom G-code.
-
--   <img alt="" src=images/CAM_Probe.svg  style="width:32px;"> [Probe](CAM_Probe.md): Creates a Probing Grid from a job stock.
-
--   <img alt="" src=images/CAM_Shape.svg  style="width:32px;"> [From Shape](CAM_Shape.md): Creates a path object from a selected Part object. [**Experimental**](CAM_experimental.md).
-
-### Path Modification 
-
--   <img alt="" src=images/CAM_Copy.svg  style="width:32px;"> [Copy the operation in the job](CAM_Copy.md): Creates a parametric Copy of a selected path object.
-
--   <img alt="" src=images/CAM_Array.svg  style="width:32px;"> [Array](CAM_Array.md): Creates an array by duplicating a selected path.
-
--   <img alt="" src=images/CAM_SimpleCopy.svg  style="width:32px;"> [Simple Copy](CAM_SimpleCopy.md): Creates a non-parametric copy of a selected path object.
-
-### Specialty Operations 
-
--   <img alt="" src=images/CAM_ThreadMilling.svg  style="width:32px;"> [Thread Milling](CAM_ThreadMilling.md): Creates a CAM Thread Milling operation from features of a base object. [**Experimental**](CAM_experimental.md).
-
-### Miscellaneous
-
--   <img alt="" src=images/CAM_Area.svg  style="width:32px;"> [Area](CAM_Area.md): Creates a feature area from selected objects. [**Experimental**](CAM_experimental.md).
-
--   <img alt="" src=images/CAM_Area_Workplane.svg  style="width:32px;"> [Area workplane](CAM_Area_Workplane.md): Creates a feature area workplane. [**Experimental**](CAM_experimental.md).
-
-## ToolBit architecture 
-
-Manage tools, bits, and the Tool Library. Based on the ToolBit architecture.
-
--   [CAM Tools](CAM_Tools.md)
--   [CAM ToolShape](CAM_ToolShape.md)
--   [CAM ToolBit](CAM_ToolBit.md)
--   [CAM ToolBit Library](CAM_ToolBit_Library.md)
--   [CAM ToolController](CAM_ToolController.md)
-
-## Other
-
--   [CAM FAQ](CAM_FAQ.md): The CAM Workbench shares many concepts with other CAM software packages but has its own peculiarities. If something seems wrong this is a good place to start.
--   [CAM SetupSheet](CAM_SetupSheet.md): You can use a SetupSheet to customize how various property values for operations are calculated.
--   [CAM Postprocessor Customization](CAM_Postprocessor_Customization.md): If you have a special machine which cannot use one of the available post-processors you may need to write your own post-processor.
--   [CAM fourth axis](CAM_fourth_axis.md): Experimental four axis milling.
-
-## Preferences
-
--   <img alt="" src=images/Preferences-cam.svg  style="width:32px;"> [Preferences\...](CAM_Preferences.md): Preferences available for the CAM Workbench.
-
-## Scripting
-
-See [CAM scripting](CAM_scripting.md).
-
-## Tutorials
-
--   [CAM Walkthrough for the Impatient](CAM_Walkthrough_for_the_Impatient.md): a quick tutorial to get familiar with CAM.
-
-## Videos
-
--   [FreeCAD Path: Custom paths with Python - Part 1 - 5](https://www.youtube.com/playlist?list=PLEuOia-QxyFKgzAeTyH62GKqWKVURiWJL): A playlist with a series of 5 videos in English by sliptonic. This series shows how to work with the [CAM Workbench](CAM_Workbench.md).
--   [FreeCAD CAM Path Workbench](https://www.youtube.com/playlist?list=PLUrr_kHPp4vhGdLlj6IemtF-OPUlRvSTC): A playlist with a series of 7 videos in English by CAD CAM Lessons.
--   [FreeCAD CAM CNC](https://www.youtube.com/playlist?list=PLUrr_kHPp4vh2n6DcIlegK4dEKIFjmISJ): A playlist with a series of 8 videos in English by CAD CAM Lessons.
--   Also see the [Computer-Aided Manufacturing (CAM) section](Video_tutorials#Computer-Aided_Manufacturing_(CAM).md) of the [Video tutorials](Video_tutorials.md) wiki page.
-
-## Roadmap
-
--   [CAM Development Roadmap](CAM_Development_Roadmap.md): Read this if you are a developer and want to contribute to CAM.
-
-
-
-
- {{CAM_Tools_navi}}
-
-
-
----
-⏵ [documentation index](../README.md) > [Workbenches](Category_Workbenches.md) > [CAM](Category_CAM.md) > CAM Workbench
+၁။ ရလဒ်တွင် မှန်ကန်သော ယူနစ်ကို ထုတ်ပေးခြင်းသည် post-processor ၏ တာဝန်ဖြစ်ပြီး ထိုအချိန်တွင်သာ လုပ်ဆောင်သည်။
+၂။ စက်၏ ရလဒ်ယူနစ်သည် သင်ရွေးချယ်ထားသော ယူနစ်ပုံစံနှင့် လုံးဝမသက်ဆိုင်ပါ။
